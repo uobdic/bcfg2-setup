@@ -1,0 +1,3 @@
+<Bundle name='server-bcfg'>
+	<Package name='bcfg2-server'/>
+</Bundle>
