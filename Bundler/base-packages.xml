@@ -3,6 +3,7 @@
         <Package name='exim'/>
         <Package name='grub'/>
         <Package name='kernel'/>
+        <Package name='python-ssl'/>
         <Package name='krb5-workstation'/>
         <Package name='m2crypto'/>
         <Package name='openssh-clients'/>
