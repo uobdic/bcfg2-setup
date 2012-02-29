@@ -1,6 +1,5 @@
 <Bundle name='base-packages'>
-	<Package name='git' type='yum'/>
-        <Package name='bcfg2-server'/>
+        <Package name='bcfg2'/>
         <Package name='exim'/>
         <Package name='grub'/>
         <Package name='kernel'/>
