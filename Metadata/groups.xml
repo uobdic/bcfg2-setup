@@ -6,7 +6,9 @@
    <Group name='debian'/>
    <Group name='redhat'>
       <Bundle name='motd'/>
+<!--
       <Bundle name='base-packages'/> 
+-->
       <Bundle name='git'/>
    </Group>
 </Groups>
