@@ -1,0 +1,3 @@
+<Group name='rpm'>
+	<Package name='git' type='yum'/>
+</Group>

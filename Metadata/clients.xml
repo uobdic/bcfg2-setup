@@ -1,0 +1,3 @@
+<Clients version="3.0">
+   <Client profile="basic" pingable="Y" pingtime="0" name="bcfg-srv"/>
+<Client profile="basic" name="bcfg-client"/></Clients>

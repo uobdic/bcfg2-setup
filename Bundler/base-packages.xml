@@ -1,0 +1,18 @@
+<Bundle name='base-packages'>
+	<Package name='git' type='yum'/>
+        <Package name='bcfg2-server'/>
+        <Package name='exim'/>
+        <Package name='grub'/>
+        <Package name='kernel'/>
+        <Package name='krb5-workstation'/>
+        <Package name='m2crypto'/>
+        <Package name='openssh-clients'/>
+        <Package name='openssh-server'/>
+        <Package name='prelink'/>
+        <Package name='redhat-lsb'/>
+        <Package name='rpm-build'/>
+        <Package name='rsync'/>
+        <Package name='sysklogd'/>
+        <Package name='vim-enhanced'/>
+        <Package name='yum'/>
+</Bundle>
