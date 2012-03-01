@@ -1,0 +1,17 @@
+<Sources>
+  <YUMSource>
+    <Group>redhat</Group>
+    <URL>http://dl.fedoraproject.org/pub/epel/5/</URL>
+    <Arch>x86_64</Arch>
+  </YUMSource>
+  <YUMSource>
+    <Group>redhat</Group>
+    <RawURL>http://packages.ilrt.bris.ac.uk/incoming/</RawURL>
+    <Arch>x86_64</Arch>
+  </YUMSource>
+  <YUMSource>
+    <Group>redhat</Group>
+    <RawURL>http://packages.cloudant.com/rpm/latest/x86_64/</RawURL>
+    <Arch>x86_64</Arch>
+  </YUMSource>
+</Sources>

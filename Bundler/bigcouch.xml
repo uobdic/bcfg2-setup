@@ -1,2 +1,4 @@
-bigcouch-0.4.0-1.el6.x86_64.rpm 
-http://packages.cloudant.com/rpm/latest/x86_64/bigcouch-0.4.0-1.el6.x86_64.rpm
+<Bundle name='bigcouch'>
+	<Package name='bigcouch'/>
+</Bundle>
+
