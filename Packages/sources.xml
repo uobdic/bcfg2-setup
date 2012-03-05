@@ -4,6 +4,12 @@
       <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
+    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific/" version="54">
+      <Component>SL</Component>
+      <Component>updates/security</Component>
+      <Arch>x86_64</Arch>
+    </Source>
+    
     <Source rawurl="http://packages.ilrt.bris.ac.uk/incoming/" type="yum">
       <Arch>x86_64</Arch>
     </Source>
