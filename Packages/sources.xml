@@ -4,15 +4,15 @@
       <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
-    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific/" version="54">
+    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific" version="54">
       <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
     
-    <Source rawurl="http://packages.ilrt.bris.ac.uk/incoming/" type="yum">
+    <Source rawurl="http://packages.ilrt.bris.ac.uk/incoming" type="yum">
       <Arch>x86_64</Arch>
     </Source>
-    <Source rawurl="http://packages.cloudant.com/rpm/latest/x86_64/" type="yum">
+    <Source rawurl="http://packages.cloudant.com/rpm/latest/x86_64" type="yum">
       <Arch>x86_64</Arch>
     </Source>
   </Group>
