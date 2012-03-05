@@ -4,12 +4,12 @@
     <YUMSource>
       <URL>http://dl.fedoraproject.org/pub/epel/5/</URL>
     </YUMSource>
-    <YUMSource>
+    <RPMSource>
       <RawURL>http://packages.ilrt.bris.ac.uk/incoming/</RawURL>
-    </YUMSource>
-    <YUMSource>
+    </RPMSource>
+    <RPMSource>
       <RawURL>http://packages.cloudant.com/rpm/latest/x86_64/</RawURL>
-    </YUMSource>
+    </RPMSource>
     </Arch>
   </Group>
 </Sources>
