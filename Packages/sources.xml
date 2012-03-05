@@ -2,13 +2,13 @@
   <Group name="redhat">
     <Source type="yum" url="http://dl.fedoraproject.org/pub/epel" version="5">
       <Component>.</Component>
-      <Arch name="x86_64"/>
+      <Arch>x86_64</Arch>
     </Source>
     <Source rawurl="http://packages.ilrt.bris.ac.uk/incoming/" type="yum">
-      <Arch name="x86_64"/>
+      <Arch>x86_64</Arch>
     </Source>
     <Source rawurl="http://packages.cloudant.com/rpm/latest/x86_64/" type="yum">
-      <Arch name="x86_64"/>
+      <Arch>x86_64</Arch>
     </Source>
   </Group>
 </Sources>
