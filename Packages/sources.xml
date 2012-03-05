@@ -5,8 +5,7 @@
       <Arch>x86_64</Arch>
     </Source>
     <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific/" version="54">
-      <Component>SL</Component>
-      <Component>updates/security</Component>
+      <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
     
