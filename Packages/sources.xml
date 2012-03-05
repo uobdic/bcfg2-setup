@@ -1,15 +1,14 @@
 <Sources>
   <Group name="redhat">
-    <Arch name="x86_64">
-    <YUMSource>
-      <URL>http://dl.fedoraproject.org/pub/epel/5/</URL>
-    </YUMSource>
-    <RPMSource>
-      <RawURL>http://packages.ilrt.bris.ac.uk/incoming/</RawURL>
-    </RPMSource>
-    <RPMSource>
-      <RawURL>http://packages.cloudant.com/rpm/latest/x86_64/</RawURL>
-    </RPMSource>
-    </Arch>
+    <Source type="yum" url="http://dl.fedoraproject.org/pub/epel" version="5">
+      <Component>.</Component>
+      <Arch name="x86_64"/>
+    </Source>
+    <Source rawurl="http://packages.ilrt.bris.ac.uk/incoming/" type="yum">
+      <Arch name="x86_64"/>
+    </Source>
+    <Source rawurl="http://packages.cloudant.com/rpm/latest/x86_64/" type="yum">
+      <Arch name="x86_64"/>
+    </Source>
   </Group>
 </Sources>
