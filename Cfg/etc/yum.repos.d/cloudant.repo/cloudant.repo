@@ -3,3 +3,4 @@ name=Cloudant Repo
 baseurl=http://packages.cloudant.com/rpm/5/$basearch
 enabled=1
 gpgcheck=0
+

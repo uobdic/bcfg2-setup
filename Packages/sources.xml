@@ -10,14 +10,17 @@
       <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
-
+<!--
     <Source rawurl="http://packages.ilrt.bris.ac.uk/incoming" type="yum">
+      <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
+-->
 
     <Source url="http://packages.cloudant.com/rpm" type="yum" version="5">
       <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
   </Group>
+
 </Sources>
