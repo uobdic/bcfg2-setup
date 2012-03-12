@@ -1,5 +1,6 @@
 <Bundle name='bigcouch'>
-        <Package name='bigcouch'/>
-        <Package name='js'/>
-        <Package name='js-devel'/>
+
+  <Package name='bigcouch'/>
+  <Package name='js'/>
+  <Package name='js-devel'/>
 </Bundle>

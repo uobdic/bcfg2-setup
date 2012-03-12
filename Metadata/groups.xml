@@ -7,14 +7,18 @@
    <Group name='debian'/>
    <Group name='x86_64'/>
    <Group name='redhat'/>
-   
+   <Group name='redhat'>
+     <Bundle name='motd'/>
+     <Bundle name='base-packages'/>
+   </Group>
+
    <Group name='sci-linux'>
-      <Group name='redhat'/>
-      <Bundle name='motd'/>
-<!--
-      <Bundle name='base-packages'/>
--->
-      <Bundle name='git'/>
-      <Bundle name='bigcouch'/>
+     <Group name='redhat'/>
+     <Bundle name='git'/>
+   </Group>
+
+   <Group name='couch' public='true'>
+     <Bundle name='bigcouch'/>
+     <Group name='sci-linux'/>
    </Group>
 </Groups>

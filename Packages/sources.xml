@@ -1,13 +1,6 @@
 <Sources>
-  <Group name="redhat">
-  
-    <!-- This should really be for a special couchdb group -->
-    <Source url="http://packages.cloudant.com/rpm" type="yum" version="latest">
-      <Component>.</Component>
-      <Arch>x86_64</Arch>
-    </Source>
+  <Group name="sci-linux">
 
-    <!-- OS level dependencies -->
     <Source type="yum" url="http://dl.fedoraproject.org/pub/epel" version="5">
       <Component>.</Component>
       <Arch>x86_64</Arch>
@@ -18,10 +11,17 @@
       <Arch>x86_64</Arch>
     </Source>
 
-    <!-- used for boot strapping, temporarily(?) -->
     <Source rawurl="http://packages.ilrt.bris.ac.uk/incoming" type="yum">
       <Arch>x86_64</Arch>
     </Source>
-    
+
+  </Group>
+
+  <Group name="couch">
+
+    <Source url="http://packages.cloudant.com/rpm" type="yum" version="5">
+      <Component>.</Component>
+      <Arch>x86_64</Arch>
+    </Source>
   </Group>
 </Sources>
