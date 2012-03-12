@@ -6,7 +6,7 @@
    <Group name='ubuntu'/>
    <Group name='debian'/>
    <Group name='x86_64'/>
-   <Group name='redhat'/>
+
    <Group name='redhat'>
      <Bundle name='motd'/>
      <Bundle name='base-packages'/>
