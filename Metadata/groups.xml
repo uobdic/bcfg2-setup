@@ -17,8 +17,9 @@
      <Bundle name='git'/>
    </Group>
 
-   <Group name='couch' public='true'>
+   <Group public='true' profile='true' name='couch'>
      <Bundle name='bigcouch'/>
      <Group name='sci-linux'/>
+     <Group name='x86_64'/>
    </Group>
 </Groups>
