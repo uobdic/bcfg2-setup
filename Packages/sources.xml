@@ -15,10 +15,6 @@
       <Arch>x86_64</Arch>
     </Source>
 
-  </Group>
-
-  <Group name="couch">
-
     <Source url="http://packages.cloudant.com/rpm" type="yum" version="5">
       <Component>.</Component>
       <Arch>x86_64</Arch>
