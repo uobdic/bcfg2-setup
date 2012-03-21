@@ -18,6 +18,11 @@
     <Source type="yum" rawurl="http://packages.cloudant.com/rpm" version="5">
       <Arch>x86_64</Arch>
     </Source>
+
+    <Source type="yum" rawurl="http://mirror.lividpenguin.com/pub/apache/hadoop/common/" version="hadoop-1.0.1">
+      <Arch>x86_64</Arch>
+    </Source>
+
   </Group>
 
 </Sources>
