@@ -15,7 +15,7 @@
     </Source>
 -->
 
-    <Source type="yum" rawurl="http://packages.cloudant.com/rpm" version="5">
+    <Source rawurl="http://packages.cloudant.com/rpm" version="5">
       <Arch>x86_64</Arch>
     </Source>
 
