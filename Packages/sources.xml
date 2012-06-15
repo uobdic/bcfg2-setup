@@ -1,11 +1,11 @@
 <Sources>
   <Group name="sci-linux">
 
-    <Source type="yum" rawurl="http://dl.fedoraproject.org/pub/epel" version="5">
+    <Source type="yum" url="http://dl.fedoraproject.org/pub/epel" version="5">
       <Arch>x86_64</Arch>
     </Source>
 
-    <Source type="yum" rawurl="http://ftp.scientificlinux.org/linux/scientific" version="54">
+    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific" version="54">
       <Arch>x86_64</Arch>
     </Source>
 <!--
@@ -19,7 +19,7 @@
       <Arch>x86_64</Arch>
     </Source>
 
-    <Source type="yum" rawurl="http://mirror.lividpenguin.com/pub/apache/hadoop/common/" version="hadoop-1.0.1">
+    <Source type="yum" url="http://mirror.lividpenguin.com/pub/apache/hadoop/common/" version="hadoop-1.0.1">
       <Arch>x86_64</Arch>
     </Source>
 
