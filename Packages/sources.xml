@@ -1,25 +1,24 @@
 <Sources>
   <Group name="sci-linux">
 
-    <Source type="yum" rawurl="http://dl.fedoraproject.org/pub/epel" version="5">
+    <Source type="yum" url="http://dl.fedoraproject.org/pub/epel" version="5">
       <Arch>x86_64</Arch>
     </Source>
 
-    <Source type="yum" rawurl="http://ftp.scientificlinux.org/linux/scientific" version="54">
-      <Arch>x86_64</Arch>
-    </Source>
-<!--
-    <Source rawurl="http://packages.ilrt.bris.ac.uk/incoming" type="yum">
-      <Component>.</Component>
-      <Arch>x86_64</Arch>
-    </Source>
--->
-
-    <Source type="yum" rawurl="http://packages.cloudant.com/rpm" version="5">
+    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific" version="54">
       <Arch>x86_64</Arch>
     </Source>
 
-    <Source type="yum" rawurl="http://mirror.lividpenguin.com/pub/apache/hadoop/common/" version="hadoop-1.0.1">
+    <Source type="yum" url="http://packages.ilrt.bris.ac.uk/centos" version="5.4">
+      <Component>ilrt</Component>
+      <Arch>x86_64</Arch>
+    </Source>
+
+    <Source rawurl="http://packages.cloudant.com/rpm" version="5">
+      <Arch>x86_64</Arch>
+    </Source>
+
+    <Source type="yum" url="http://mirror.lividpenguin.com/pub/apache/hadoop/common/" version="hadoop-1.0.1">
       <Arch>x86_64</Arch>
     </Source>
 
