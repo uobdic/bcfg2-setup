@@ -8,12 +8,11 @@
     <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific" version="54">
       <Arch>x86_64</Arch>
     </Source>
-<!--
-    <Source rawurl="http://packages.ilrt.bris.ac.uk/incoming" type="yum">
-      <Component>.</Component>
+
+    <Source type="yum" url="http://packages.ilrt.bris.ac.uk/centos" version="5.4">
+      <Component>ilrt</Component>
       <Arch>x86_64</Arch>
     </Source>
--->
 
     <Source rawurl="http://packages.cloudant.com/rpm" version="5">
       <Arch>x86_64</Arch>
