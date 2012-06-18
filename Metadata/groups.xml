@@ -32,6 +32,7 @@
 
    <Group profile='true' name='hadoop-repo' public='true'>
      <Bundle name='localrepo' />
+     <Bundle name='apache' />
      <Group name='hadoop' />
      <Group name='sci-linux'/>
      <Group name='x86_64'/>
