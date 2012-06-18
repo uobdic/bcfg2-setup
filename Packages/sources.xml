@@ -1,20 +1,15 @@
 <Sources>
   <Group name="sci-linux">
 
-    <Source type="yum" url="http://dl.fedoraproject.org/pub/epel" version="5">
+    <Source type="yum" url="http://dl.fedoraproject.org/pub/epel" version="6">
       <Arch>x86_64</Arch>
     </Source>
 
-    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific" version="54">
+    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific" version="6.2">
       <Arch>x86_64</Arch>
     </Source>
 
-    <Source type="yum" url="http://packages.ilrt.bris.ac.uk/centos" version="5.4">
-      <Component>ilrt</Component>
-      <Arch>x86_64</Arch>
-    </Source>
-
-    <Source rawurl="http://packages.cloudant.com/rpm" version="5">
+    <Source rawurl="http://packages.cloudant.com/rpm" version="6">
       <Arch>x86_64</Arch>
     </Source>
 
