@@ -18,6 +18,7 @@
    </Group>
 
    <Group profile='true' name='couch' public='true'>
+     <Bundle name='permissive-selinux'/>
      <Bundle name='bigcouch'/>
      <Group name='sci-linux'/>
      <Group name='x86_64'/>
