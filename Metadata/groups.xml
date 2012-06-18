@@ -30,4 +30,11 @@
      <Group name='x86_64'/>
    </Group>
 
+   <Group profile='true' name='hadoop-repo' public='true'>
+     <Bundle name='localrepo' />
+     <Group name='hadoop' />
+     <Group name='sci-linux'/>
+     <Group name='x86_64'/>
+   </Group>
+
 </Groups>

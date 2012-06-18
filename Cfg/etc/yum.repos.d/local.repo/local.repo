@@ -1,0 +1,4 @@
+[local-repo]
+name = Local YUM Repository for cluster RPMs
+baseurl = http://hudson/local-repo/
+gpgcheck = 0

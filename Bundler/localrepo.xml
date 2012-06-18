@@ -1,0 +1,9 @@
+<Bundle name='localrepo'>
+<!--
+	This bundle is to create a local YUM repository for storing the cluster
+	RPMs that are not being stored in properly formed YUM repos online.
+-->
+  <Path name='/etc/yum.repos.d/local.repo' />
+  <Package name='createrepo'/>
+  <Path name='/srv/local-repo' />
+</Bundle>

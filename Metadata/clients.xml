@@ -1,4 +1,5 @@
 <Clients version="3.0">
   <Client profile="couch" pingable="Y" pingtime="0" name="bcfg-srv"/>
   <Client profile="basic" name="bcfg-client"/>
+  <Client profile="hadoop-repo" name="hudson"/>
 </Clients>
