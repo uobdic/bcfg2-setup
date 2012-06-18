@@ -1,0 +1,3 @@
+<Bundle name='permissive-selinux' version='2.0'>
+    <Path name='/etc/selinux/config'/>
+</Bundle>
