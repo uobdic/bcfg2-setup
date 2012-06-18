@@ -1,0 +1,3 @@
+<Bundle name='bcfg2.crt' version='2.0'>
+  <Path name='/etc/bcfg2.crt'/>
+</Bundle>

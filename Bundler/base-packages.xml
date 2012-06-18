@@ -1,4 +1,6 @@
 <Bundle name='base-packages'>
+        <Path name='/etc/bcfg2.conf'/>
+        <Path name='/etc/bcfg2.crt'/>
         <Package name='bcfg2'/>
         <Package name='exim'/>
         <Package name='grub'/>
