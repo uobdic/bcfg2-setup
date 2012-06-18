@@ -1,0 +1,4 @@
+<Bundle name='apache'>
+  <Path name='/etc/httpd/conf.d/localrepo.conf' />
+  <Package name='apache' />
+</Bundle>
