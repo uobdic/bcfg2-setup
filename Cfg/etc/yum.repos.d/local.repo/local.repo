@@ -1,0 +1,5 @@
+[local-repo]
+name = Local YUM Repository for cluster RPMs
+baseurl = http://dice-sl6/localrepo/
+gpgcheck = 0
+enabled=1
