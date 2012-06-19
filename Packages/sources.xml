@@ -13,7 +13,7 @@
       <Arch>x86_64</Arch>
     </Source>
 
-    <Source type="yum" url="http://mirror.lividpenguin.com/pub/apache/hadoop/common/" version="hadoop-1.0.1">
+    <Source type="yum" url="http://mirror.lividpenguin.com/pub/apache/hadoop/common/" version="hadoop-1.0.3">
       <Arch>x86_64</Arch>
     </Source>
 
