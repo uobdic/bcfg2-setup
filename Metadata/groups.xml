@@ -30,4 +30,12 @@
      <Group name='x86_64'/>
    </Group>
 
+   <Group profile='true' name='repo' public='true'>
+        <!-- This will be the service node profile -->
+        <Bundle name='permissive-selinux'/>
+        <Bundle name='apache' />
+        <Bundle name='localrepo' />
+        <Group name='sci-linux'/>
+        <Group name='x86_64'/>
+   </Group>
 </Groups>
