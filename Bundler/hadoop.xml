@@ -1,7 +1,4 @@
 <Bundle name='hadoop'>
-<!--
-  Not sure that this is needed/available
-  <Path name='/etc/yum.repos.d/hadoop.repo' />
--->
-  <Package name='hadoop'/>
+  <Path name='/etc/yum.repos.d/local.repo' />
+  <Package name='hadoop' />
 </Bundle>
