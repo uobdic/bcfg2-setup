@@ -1,4 +1,27 @@
 <Bundle name='hadoop'>
   <Path name='/etc/yum.repos.d/local.repo' />
   <Package name='hadoop' />
+  <Path name="/etc/hadoop" />
+<!-- Fix permissions of scripts provided by rpm -->
+<Path name="/usr/sbin/update-hadoop-env.sh" />
+<Path name="/usr/sbin/stop-mapred.sh" />
+<Path name="/usr/sbin/stop-jobhistoryserver.sh" />
+<Path name="/usr/sbin/stop-dfs.sh" />
+<Path name="/usr/sbin/stop-balancer.sh" />
+<Path name="/usr/sbin/stop-all.sh" />
+<Path name="/usr/sbin/start-mapred.sh" />
+<Path name="/usr/sbin/start-jobhistoryserver.sh" />
+<Path name="/usr/sbin/start-dfs.sh" />
+<Path name="/usr/sbin/start-balancer.sh" />
+<Path name="/usr/sbin/start-all.sh" />
+<Path name="/usr/sbin/slaves.sh" />
+<Path name="/usr/sbin/rcc" />
+<Path name="/usr/sbin/hadoop-validate-setup.sh" />
+<Path name="/usr/sbin/hadoop-setup-single-node.sh" />
+<Path name="/usr/sbin/hadoop-setup-hdfs.sh" />
+<Path name="/usr/sbin/hadoop-setup-conf.sh" />
+<Path name="/usr/sbin/hadoop-setup-applications.sh" />
+<Path name="/usr/sbin/hadoop-daemons.sh" />
+<Path name="/usr/sbin/hadoop-daemon.sh" />
+<Path name="/usr/sbin/hadoop-create-user.sh" />
 </Bundle>
