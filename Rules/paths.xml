@@ -1,25 +1,3 @@
 <Rules priority="0">
     <Path type='directory' group="apache" name="/srv/local-repo" owner="apache" perms="0755"/>
-    <Path type='directory' group="hadoop" name="/etc/hadoop" owner="root" perms="0755"/>
-    <Path type="directory" group="root" name="/usr/sbin/update-hadoop-env.sh" owner="root" perms="0755"/>
-    <Path type="directory" group="root" name="/usr/sbin/stop-mapred.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/stop-jobhistoryserver.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/stop-dfs.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/stop-balancer.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/stop-all.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/start-mapred.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/start-jobhistoryserver.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/start-dfs.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/start-balancer.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/start-all.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/slaves.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/rcc" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/hadoop-validate-setup.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/hadoop-setup-single-node.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/hadoop-setup-hdfs.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/hadoop-setup-conf.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/hadoop-setup-applications.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/hadoop-daemons.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/hadoop-daemon.sh" owner="root" perms="0755"/>
-<Path type="directory" group="root" name="/usr/sbin/hadoop-create-user.sh" owner="root" perms="0755"/>
 </Rules>

@@ -1,27 +1,23 @@
 <Bundle name='hadoop'>
   <Path name='/etc/yum.repos.d/local.repo' />
   <Package name='hadoop' />
-  <Path name="/etc/hadoop" />
-<!-- Fix permissions of scripts provided by rpm -->
-<Path name="/usr/sbin/update-hadoop-env.sh" />
-<Path name="/usr/sbin/stop-mapred.sh" />
-<Path name="/usr/sbin/stop-jobhistoryserver.sh" />
-<Path name="/usr/sbin/stop-dfs.sh" />
-<Path name="/usr/sbin/stop-balancer.sh" />
-<Path name="/usr/sbin/stop-all.sh" />
-<Path name="/usr/sbin/start-mapred.sh" />
-<Path name="/usr/sbin/start-jobhistoryserver.sh" />
-<Path name="/usr/sbin/start-dfs.sh" />
-<Path name="/usr/sbin/start-balancer.sh" />
-<Path name="/usr/sbin/start-all.sh" />
-<Path name="/usr/sbin/slaves.sh" />
-<Path name="/usr/sbin/rcc" />
-<Path name="/usr/sbin/hadoop-validate-setup.sh" />
-<Path name="/usr/sbin/hadoop-setup-single-node.sh" />
-<Path name="/usr/sbin/hadoop-setup-hdfs.sh" />
-<Path name="/usr/sbin/hadoop-setup-conf.sh" />
-<Path name="/usr/sbin/hadoop-setup-applications.sh" />
-<Path name="/usr/sbin/hadoop-daemons.sh" />
-<Path name="/usr/sbin/hadoop-daemon.sh" />
-<Path name="/usr/sbin/hadoop-create-user.sh" />
+  <Path name='/etc/hadoop/capacity-scheduler.xml' />
+  <Path name='/etc/hadoop/configuration.xsl' />
+  <Path name='/etc/hadoop/core-site.xml' />
+  <Path name='/etc/hadoop/fair-scheduler.xml' />
+  <Path name='/etc/hadoop/hadoop-env.sh' />
+  <Path name='/etc/hadoop/hadoop-metrics2.properties' />
+  <Path name='/etc/hadoop/hadoop-policy.xml' />
+  <Path name='/etc/hadoop/hdfs-site.xml' />
+  <Path name='/etc/hadoop/log4j.properties' />
+  <Path name='/etc/hadoop/mapred-queue-acls.xml' />
+  <Path name='/etc/hadoop/mapred-site.xml' />
+  <Path name='/etc/hadoop/masters' />
+  <Path name='/etc/hadoop/slaves' />
+  <Path name='/etc/hadoop/ssl-client.xml.example' />
+  <Path name='/etc/hadoop/ssl-server.xml.example' />
+  <Path name='/etc/hadoop/taskcontroller.cfg' />
+  <!-- Fix permissions of scripts provided by rpm -->
+  <Action name="fix-hadoop-permissions" />
+  <Action name="cleanup-hadoop-etc" />
 </Bundle>
