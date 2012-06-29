@@ -20,22 +20,19 @@
    <Group profile='true' name='couch' public='true'>
      <Bundle name='permissive-selinux'/>
      <Bundle name='bigcouch'/>
-     <Group name='sci-linux'/>
-     <Group name='x86_64'/>
+     <Group name='basic'/>
    </Group>
 
    <Group profile='true' name='hadoop' public='true'>
      <Bundle name='hadoop'/>
-     <Group name='sci-linux'/>
-     <Group name='x86_64'/>
+     <Group name='basic'/>
    </Group>
 
-   <Group profile='true' name='hadoop-repo' public='true'>
-     <Bundle name='localrepo' />
-     <Bundle name='apache' />
-     <Group name='hadoop' />
-     <Group name='sci-linux'/>
-     <Group name='x86_64'/>
+   <Group profile='true' name='repo' public='true'>
+        <!-- This will be the service node profile -->
+        <Bundle name='permissive-selinux'/>
+        <Bundle name='apache' />
+        <Bundle name='localrepo' />
+        <Group name='basic'/>
    </Group>
-
 </Groups>

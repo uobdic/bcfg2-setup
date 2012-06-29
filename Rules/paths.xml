@@ -1,4 +1,3 @@
 <Rules priority="0">
     <Path type='directory' group="apache" name="/srv/local-repo" owner="apache" perms="0755"/>
 </Rules>
-

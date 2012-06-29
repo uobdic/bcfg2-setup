@@ -1,4 +1,23 @@
 <Bundle name='hadoop'>
   <Path name='/etc/yum.repos.d/local.repo' />
   <Package name='hadoop' />
+  <Path name='/etc/hadoop/capacity-scheduler.xml' />
+  <Path name='/etc/hadoop/configuration.xsl' />
+  <Path name='/etc/hadoop/core-site.xml' />
+  <Path name='/etc/hadoop/fair-scheduler.xml' />
+  <Path name='/etc/hadoop/hadoop-env.sh' />
+  <Path name='/etc/hadoop/hadoop-metrics2.properties' />
+  <Path name='/etc/hadoop/hadoop-policy.xml' />
+  <Path name='/etc/hadoop/hdfs-site.xml' />
+  <Path name='/etc/hadoop/log4j.properties' />
+  <Path name='/etc/hadoop/mapred-queue-acls.xml' />
+  <Path name='/etc/hadoop/mapred-site.xml' />
+  <Path name='/etc/hadoop/masters' />
+  <Path name='/etc/hadoop/slaves' />
+  <Path name='/etc/hadoop/ssl-client.xml.example' />
+  <Path name='/etc/hadoop/ssl-server.xml.example' />
+  <Path name='/etc/hadoop/taskcontroller.cfg' />
+  <!-- Fix permissions of scripts provided by rpm -->
+  <Action name="fix-hadoop-permissions" />
+  <Action name="cleanup-hadoop-etc" />
 </Bundle>

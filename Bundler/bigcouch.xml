@@ -3,4 +3,5 @@
   <Package name='bigcouch'/>
   <Package name='js'/>
   <Package name='js-devel'/>
+  <Path name='/opt/bigcouch/etc/vm.args' />
 </Bundle>

@@ -9,9 +9,12 @@
       <Arch>x86_64</Arch>
     </Source>
 
+    <!-- No type specified on this. Results in error. -->
+    <!--
     <Source rawurl="http://packages.cloudant.com/rpm" version="6">
       <Arch>x86_64</Arch>
     </Source>
+    -->
 
   </Group>
 
