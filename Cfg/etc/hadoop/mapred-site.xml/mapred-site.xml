@@ -6,6 +6,6 @@
 <configuration>
   <property>
     <name>mapred.job.tracker</name>
-    <value>dice-sl6:9001</value>
+    <value>dice-master:9001</value>
   </property>
 </configuration>

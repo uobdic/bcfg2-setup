@@ -6,6 +6,6 @@
 <configuration>
   <property>
     <name>fs.default.name</name>
-    <value>hdfs://dice-sl6:9000</value>
+    <value>hdfs://dice-master:9000</value>
   </property>
 </configuration>
