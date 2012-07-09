@@ -7,7 +7,7 @@
 # All nodes must share the same magic cookie for distributed Erlang to work.
 # Comment out this line if you synchronized the cookies by other means (using
 # the ~/.erlang.cookie file, for example).
--setcookie PASSWORD
+-setcookie ugbnnvsaf
 
 # Tell SASL not to log progress reports
 -sasl errlog_type error

@@ -17,7 +17,22 @@
   <Path name='/etc/hadoop/ssl-client.xml.example' />
   <Path name='/etc/hadoop/ssl-server.xml.example' />
   <Path name='/etc/hadoop/taskcontroller.cfg' />
+
   <!-- Fix permissions of scripts provided by rpm -->
   <Action name="fix-hadoop-permissions" />
   <Action name="cleanup-hadoop-etc" />
+
+  <!-- Fix HDFS -->
+  <Path name='/mapred' />
+  <Path name='/hdfs' />
+  <Path name='/hdfs/data' />
+  <Action name="format-hadoop-namenode" />
+  <Action name="disable-firewalls" />
+  <Action name="clear-hadoop-logs" />
+
+  <!-- Ensure passwordless SSH between nodes (may need to be concat'd into one action) -->
+  <Action name="generate-ssh-dsa-keys" />
+  <Action name="sync-auth-keys" />
+
+<!--  <Action name="test-hadoop" /> -->
 </Bundle>
