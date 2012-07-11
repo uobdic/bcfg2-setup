@@ -1,5 +1,6 @@
 <Bundle name='hadoop'>
   <Path name='/etc/yum.repos.d/local.repo' />
+  <Package name='jre' />
   <Package name='hadoop' />
   <Path name='/etc/hadoop/capacity-scheduler.xml' />
   <Path name='/etc/hadoop/configuration.xsl' />

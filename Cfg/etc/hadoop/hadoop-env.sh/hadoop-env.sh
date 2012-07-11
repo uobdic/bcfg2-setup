@@ -6,7 +6,7 @@
 # remote nodes.
 
 # The java implementation to use.
-export JAVA_HOME=/usr/lib/jvm/jre-1.6.0
+export JAVA_HOME=/usr/java/jre1.6.0_33
 export HADOOP_CONF_DIR=${HADOOP_CONF_DIR:-"/etc/hadoop"}
 
 # The maximum amount of heap to use, in MB. Default is 1000.
