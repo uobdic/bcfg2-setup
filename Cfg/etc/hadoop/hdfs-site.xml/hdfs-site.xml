@@ -6,6 +6,18 @@
 <configuration>
   <property>
     <name>dfs.replication</name>
-    <value>1</value>
+    <value>3</value>
+  </property>
+  <property>
+    <name>dfs.name.dir</name>
+    <value>/hdfs/namespace</value>
+  </property>
+  <property>
+    <name>dfs.data.dir</name>
+    <value>/hdfs/data</value>
+  </property>
+  <property>
+    <name>dfs.datanode.max.xcievers</name>
+    <value>4096</value>
   </property>
 </configuration>
