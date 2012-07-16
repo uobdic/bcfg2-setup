@@ -1,4 +1,5 @@
 <Bundle name='hadoop'>
+  <Action name='remove-openjdk' />
   <Path name='/etc/yum.repos.d/local.repo' />
   <Package name='jre' />
   <Package name='hadoop' />
