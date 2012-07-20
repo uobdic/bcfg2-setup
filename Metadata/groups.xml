@@ -18,7 +18,6 @@
    </Group>
 
    <Group profile='true' name='couch' public='true'>
-     <Bundle name='permissive-selinux'/>
      <Bundle name='bigcouch'/>
      <Group name='basic'/>
    </Group>
@@ -30,7 +29,6 @@
 
    <Group profile='true' name='repo' public='true'>
         <!-- This will be the service node profile -->
-        <Bundle name='permissive-selinux'/>
         <Bundle name='apache' />
         <Bundle name='localrepo' />
         <Group name='basic'/>
