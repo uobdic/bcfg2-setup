@@ -47,6 +47,11 @@
     <Group name='basic'/>
   </Group>
 
+  <Group profile='true' name='pig' public='true'>
+    <Bundle name='pig'/>
+    <Group name='basic'/>
+  </Group>
+
   <Group profile="true" name="repo" public="true">
     <!-- This will be the service node profile -->
     <Bundle name="apache" />
