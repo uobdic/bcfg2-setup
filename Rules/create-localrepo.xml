@@ -2,8 +2,6 @@
   <Action name="create-localrepo" timing="post"
       command="
           wget -O /srv/local-repo/hadoop-1.0.3-1.x86_64.rpm http://mirror.lividpenguin.com/pub/apache/hadoop/common/hadoop-1.0.3/hadoop-1.0.3-1.x86_64.rpm &amp;&amp;
-          wget -O /srv/local-repo/pig-0.10.0-1.i386.rpm http://mirror.gopotato.co.uk/apache/pig/stable/pig-0.10.0-1.i386.rpm &amp;&amp;
-          wget -O /srv/local-repo/mahout-0.6+16-1.cdh4.0.1.p0.1.el6.noarch.rpm http://archive.cloudera.com/cdh4/redhat/6/x86_64/cdh/4/RPMS/noarch/mahout-0.6+16-1.cdh4.0.1.p0.1.el6.noarch.rpm &amp;&amp;
           wget -O /tmp/jre-6u33-linux-x64-rpm.bin http://javadl.sun.com/webapps/download/AutoDL?BundleId=63984 &amp;&amp; cd /tmp &amp;&amp; sh jre-6u33-linux-x64-rpm.bin -x &amp;&amp; mv jre-6u33-linux-amd64.rpm /srv/local-repo/ &amp;&amp;
           createrepo /srv/local-repo" when="modified" status="check" />
 </Rules>

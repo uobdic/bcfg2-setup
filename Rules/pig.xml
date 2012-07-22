@@ -1,0 +1,3 @@
+<Rules priority="0">
+    <Action name="download-and-install-pig" timing="post" when="modified" status="check" command="mkdir -p /opt/pig; cd /opt/pig; wget http://apache.mirror.anlx.net/pig/stable/pig-0.10.0.tar.gz; tar xvzf pig-0.10.0.tar.gz" />
+</Rules>
