@@ -52,6 +52,11 @@
     <Group name='basic'/>
   </Group>
 
+  <Group profile='true' name='mahout' public='true'>
+    <Bundle name='mahout'/>
+    <Group name='basic'/>
+  </Group>
+
   <Group profile="true" name="repo" public="true">
     <!-- This will be the service node profile -->
     <Bundle name="apache" />
