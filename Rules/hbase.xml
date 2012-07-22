@@ -1,0 +1,14 @@
+<Rules priority="0">
+    <Service name='ntpd' status='on' type='chkconfig'/>
+    <Action name="useradd-hbase" timing="pre" when="modified" status="check" command="useradd hbase" />
+    <Action name="hadoop-sync-dates" timing="post" when="modified" status="check" command="
+	cat /etc/hadoop/slaves /etc/hadoop/masters | xargs -I{} ssh {} date
+;	cat /etc/hadoop/slaves /etc/hadoop/masters | xargs -I{} ssh {} service ntpd stop
+;	cat /etc/hadoop/slaves /etc/hadoop/masters | xargs -I{} ssh {} ntpdate -u 0.europe.pool.ntp.org
+;	cat /etc/hadoop/slaves /etc/hadoop/masters | xargs -I{} ssh {} ntpdate -u 0.europe.pool.ntp.org
+;	cat /etc/hadoop/slaves /etc/hadoop/masters | xargs -I{} ssh {} ntpdate -u 0.europe.pool.ntp.org
+;	cat /etc/hadoop/slaves /etc/hadoop/masters | xargs -I{} ssh {} service ntpd start
+" />
+    <Action name="download-and-install-hbase" timing="post" when="modified" status="check" command="mkdir -p /opt/hbase; cd /opt/hbase; wget http://mirrors.enquira.co.uk/apache/hbase/hbase-0.94.0/hbase-0.94.0.tar.gz; tar xvzf hbase-0.94.0.tar.gz; chown -R hbase:hbase /opt/hbase; rm -f /opt/hbase/hbase-0.94.0/lib/hadoop-*.jar" />
+    <Action name="copy-hadoop-jar-to-hbase-lib" timing="post" when="modified" status="check" command="find /* -name hadoop*core*.jar | xargs -I{} cp {} /opt/hbase/hbase-0.94.0/lib" />
+</Rules>

@@ -42,6 +42,11 @@
     <Group name="basic-user" />
   </Group>
 
+  <Group profile='true' name='hbase' public='true'>
+    <Bundle name='hbase'/>
+    <Group name='basic'/>
+  </Group>
+
   <Group profile="true" name="repo" public="true">
     <!-- This will be the service node profile -->
     <Bundle name="apache" />

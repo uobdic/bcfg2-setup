@@ -1,0 +1,22 @@
+<Bundle name='hbase'>
+  <!-- NB: Ensure passwordless SSH between nodes -->
+  <!-- NB: Ensure DNS/hosts set up for reverse DNS across all nodes -->
+  <!-- NB: Ensure datetime syncd across nodes -->
+  <Package name='ntp' />
+  <Service name='ntpd' />
+  <Action name="hadoop-sync-dates" />
+
+  <Path name='/etc/hadoop/hdfs-site.xml' />
+  <Path name='/opt/hbase/hbase-0.94.0/conf/hbase-site.xml' />
+  <Path name='/opt/hbase/hbase-0.94.0/conf/hbase-env.sh' />
+  <Path name='/opt/hbase/hbase-0.94.0/conf/regionservers' />
+
+  <Action name="useradd-hbase" />
+  <Action name="download-and-install-hbase" />
+
+  <!-- Loosen user constraints on nproc (num of processes) and nofile (no. of open files) -->
+  <Path name='/etc/security/limits.conf' />
+
+  <!-- Copy the current hadoop JAR into HBase lib -->
+  <Action name="copy-hadoop-jar-to-hbase-lib" />
+</Bundle>
