@@ -1,5 +1,5 @@
 <Rules priority="0">
-  <Path type='directory' name='/zookeeper_data' perms="0777" owner="root" group="root" />
+  <Path type='directory' name='/data/zookeeper' perms="0777" owner="root" group="root" />
   <Path type='directory' name='/opt/zookeeper' perms="0777" owner="root" group="root" />
   <Path type='directory' name='/opt/zookeeper/zookeeper-3.4.3/conf' perms="0777" owner="root" group="root" />
   <Action name="dl-and-build-zookeeper" timing="pre" when="modified" status="check" command="
