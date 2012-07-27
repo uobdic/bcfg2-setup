@@ -1,0 +1,15 @@
+<Bundle name='zookeeper'>
+  <Path name='/zookeeper_data' />
+  <Path name='/opt/zookeeper' />
+  <Path name='/zookeeper_data/myid' />
+  <Path name='/opt/zookeeper/zookeeper-3.4.3/conf' />
+  <Path name='/opt/zookeeper/zookeeper-3.4.3/conf/zoo.cfg' />
+  <Path name='/opt/zookeeper/zookeeper-3.4.3/zkservers' />
+<!--
+	<Package name='zookeeper' />
+-->
+  <Action name='dl-and-build-zookeeper' />
+  <Path name='/etc/init.d/zookeeper' />
+  <!-- Netcat needed for testing -->
+  <Package name='nc' />
+</Bundle>

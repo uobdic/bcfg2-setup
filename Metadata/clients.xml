@@ -1,4 +1,4 @@
 <Clients version="3.0">
   <Client profile="couch" pingable="Y" pingtime="0" name="bcfg-srv"/>
   <Client profile="basic" name="bcfg-client"/>
-<Client profile="basic" name="bcfg2-server"/><Client profile="hadoop" name="dice-master"/><Client profile="hadoop" name="dice-slave1"/><Client profile="hadoop" name="dice-slave3"/><Client profile="hadoop" name="dice-slave2"/></Clients>
+<Client profile="repo" name="bcfg2-server"/><Client profile="zookeeper" name="dice-master"/><Client profile="zookeeper" name="dice-slave1"/><Client profile="hadoop" name="dice-slave3"/><Client profile="zookeeper" name="dice-slave2"/><Client profile="basic" name="v"/></Clients>
