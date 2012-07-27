@@ -28,6 +28,9 @@
   <Path name='/mapred' />
   <Path name='/hdfs' />
   <Path name='/hdfs/data' />
+
+  <!-- Add hadoop user and set ownership -->
+  <Action name="add-hadoop-user" />
 <!--
   <Action name="format-hadoop-namenode" />
   <Action name="disable-firewalls" />
