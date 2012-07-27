@@ -33,7 +33,6 @@
   <Action name="add-hadoop-user" />
 <!--
   <Action name="format-hadoop-namenode" />
-  <Action name="disable-firewalls" />
   <Action name="clear-hadoop-logs" />
 -->
   <!-- Ensure passwordless SSH between nodes (may need to be concat'd into one action) -->
