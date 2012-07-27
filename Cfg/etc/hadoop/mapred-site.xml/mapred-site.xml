@@ -6,7 +6,7 @@
 <configuration>
   <property>
     <name>mapred.job.tracker</name>
-    <value>dice-master:9001</value>
+    <value>nn-37-00.dice.cluster:9001</value>
   </property>
   <property>
     <name>mapred.local.dir</name>
