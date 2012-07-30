@@ -1,7 +1,7 @@
-<Bundle name='bigcouch'>
-  <Path name='/etc/yum.repos.d/cloudant.repo' />
-  <Package name='bigcouch'/>
-  <Package name='js'/>
-  <Package name='js-devel'/>
-  <Path name='/opt/bigcouch/etc/vm.args' />
+<Bundle name="bigcouch">
+  <Path name="/etc/yum.repos.d/cloudant.repo" />
+  <Package name="bigcouch" />
+  <Package name="js" />
+  <Package name="js-devel" />
+  <Path name="/opt/bigcouch/etc/vm.args" />
 </Bundle>

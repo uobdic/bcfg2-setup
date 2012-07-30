@@ -1,3 +1,3 @@
-<Rules priority='0'>
-    <Service name='httpd' type='chkconfig' status='on' />
+<Rules priority="0">
+  <Service name="httpd" type="chkconfig" status="on" />
 </Rules>

@@ -1,38 +1,38 @@
-<Bundle name='hadoop'>
-  <Path name='/etc/yum.repos.d/bristol.repo' />
-  <Package name='jre' />
-  <Package name='hadoop' />
-  <Path name='/etc/hadoop/capacity-scheduler.xml' />
-  <Path name='/etc/hadoop/configuration.xsl' />
-  <Path name='/etc/hadoop/core-site.xml' />
-  <Path name='/etc/hadoop/fair-scheduler.xml' />
-  <Path name='/etc/hadoop/hadoop-env.sh' />
-  <Path name='/etc/hadoop/hadoop-metrics2.properties' />
-  <Path name='/etc/hadoop/hadoop-policy.xml' />
-  <Path name='/etc/hadoop/hdfs-site.xml' />
-  <Path name='/etc/hadoop/log4j.properties' />
-  <Path name='/etc/hadoop/mapred-queue-acls.xml' />
-  <Path name='/etc/hadoop/mapred-site.xml' />
-  <Path name='/etc/hadoop/masters' />
-  <Path name='/etc/hadoop/slaves' />
-  <Path name='/etc/hadoop/ssl-client.xml.example' />
-  <Path name='/etc/hadoop/ssl-server.xml.example' />
-  <Path name='/etc/hadoop/taskcontroller.cfg' />
+<Bundle name="hadoop">
+  <Path name="/etc/yum.repos.d/bristol.repo" />
+  <Package name="jre" />
+  <Package name="hadoop" />
+  <Path name="/etc/hadoop/capacity-scheduler.xml" />
+  <Path name="/etc/hadoop/configuration.xsl" />
+  <Path name="/etc/hadoop/core-site.xml" />
+  <Path name="/etc/hadoop/fair-scheduler.xml" />
+  <Path name="/etc/hadoop/hadoop-env.sh" />
+  <Path name="/etc/hadoop/hadoop-metrics2.properties" />
+  <Path name="/etc/hadoop/hadoop-policy.xml" />
+  <Path name="/etc/hadoop/hdfs-site.xml" />
+  <Path name="/etc/hadoop/log4j.properties" />
+  <Path name="/etc/hadoop/mapred-queue-acls.xml" />
+  <Path name="/etc/hadoop/mapred-site.xml" />
+  <Path name="/etc/hadoop/masters" />
+  <Path name="/etc/hadoop/slaves" />
+  <Path name="/etc/hadoop/ssl-client.xml.example" />
+  <Path name="/etc/hadoop/ssl-server.xml.example" />
+  <Path name="/etc/hadoop/taskcontroller.cfg" />
 
-  <Path name='/home/hdfs/.ssh' />
-  <Path name='/home/hdfs/.ssh/id_dsa' />
-  <Path name='/home/hdfs/.ssh/id_dsa.pub' />
-  <Path name='/home/hdfs/.ssh/authorized_keys' />
-  <Path name='/home/hdfs/.ssh/known_hosts' />
+  <Path name="/home/hdfs/.ssh" />
+  <Path name="/home/hdfs/.ssh/id_dsa" />
+  <Path name="/home/hdfs/.ssh/id_dsa.pub" />
+  <Path name="/home/hdfs/.ssh/authorized_keys" />
+  <Path name="/home/hdfs/.ssh/known_hosts" />
 
   <!-- Fix permissions of scripts provided by rpm -->
   <Action name="fix-hadoop-permissions" />
   <Action name="cleanup-hadoop-etc" />
 
   <!-- Fix HDFS -->
-  <Path name='/mapred' />
-  <Path name='/hdfs' />
-  <Path name='/hdfs/data' />
+  <Path name="/mapred" />
+  <Path name="/hdfs" />
+  <Path name="/hdfs/data" />
 
   <!-- Make sure hdfs user has home dir -->
   <Action name="create-hdfs-user" />
@@ -40,7 +40,7 @@
   <Action name="format-hadoop-namenode" />
   <Action name="clear-hadoop-logs" />
 -->
-  <!-- Ensure passwordless SSH between nodes (may need to be concat'd into one action) -->
+  <!-- Ensure passwordless SSH between nodes (may need to be concat"d into one action) -->
   <!--
     <Action name="generate-ssh-dsa-keys" />
     <Action name="sync-auth-keys" />

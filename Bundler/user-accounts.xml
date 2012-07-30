@@ -1,8 +1,8 @@
-<Bundle name='user-accounts'>
-    <Path name='/etc/krb5.conf' />
-    <Path name='/opt/bcfg2/bin/add-groups' />
-    <Path name='/opt/bcfg2/bin/add-users' />
-    <Package name='pam_krb5' />
-    <Action name='authconfig' />
-    <Action name='add-users' />
+<Bundle name="user-accounts">
+  <Path name="/etc/krb5.conf" />
+  <Path name="/opt/bcfg2/bin/add-groups" />
+  <Path name="/opt/bcfg2/bin/add-users" />
+  <Package name="pam_krb5" />
+  <Action name="authconfig" />
+  <Action name="add-users" />
 </Bundle>

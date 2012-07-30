@@ -1,7 +1,7 @@
-<Rules priority='0'>
-    <Action name='authconfig' timing='post'
-        command='authconfig --disablecache  --enablekrb5 --krb5realm=ADS.BRIS.AC.UK --enablekrb5kdcdns --enablekrb5realmdns --enablelocauthorize --enablemkhomedir --enablepamaccess --updateall' when='modified' status='check' />
-    <Action name='add-users' timing='post'
-        command='/opt/bcfg2/bin/add-groups &amp;&amp; /opt/bcfg2/bin/add-users'
-            when='modified' status='check' />
+<Rules priority="0">
+  <Action name="authconfig" timing="post"
+      command="authconfig --disablecache  --enablekrb5 --krb5realm=ADS.BRIS.AC.UK --enablekrb5kdcdns --enablekrb5realmdns --enablelocauthorize --enablemkhomedir --enablepamaccess --updateall" when="modified" status="check" />
+  <Action name="add-users" timing="post"
+      command="/opt/bcfg2/bin/add-groups &amp;&amp; /opt/bcfg2/bin/add-users"
+          when="modified" status="check" />
 </Rules>
