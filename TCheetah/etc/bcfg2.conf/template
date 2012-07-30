@@ -1,0 +1,21 @@
+[server]
+repository = /var/lib/bcfg2
+plugins = Bundler,Cfg,Metadata,Packages,Rules,SSHbase,TCheetah
+
+[statistics]
+sendmailpath = /usr/lib/sendmail
+database_engine = sqlite3
+# 'postgresql', 'mysql', 'mysql_old', 'sqlite3' or 'ado_mssql'.
+database_name = /etc/brpt.sqlite
+
+[communication]
+protocol = xmlrpc/ssl
+password = root-dice
+#if 'bcfg2-server' in $self.metadata.groups
+certificate = /etc/bcfg2.crt
+key = /etc/bcfg2.key
+#end if
+ca = /etc/bcfg2.crt
+
+[components]
+bcfg2 = https://vm-37-01.dice.cluster:6789

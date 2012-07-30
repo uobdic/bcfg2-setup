@@ -1,3 +1,4 @@
 <Bundle name='server-bcfg'>
-	<Package name='bcfg2-server'/>
+    <Path name='/etc/bcfg2.conf' />
+    <Package name='bcfg2-server'/>
 </Bundle>

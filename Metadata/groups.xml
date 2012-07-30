@@ -18,6 +18,11 @@
      <Bundle name='git'/>
    </Group>
 
+   <Group profile='true' name='bcfg2-server' public='true'>
+     <Group name='basic' />
+     <Bundle name='server-bcfg' />
+   </Group>
+
    <Group profile='true' name='user-accounts' public='true'>
      <Bundle name='user-accounts'/>
    </Group>
