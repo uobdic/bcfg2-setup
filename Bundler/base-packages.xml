@@ -222,4 +222,22 @@
   <Package name="yum-plugin-security" />
   <Package name="yum-utils" />
   <Package name="zlib" />
+  <Service name="auditd" />
+  <Service name="iptables" />
+  <Service name="network" />
+  <Service name="postfix" />
+  <Service name="rpcgssd" />
+  <Service name="smartd" />
+  <Service name="udev-post" />
+  <Service name="bcfg2" />
+  <Service name="nfslock" />
+  <Service name="psacct" />
+  <Service name="rpcidmapd" />
+  <Service name="sshd" />
+  <Service name="crond" />
+  <Service name="netfs" />
+  <Service name="ntpd" />
+  <Service name="rpcbind" />
+  <Service name="rsyslog" />
+  <Service name="sysstat" />
 </Bundle>

@@ -1,0 +1,21 @@
+<Rules priority="0">
+  <Service type="chkconfig" status="on" name="jexec" />
+  <Service type="chkconfig" status="on" name="auditd" />
+  <Service type="chkconfig" status="on" name="iptables" />
+  <Service type="chkconfig" status="on" name="network" />
+  <Service type="chkconfig" status="on" name="postfix" />
+  <Service type="chkconfig" status="on" name="rpcgssd" />
+  <Service type="chkconfig" status="on" name="smartd" />
+  <Service type="chkconfig" status="on" name="udev-post" />
+  <Service type="chkconfig" status="on" name="bcfg2" />
+  <Service type="chkconfig" status="on" name="nfslock" />
+  <Service type="chkconfig" status="on" name="psacct" />
+  <Service type="chkconfig" status="on" name="rpcidmapd" />
+  <Service type="chkconfig" status="on" name="sshd" />
+  <Service type="chkconfig" status="on" name="crond" />
+  <Service type="chkconfig" status="on" name="netfs" />
+  <Service type="chkconfig" status="on" name="ntpd" />
+  <Service type="chkconfig" status="on" name="rpcbind" />
+  <Service type="chkconfig" status="on" name="rsyslog" />
+  <Service type="chkconfig" status="on" name="sysstat" />
+</Rules>

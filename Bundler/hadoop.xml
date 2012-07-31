@@ -47,4 +47,5 @@
   -->
 
 <!--  <Action name="test-hadoop" /> -->
+  <Service name="jexec" />
 </Bundle>
