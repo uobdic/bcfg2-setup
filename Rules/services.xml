@@ -4,9 +4,9 @@
   <Service type="chkconfig" status="on" name="iptables" />
   <Service type="chkconfig" status="on" name="network" />
   <Service type="chkconfig" status="on" name="postfix" />
-  <Service type="chkconfig" status="on" name="rpcgssd" />
+  <Service type="chkconfig" status="off" name="rpcgssd" />
   <Service type="chkconfig" status="on" name="smartd" />
-  <Service type="chkconfig" status="on" name="udev-post" />
+  <Service type="chkconfig" status="off" name="udev-post" />
   <Service type="chkconfig" status="on" name="bcfg2" />
   <Service type="chkconfig" status="on" name="nfslock" />
   <Service type="chkconfig" status="on" name="psacct" />
