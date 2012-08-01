@@ -20,6 +20,18 @@
   <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h11/mapred" />
   <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h12/mapred" />
   <Path type='directory' group="hadoop" owner="mapred" perms="0775" name="/data/mapred" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h1/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h2/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h3/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h4/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h5/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h6/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h7/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h8/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h9/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h10/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h11/hdfs" />
+  <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h12/hdfs" />
   <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h1/hdfs/data" />
   <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h2/hdfs/data" />
   <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h3/hdfs/data" />
