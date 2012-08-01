@@ -1,0 +1,4 @@
+<Bundle name="hadoop-master">
+  <Path name="/data/mapred" />
+  <Path name="/data/hdfs" />
+</Bundle>

@@ -29,11 +29,6 @@
   <Action name="fix-hadoop-permissions" />
   <Action name="cleanup-hadoop-etc" />
 
-  <!-- Fix HDFS -->
-  <Path name="/mapred" />
-  <Path name="/hdfs" />
-  <Path name="/hdfs/data" />
-
   <!-- Make sure hdfs user has home dir -->
   <Action name="create-hdfs-user" />
 <!--

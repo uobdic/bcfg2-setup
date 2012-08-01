@@ -1,0 +1,26 @@
+<Bundle name="hadoop-worker">
+  <Path name="/h1/mapred" />
+  <Path name="/h2/mapred" />
+  <Path name="/h3/mapred" />
+  <Path name="/h4/mapred" />
+  <Path name="/h5/mapred" />
+  <Path name="/h6/mapred" />
+  <Path name="/h7/mapred" />
+  <Path name="/h8/mapred" />
+  <Path name="/h9/mapred" />
+  <Path name="/h10/mapred" />
+  <Path name="/h11/mapred" />
+  <Path name="/h12/mapred" />
+  <Path name="/h1/hdfs/data" />
+  <Path name="/h2/hdfs/data" />
+  <Path name="/h3/hdfs/data" />
+  <Path name="/h4/hdfs/data" />
+  <Path name="/h5/hdfs/data" />
+  <Path name="/h6/hdfs/data" />
+  <Path name="/h7/hdfs/data" />
+  <Path name="/h8/hdfs/data" />
+  <Path name="/h9/hdfs/data" />
+  <Path name="/h10/hdfs/data" />
+  <Path name="/h11/hdfs/data" />
+  <Path name="/h12/hdfs/data" />
+</Bundle>

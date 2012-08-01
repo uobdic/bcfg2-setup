@@ -10,7 +10,25 @@
   </property>
   <property>
     <name>mapred.local.dir</name>
-    <value>/mapred</value>
+    <value>
+#if 'hadoop-worker' in $self.metadata.groups
+      /h1/mapred,
+      /h2/mapred,
+      /h3/mapred,
+      /h4/mapred,
+      /h5/mapred,
+      /h6/mapred,
+      /h7/mapred,
+      /h8/mapred,
+      /h9/mapred,
+      /h10/mapred,
+      /h11/mapred,
+      /h12/mapred
+#end if
+#if 'hadoop-master' in $self.metadata.groups
+      /data/mapred
+#end if
+    </value>
   </property>
   <property>
     <name>mapred.system.dir</name>

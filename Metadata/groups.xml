@@ -37,6 +37,16 @@
     <Group name="basic-user" />
   </Group>
 
+  <Group profile="true" name="hadoop-master" public="true">
+    <Group name="hadoop" />
+    <Bundle name="hadoop-master" />
+  </Group>
+
+  <Group profile="true" name="hadoop-worker" public="true">
+    <Group name="hadoop" />
+    <Bundle name="hadoop-worker" />
+  </Group>
+
   <Group profile="true" name="zookeeper" public="true">
     <Bundle name="zookeeper" />
     <Group name="basic-user" />
