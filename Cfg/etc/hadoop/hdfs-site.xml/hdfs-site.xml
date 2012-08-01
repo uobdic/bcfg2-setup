@@ -14,20 +14,7 @@
   </property>
   <property>
     <name>dfs.data.dir</name>
-    <value>
-      /h1/hdfs/data,
-      /h2/hdfs/data,
-      /h3/hdfs/data,
-      /h4/hdfs/data,
-      /h5/hdfs/data,
-      /h6/hdfs/data,
-      /h7/hdfs/data,
-      /h8/hdfs/data,
-      /h9/hdfs/data,
-      /h10/hdfs/data,
-      /h11/hdfs/data,
-      /h12/hdfs/data
-    </value>
+      <value>/h1/hdfs/data,/h2/hdfs/data,/h3/hdfs/data,/h4/hdfs/data,/h5/hdfs/data,/h6/hdfs/data,/h7/hdfs/data,/h8/hdfs/data,/h9/hdfs/data,/h10/hdfs/data,/h11/hdfs/data,/h12/hdfs/data</value>
   </property>
   <property>
     <name>dfs.datanode.max.xcievers</name>
