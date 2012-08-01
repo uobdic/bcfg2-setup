@@ -1,5 +1,4 @@
 <Rules priority="0">
-    <Service name='ntpd' status='on' type='chkconfig'/>
     <Action name="useradd-hbase" timing="pre" when="modified" status="check" command="useradd hbase" />
     <Action name="hadoop-sync-dates" timing="post" when="modified" status="check" command="
 	cat /etc/hadoop/slaves /etc/hadoop/masters | xargs -I{} ssh {} date
