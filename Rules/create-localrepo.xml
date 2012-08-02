@@ -1,7 +1,7 @@
 <Rules priority="0">
   <Action name="create-localrepo" timing="post"
       command="
-          wget -O /srv/local-repo/hadoop-1.0.3-1.x86_64.rpm http://mirror.lividpenguin.com/pub/apache/hadoop/common/hadoop-1.0.3/hadoop-1.0.3-1.x86_64.rpm &amp;&amp;
-          wget -O /tmp/jre-6u33-linux-x64-rpm.bin http://javadl.sun.com/webapps/download/AutoDL?BundleId=63984 &amp;&amp; cd /tmp &amp;&amp; sh jre-6u33-linux-x64-rpm.bin -x &amp;&amp; mv jre-6u33-linux-amd64.rpm /srv/local-repo/ &amp;&amp;
+          curl -o /srv/local-repo/hadoop-1.0.3-1.x86_64.rpm http://mirror.lividpenguin.com/pub/apache/hadoop/common/hadoop-1.0.3/hadoop-1.0.3-1.x86_64.rpm &amp;&amp;
+          curl -o /tmp/jre-6u33-linux-x64-rpm.bin http://javadl.sun.com/webapps/download/AutoDL?BundleId=63984 &amp;&amp; cd /tmp &amp;&amp; sh jre-6u33-linux-x64-rpm.bin -x &amp;&amp; mv jre-6u33-linux-amd64.rpm /srv/local-repo/ &amp;&amp;
           createrepo /srv/local-repo" when="modified" status="check" />
 </Rules>
