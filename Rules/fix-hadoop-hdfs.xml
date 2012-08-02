@@ -7,18 +7,18 @@
   <Path type='directory' group="hadoop" name="/home/hdfs/.ssh" owner="hdfs" perms="0700"/>
   <Action name="clear-hadoop-logs" timing="post" when="modified" status="check" command="ssh nn-37-00.dice.cluster cat /etc/hadoop/masters /etc/hadoop/slaves | xargs -i sh -c 'ssh {} rm -Rf /var/log/hadoop/*';" />
   <Action name="test-hadoop" timing="post" when="modified" status="check" command="hadoop fs -rmr input; hadoop fs -mkdir input; hadoop fs -put /etc/hadoop/*.xml input; hadoop jar /usr/share/hadoop/hadoop-examples-1.0.3.jar grep input input/output 'dfs[a-z]+'" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h1/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h2/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h3/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h4/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h5/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h6/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h7/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h8/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h9/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h10/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h11/mapred" />
-  <Path type='directory' group='hadoop' owner='mapred' perms='0755' name="/h12/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h1/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h2/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h3/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h4/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h5/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h6/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h7/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h8/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h9/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h10/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h11/mapred" />
+  <Path type='directory' group='hadoop' owner='mapred' perms='0775' name="/h12/mapred" />
   <Path type='directory' group="hadoop" owner="mapred" perms="0775" name="/data/mapred" />
   <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h1/hdfs" />
   <Path type='directory' group='hadoop' owner='hdfs' perms='0755' name="/h2/hdfs" />
