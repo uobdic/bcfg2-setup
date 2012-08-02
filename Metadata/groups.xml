@@ -34,6 +34,7 @@
 
   <Group profile="true" name="hadoop" public="true">
     <Bundle name="hadoop" />
+    <Group name="pig" />
     <Group name="basic-user" />
   </Group>
 
@@ -69,7 +70,7 @@
 
   <Group profile='true' name='pig' public='true'>
     <Bundle name='pig'/>
-    <Group name='basic'/>
+    <Group name='basic-user'/>
   </Group>
 
   <Group profile='true' name='mahout' public='true'>
