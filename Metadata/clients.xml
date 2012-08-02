@@ -2,9 +2,9 @@
   <Client name="hd-37-00.dice.cluster" profile="hadoop-worker-zookeeper" />
   <Client name="hd-37-01.dice.cluster" profile="hadoop-worker-zookeeper" />
   <Client name="hd-37-02.dice.cluster" profile="hadoop-worker-zookeeper" />
-  <Client name="hd-37-03.dice.cluster" profile="hadoop-worker" />
-  <Client name="hd-37-04.dice.cluster" profile="hadoop-worker" />
-  <Client name="hd-37-05.dice.cluster" profile="hadoop-worker" />
+  <Client name="hd-37-03.dice.cluster" profile="hadoop-worker-hbase" />
+  <Client name="hd-37-04.dice.cluster" profile="hadoop-worker-hbase" />
+  <Client name="hd-37-05.dice.cluster" profile="hadoop-worker-hbase" />
   <Client name="hd-37-06.dice.cluster" profile="hadoop-worker" />
   <Client name="hd-37-07.dice.cluster" profile="hadoop-worker" />
   <Client name="hd-38-00.dice.cluster" profile="hadoop-worker" />

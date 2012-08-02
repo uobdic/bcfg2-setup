@@ -4,9 +4,7 @@
   <!-- NB: Ensure datetime syncd across nodes -->
   <Package name='ntp' />
   <Service name='ntpd' />
-  <Action name="hadoop-sync-dates" />
 
-  <Path name='/etc/hadoop/hdfs-site.xml' />
   <Path name='/opt/hbase/hbase-0.94.0/conf/hbase-site.xml' />
   <Path name='/opt/hbase/hbase-0.94.0/conf/hbase-env.sh' />
   <Path name='/opt/hbase/hbase-0.94.0/conf/regionservers' />

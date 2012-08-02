@@ -29,7 +29,7 @@
 
   <property>
     <name>hbase.rootdir</name>
-    <value>hdfs://dice-master:9000/hbase</value>
+    <value>hdfs://nn-37-00.dice.cluster:9000/hbase</value>
     <description>The directory shared by RegionServers.</description>
   </property>
 
@@ -44,12 +44,12 @@
 
   <property>
     <name>dfs.replication</name>
-    <value>5</value>
+    <value>3</value>
   </property>
 
   <property>
     <name>hbase.zookeeper.quorum</name>
-    <value>dice-master,dice-slave1,dice-slave2</value>
+    <value>hd-37-00.dice.cluster,hd-37-01.dice.cluster,hd-37-02.dice.cluster</value>
     <description>The zookeeper ensemble.</description>
   </property>
   <property>
