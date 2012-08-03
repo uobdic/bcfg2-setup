@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo "If you are reading this message you need to overwrite
+/var/lib/bcfg2/Cfg/opt/bcfg2/bin/add-groups/add-groups with a shell script that
+creates the required groups."
+exit 1

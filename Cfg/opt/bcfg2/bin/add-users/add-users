@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+echo "If you are reading this message you need to overwrite
+/var/lib/bcfg2/Cfg/opt/bcfg2/bin/add-users/add-users with a shell script that
+creates the required users."
+exit 1
