@@ -1,7 +1,7 @@
 <Bundle name="zookeeper">
-  <Path name="/data/zookeeper" />
+  <Path name="/h12/zookeeper" />
   <Path name="/opt/zookeeper" />
-  <Path name="/data/zookeeper/myid" />
+  <Path name="/h12/zookeeper/myid" />
   <Path name="/opt/zookeeper/zookeeper-3.4.3/conf" />
   <Path name="/opt/zookeeper/zookeeper-3.4.3/conf/zoo.cfg" />
   <Path name="/opt/zookeeper/zookeeper-3.4.3/zkservers" />

@@ -8,7 +8,7 @@
 #
 # processname: zookeeper
 # config: /opt/zookeeper/zookeeper-3.4.3/conf/zoo.cfg
-# pidfile: /data/zookeeper/zookeeper_server.pid
+# pidfile: /h12/zookeeper/zookeeper_server.pid
 
 # source function library
 . /etc/rc.d/init.d/functions

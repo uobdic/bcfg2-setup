@@ -52,6 +52,11 @@
     <Group name="basic-user" />
   </Group>
 
+  <Group profile="true" name="hadoop-worker-zookeeper" public="true">
+    <Group name="zookeeper" />
+    <Group name="hadoop-worker" />
+  </Group>
+
   <Group profile='true' name='hbase' public='true'>
     <Bundle name='hbase'/>
     <Group name='basic'/>
