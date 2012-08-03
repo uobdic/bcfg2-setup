@@ -1,5 +1,5 @@
 <Rules priority="0">
     <Action name="useradd-hbase" timing="pre" when="modified" status="ignore" command="useradd hbase" />
-    <Action name="download-and-install-hbase" timing="post" when="modified" status="check" command="mkdir -p /opt/hbase; cd /opt/hbase; curl -o hbase-0.94.0.tar.gz http://mirrors.enquira.co.uk/apache/hbase/hbase-0.94.0/hbase-0.94.0.tar.gz; tar xvzf hbase-0.94.0.tar.gz; chown -R hbase:hbase /opt/hbase; rm -f /opt/hbase/hbase-0.94.0/lib/hadoop-*.jar" />
+    <Action name="download-and-install-hbase" timing="post" when="modified" status="check" command="mkdir -p /opt/hbase; cd /opt/hbase; curl -o hbase-0.94.0.tar.gz http://vm-37-00.dice.cluster/tarballs/hbase-0.94.0.tar.gz; tar xvzf hbase-0.94.0.tar.gz; chown -R hbase:hbase /opt/hbase; rm -f /opt/hbase/hbase-0.94.0/lib/hadoop-*.jar" />
     <Action name="copy-hadoop-jar-to-hbase-lib" timing="post" when="modified" status="check" command="find /usr/* -name hadoop*core*.jar | xargs -I{} cp {} /opt/hbase/hbase-0.94.0/lib" />
 </Rules>

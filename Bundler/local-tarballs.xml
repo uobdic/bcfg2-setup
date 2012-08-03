@@ -1,0 +1,5 @@
+<Bundle name="local-tarballs">
+  <Path name="/opt/tarballs" />
+  <Action name="fetch-tarballs" />
+  <Action name="symlink-tarballs-dir" />
+</Bundle>
