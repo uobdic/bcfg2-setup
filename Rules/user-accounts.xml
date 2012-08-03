@@ -4,4 +4,7 @@
   <Action name="add-users" timing="post"
       command="/opt/bcfg2/bin/add-groups &amp;&amp; /opt/bcfg2/bin/add-users"
           when="modified" status="check" />
+  <Action name="writeable-sudoers" timing="pre"
+      command="chmod u+w /etc/sudoers"
+          when="modified" status="ignore" />
 </Rules>

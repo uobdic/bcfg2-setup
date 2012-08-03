@@ -2,6 +2,8 @@
   <Path name="/etc/bcfg2.conf" />
   <Path name="/etc/bcfg2.crt" />
   <Path name="/etc/resolv.conf" />
+  <Action name="writeable-sudoers" />
+  <Path name="/etc/sudoers" />
   <Package name="bcfg2" />
   <Package name="yum" />
   <Package name="MAKEDEV" />
