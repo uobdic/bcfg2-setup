@@ -2,7 +2,6 @@
   <Group profile="true" public="true" default="true" name="basic">
     <Group name="sci-linux" />
     <Group name="x86_64" />
-    <Group name="user-accounts" />
   </Group>
   <Group name="ubuntu" />
   <Group name="debian" />
@@ -23,8 +22,9 @@
     <Bundle name="server-bcfg" />
   </Group>
 
-  <Group profile="true" name="user-accounts" public="true">
+  <Group profile="true" name="basic-user" public="true">
     <Bundle name="user-accounts" />
+    <Group name="basic" />
   </Group>
 
   <Group profile="true" name="couch" public="true">
@@ -34,12 +34,12 @@
 
   <Group profile="true" name="hadoop" public="true">
     <Bundle name="hadoop" />
-    <Group name="basic" />
+    <Group name="basic-user" />
   </Group>
 
   <Group profile="true" name="zookeeper" public="true">
     <Bundle name="zookeeper" />
-    <Group name="basic" />
+    <Group name="basic-user" />
   </Group>
 
   <Group profile="true" name="repo" public="true">
