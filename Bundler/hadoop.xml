@@ -20,6 +20,11 @@
   <Path name='/etc/hadoop/ssl-server.xml.example' />
   <Path name='/etc/hadoop/taskcontroller.cfg' />
 
+  <Path name='/home/hadoop/.ssh' />
+  <Path name='/home/hadoop/.ssh/id_dsa' />
+  <Path name='/home/hadoop/.ssh/id_dsa.pub' />
+  <Path name='/home/hadoop/.ssh/authorized_keys' />
+
   <!-- Fix permissions of scripts provided by rpm -->
   <Action name="fix-hadoop-permissions" />
   <Action name="cleanup-hadoop-etc" />
