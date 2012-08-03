@@ -19,11 +19,11 @@
   <Path name='/etc/hadoop/ssl-server.xml.example' />
   <Path name='/etc/hadoop/taskcontroller.cfg' />
 
-  <Path name='/home/hadoop/.ssh' />
-  <Path name='/home/hadoop/.ssh/id_dsa' />
-  <Path name='/home/hadoop/.ssh/id_dsa.pub' />
-  <Path name='/home/hadoop/.ssh/authorized_keys' />
-  <Path name='/home/hadoop/.ssh/known_hosts' />
+  <Path name='/home/hdfs/.ssh' />
+  <Path name='/home/hdfs/.ssh/id_dsa' />
+  <Path name='/home/hdfs/.ssh/id_dsa.pub' />
+  <Path name='/home/hdfs/.ssh/authorized_keys' />
+  <Path name='/home/hdfs/.ssh/known_hosts' />
 
   <!-- Fix permissions of scripts provided by rpm -->
   <Action name="fix-hadoop-permissions" />
@@ -34,8 +34,8 @@
   <Path name='/hdfs' />
   <Path name='/hdfs/data' />
 
-  <!-- Add hadoop user and set ownership -->
-  <Action name="add-hadoop-user" />
+  <!-- Make sure hdfs user has home dir -->
+  <Action name="create-hdfs-user" />
 <!--
   <Action name="format-hadoop-namenode" />
   <Action name="clear-hadoop-logs" />

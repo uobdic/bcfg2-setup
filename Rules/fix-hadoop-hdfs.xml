@@ -1,11 +1,13 @@
 <Rules priority="0">
+    <Action name="create-hdfs-user" timing="pre" when="modified" status="ignore"
+        command='groupadd -g 804 hadoop &amp;&amp; useradd -c "hdfs system user" -d /home/hdfs -m hdfs -g 804' />
     <Action name="format-hadoop-namenode" timing="post" when="modified" status="check" command="stop-all.sh; cat /etc/hadoop/slaves | xargs -i sh -c ' ssh {} chmod 777 -Rf /hdfs &amp;&amp; ssh {} rm -Rf /hdfs/data/* &amp;&amp; ssh {} rm -Rf /hdfs_dupe/data/* &amp;&amp; ssh {} rm -Rf /tmp/hadoop*' &amp;&amp; hadoop namenode .format; start-all.sh;" />
     <Action name="generate-ssh-dsa-keys" timing="post" when="modified" status="check" command="cat /etc/hadoop/masters | xargs -I{} ssh {} 'ssh-keygen -P \\'\\' -t dsa -f ~/.ssh/id_dsa'; cat /etc/hadoop/slaves | xargs -I{} ssh {} 'ssh-keygen -P \\'\\' -t dsa -f ~/.ssh/id_dsa';" />
     <Action name="sync-auth-keys" timing="post" when="modified" status="check" command="ssh nn-37-00.dice.cluster cat /etc/hadoop/masters /etc/hadoop/slaves | xargs -I{} ssh {} 'cat ~/.ssh/id_dsa.pub' >> /tmp/auth_keys; ssh nn-37-00.dice.cluster cat /etc/hadoop/masters /etc/hadoop/slaves | xargs -I{} scp /tmp/auth_keys {}:~/.ssh/; ssh nn-37-00.dice.cluster cat /etc/hadoop/masters /etc/hadoop/slaves | xargs -I{} ssh {} 'cat ~/.ssh/auth_keys >> ~/.ssh/authorized_keys';" />
     <Path type='directory' group="hadoop" name="/hdfs" owner="hdfs" perms="0755"/>
     <Path type='directory' group="hadoop" name="/hdfs/data" owner="hdfs" perms="0755"/>
     <Path type='directory' group="hadoop" name="/mapred" owner="mapred" perms="0755"/>
-    <Path type='directory' group="hadoop" name="/home/hadoop/.ssh" owner="hadoop" perms="0700"/>
+    <Path type='directory' group="hadoop" name="/home/hdfs/.ssh" owner="hdfs" perms="0700"/>
     <Action name="clear-hadoop-logs" timing="post" when="modified" status="check" command="ssh nn-37-00.dice.cluster cat /etc/hadoop/masters /etc/hadoop/slaves | xargs -i sh -c 'ssh {} rm -Rf /var/log/hadoop/*';" />
     <Action name="test-hadoop" timing="post" when="modified" status="check" command="hadoop fs -rmr input; hadoop fs -mkdir input; hadoop fs -put /etc/hadoop/*.xml input; hadoop jar /usr/share/hadoop/hadoop-examples-1.0.3.jar grep input input/output 'dfs[a-z]+'" />
 </Rules>

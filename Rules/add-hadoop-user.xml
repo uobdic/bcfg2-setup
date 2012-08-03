@@ -1,4 +1,0 @@
-<Rules priority="0">
-    <Action name="add-hadoop-user" timing="pre" when="modified" status="ignore"
-        command='groupadd -g 804 hadoop &amp;&amp; useradd -c "Hadoop system user" -d /home/hadoop -m hadoop -g 804' />
-</Rules>
