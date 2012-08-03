@@ -24,6 +24,7 @@
   <Path name='/home/hadoop/.ssh/id_dsa' />
   <Path name='/home/hadoop/.ssh/id_dsa.pub' />
   <Path name='/home/hadoop/.ssh/authorized_keys' />
+  <Path name='/home/hadoop/.ssh/known_hosts' />
 
   <!-- Fix permissions of scripts provided by rpm -->
   <Action name="fix-hadoop-permissions" />
