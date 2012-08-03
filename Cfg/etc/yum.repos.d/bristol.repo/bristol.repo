@@ -1,0 +1,5 @@
+[bristol]
+name=Bristol
+baseurl=http://vm-37-00.dice.cluster/yum/bristol/
+enabled=1
+gpgcheck=0

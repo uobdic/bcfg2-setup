@@ -1,6 +1,6 @@
 <Bundle name='hadoop'>
   <Action name='remove-openjdk' />
-  <Path name='/etc/yum.repos.d/local.repo' />
+  <Path name='/etc/yum.repos.d/bristol.repo' />
   <Package name='jre' />
   <Package name='hadoop' />
   <Path name='/etc/hadoop/capacity-scheduler.xml' />
