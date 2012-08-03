@@ -1,0 +1,39 @@
+\# Firewall configuration written by system-config-firewall
+\# Manual customization of this file is not recommended.
+
+*nat
+:PREROUTING ACCEPT [32:5258]
+:POSTROUTING ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+\# DNS servers can't have static route so need to be NATed
+#if $self.metadata.hostname.startswith('io-37-00')
+-A POSTROUTING -o em2 -j SNAT --to-source 137.222.79.1
+#elif $self.metadata.hostname.startswith('io-37-01')
+-A POSTROUTING -o em2 -j SNAT --to-source 137.222.79.2
+#end if
+COMMIT
+
+
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -m state --state NEW -s 137.222.0.0/16 -m tcp -p tcp --dport 22 -j ACCEPT
+\#------------------------------------------
+\# Trust internal network
+\#------------------------------------------
+-A INPUT -m state --state NEW -s 10.132.0.0/16 -j ACCEPT
+\#------------------------------------------
+\# Default is to reject
+\#------------------------------------------
+-A INPUT -p igmp -d 224.0.0.1 -j DROP
+\#-A INPUT -m limit -j LOG
+-A INPUT -m limit -j LOG --log-prefix "[iptables]: "
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -m state --state NEW  -s 10.132.0.0/16 -j ACCEPT
+-A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+-A FORWARD  -j REJECT --reject-with icmp-host-prohibited
+COMMIT

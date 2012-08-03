@@ -1,0 +1,8 @@
+<Bundle name="router">
+  <Path name="/etc/sysctl.conf" />
+  <Path name="/etc/hosts.allow" />
+  <Path name="/etc/hosts.deny" />
+  <Path name="/etc/sysconfig/iptables" />
+  <Path name="/etc/sysconfig/network-scripts/ifcfg-em2" />
+  <Path name="/etc/sysconfig/network" />
+</Bundle>

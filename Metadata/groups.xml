@@ -48,4 +48,9 @@
     <Bundle name="localrepo" />
     <Group name="basic" />
   </Group>
+
+  <Group profile="true" name="router" public="true">
+    <Bundle name="router" />
+    <Group name="basic-user" />
+  </Group>
 </Groups>

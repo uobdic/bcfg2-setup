@@ -1,0 +1,9 @@
+NETWORKING=yes
+#if $self.metadata.hostname.startswith('io-37-00')
+HOSTNAME=dice-io-37-00.acrc.bris.ac.uk
+#elif $self.metadata.hostname.startswith('io-37-01')
+HOSTNAME=dice-io-37-01.acrc.bris.ac.uk
+#end if
+NETWORKING_IPV6=no
+NOZEROCONF=yes
+GATEWAY=137.222.79.250

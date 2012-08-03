@@ -1,0 +1,13 @@
+DEVICE="em2"
+#if $self.metadata.hostname.startswith('io-37-00')
+HWADDR="D4:BE:D9:EE:EF:3C"
+IPADDR=137.222.79.1
+#elif $self.metadata.hostname.startswith('io-37-01')
+HWADDR="D4:BE:D9:EE:D2:EF"
+IPADDR=137.222.79.2
+#end if
+NM_CONTROLLED="yes"
+BOOTPROTO=none
+ONBOOT=yes
+TYPE=Ethernet
+NETMASK=255.255.255.0
