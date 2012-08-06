@@ -1,0 +1,5 @@
+<Bundle name="munin-master">
+  <Path name="/etc/munin/munin.conf" />
+  <Package name="munin" />
+  <Service name="crond" />
+</Bundle>

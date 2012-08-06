@@ -107,10 +107,12 @@
   <Group profile="true" name="admin-node-0" public="true">
     <Group name="vm-host" />
     <Group name="local-tarballs" />
+    <Bundle name="munin-master" />
   </Group>
 
   <Group profile="true" name="admin-node-1" public="true">
     <Group name="vm-host" />
     <Group name="bcfg2-server" />
+    <Bundle name="munin-master" />
   </Group>
 </Groups>
