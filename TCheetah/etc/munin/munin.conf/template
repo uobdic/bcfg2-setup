@@ -14,7 +14,7 @@
 \# tmpldir	/etc/munin/templates
 
 \# (Exactly one) directory to include all files from.
-\#
+
 includedir /etc/munin/conf.d
 
 \# Make graphs show values per minute instead of per second
@@ -36,7 +36,7 @@ includedir /etc/munin/conf.d
 \#munin_cgi_graph_jobs 6
 
 \# If the automatic CGI url is wrong for your system override it here:
-\#
+
 \#cgiurl_graph /cgi-bin/munin-cgi-graph
 
 \# munin-graph runs in parallel, the number of concurrent processes is
