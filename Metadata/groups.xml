@@ -94,4 +94,18 @@
     <Bundle name="apache" />
     <Bundle name="local-tarballs" />
   </Group>
+
+  <Group profile="true" name="vm-host" public="true">
+    <Group name="basic" />
+  </Group>
+
+  <Group profile="true" name="admin-node-0" public="true">
+    <Group name="vm-host" />
+    <Group name="local-tarballs" />
+  </Group>
+
+  <Group profile="true" name="admin-node-1" public="true">
+    <Group name="vm-host" />
+    <Group name="bcfg2-server" />
+  </Group>
 </Groups>

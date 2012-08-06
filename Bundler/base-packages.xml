@@ -2,6 +2,7 @@
   <Path name="/etc/bcfg2.conf" />
   <Path name="/etc/bcfg2.crt" />
   <Path name="/etc/resolv.conf" />
+  <Path name="/etc/sysconfig/yum-autoupdate" />
   <Action name="writeable-sudoers" />
   <Path name="/etc/sudoers" />
   <Package name="bcfg2" />

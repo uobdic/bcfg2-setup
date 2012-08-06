@@ -17,5 +17,6 @@
   <Client name="bc-37-02.dice.cluster" profile="couch" />
   <Client name="io-37-00.dice.cluster" profile="router" />
   <Client name="io-37-01.dice.cluster" profile="router" />
-  <Client name="vm-37-00.dice.cluster" profile="local-tarballs" />
+  <Client name="vm-37-00.dice.cluster" profile="admin-node-0" />
+  <Client name="vm-37-01.dice.cluster" profile="admin-node-1" />
 </Clients>
