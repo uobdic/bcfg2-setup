@@ -6,6 +6,7 @@
   <Action name="writeable-sudoers" />
   <Path name="/etc/sudoers" />
   <Path name="/etc/yum.repos.d/all.repo" />
+  <Path name="/etc/hosts" />
   <Package name="bcfg2" />
   <Package name="yum" />
   <Package name="MAKEDEV" />
