@@ -4,25 +4,25 @@
 137.222.79.2 dice-io-37-01.acrc.bris.ac.uk
 137.222.79.3 vm-37-00.dice.bris.ac.uk
 137.222.79.4 vm-37-01.dice.bris.ac.uk
-10.132.0.1   vm-37-00.dice.cluster vm-37-00
-10.132.0.5   vm-37-01.dice.cluster vm-37-01
+10.132.0.1   vm-37-00 vm-37-00.dice.cluster
+10.132.0.5   vm-37-01 vm-37-01.dice.cluster
 10.132.0.10  test-pxe-vm test-pxe-vm.dice.cluster
 
-10.132.0.21  bc-37-00.dice.cluster bc-37-00
-10.132.0.23  bc-37-01.dice.cluster bc-37-01
-10.132.0.25  bc-37-02.dice.cluster bc-37-02
+10.132.0.21  bc-37-00 bc-37-00.dice.cluster
+10.132.0.23  bc-37-01 bc-37-01.dice.cluster
+10.132.0.25  bc-37-02 bc-37-02.dice.cluster
 
-10.132.0.250  io-37-00.dice.cluster io-37-00
-10.132.0.251  io-37-01.dice.cluster io-37-01
+10.132.0.250  io-37-00 io-37-00.dice.cluster
+10.132.0.251  io-37-01 io-37-01.dice.cluster
 
-10.132.0.11  nn-37-00.dice.cluster nn-37-00
-10.132.0.13  jt-37-00.dice.cluster jt-37-00
+10.132.0.11  nn-37-00 nn-37-00.dice.cluster
+10.132.0.13  jt-37-00 jt-37-00.dice.cluster
 
-10.132.0.41  hd-37-00.dice.cluster hd-37-00
-10.132.0.43  hd-37-01.dice.cluster hd-37-01
-10.132.0.45  hd-37-02.dice.cluster hd-37-02
-10.132.0.47  hd-37-03.dice.cluster hd-37-03
-10.132.0.49  hd-37-04.dice.cluster hd-37-04
-10.132.0.51  hd-37-05.dice.cluster hd-37-05
-10.132.0.53  hd-37-06.dice.cluster hd-37-06
-10.132.0.55  hd-37-07.dice.cluster hd-37-07
+10.132.0.41  hd-37-00 hd-37-00.dice.cluster
+10.132.0.43  hd-37-01 hd-37-01.dice.cluster
+10.132.0.45  hd-37-02 hd-37-02.dice.cluster
+10.132.0.47  hd-37-03 hd-37-03.dice.cluster
+10.132.0.49  hd-37-04 hd-37-04.dice.cluster
+10.132.0.51  hd-37-05 hd-37-05.dice.cluster
+10.132.0.53  hd-37-06 hd-37-06.dice.cluster
+10.132.0.55  hd-37-07 hd-37-07.dice.cluster
