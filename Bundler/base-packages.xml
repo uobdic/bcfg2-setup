@@ -5,6 +5,7 @@
   <Path name="/etc/sysconfig/yum-autoupdate" />
   <Action name="writeable-sudoers" />
   <Path name="/etc/sudoers" />
+  <Path name="/etc/yum.repos.d/all.repo" />
   <Package name="bcfg2" />
   <Package name="yum" />
   <Package name="MAKEDEV" />
