@@ -6,10 +6,9 @@
       <Arch>x86_64</Arch>
     </Source>
 
-    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific" version="6.2">
-      <Component>os</Component>
-      <Component>updates</Component>
-      <Arch>x86_64</Arch>
+    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific/6.2/x86_64/os">
+      <Component>.</Component>
+      <Arch>.</Arch>
     </Source>
 
     <Source rawurl="http://packages.cloudant.com/rpm" version="6">
