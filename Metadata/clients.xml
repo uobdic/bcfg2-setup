@@ -1,4 +1,5 @@
 <Clients version="3.0">
+  <Client name="text-pxe-vm.dice.cluster" profile="basic" />
   <Client name="hd-37-00.dice.cluster" profile="hadoop-worker-zookeeper" />
   <Client name="hd-37-01.dice.cluster" profile="hadoop-worker-zookeeper" />
   <Client name="hd-37-02.dice.cluster" profile="hadoop-worker-zookeeper" />
