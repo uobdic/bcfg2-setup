@@ -2,6 +2,7 @@
   <Group profile="true" public="true" default="true" name="basic">
     <Group name="sci-linux" />
     <Group name="x86_64" />
+    <Group name="munin-node" />
   </Group>
   <Group name="ubuntu" />
   <Group name="debian" />
@@ -15,6 +16,10 @@
   <Group name="sci-linux">
     <Group name="redhat" />
     <Bundle name="git" />
+  </Group>
+
+  <Group name="munin-node">
+    <Bundle name="munin-node" />
   </Group>
 
   <Group profile="true" name="bcfg2-server" public="true">
