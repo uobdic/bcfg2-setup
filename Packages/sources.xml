@@ -7,7 +7,8 @@
     </Source>
 
     <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific" version="6.2">
-      <Component>.</Component>
+      <Component>os</Component>
+      <Component>updates</Component>
       <Arch>x86_64</Arch>
     </Source>
 
