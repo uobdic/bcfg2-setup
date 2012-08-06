@@ -58,7 +58,7 @@ contact.root.command mail -s "Munin notification" root@localhost
 \# the services must be defined in the Nagios server as well.
 \#contact.nagios.command /usr/sbin/send_nsca -H nagios.host.com -c /etc/send_nsca.cfg
 
-[$self.metadata.hostname]
+[${self.metadata.hostname}.bris.ac.uk]
 	address 127.0.0.1
 	use_node_name yes
 
