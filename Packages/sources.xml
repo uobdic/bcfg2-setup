@@ -2,10 +2,12 @@
   <Group name="sci-linux">
 
     <Source type="yum" url="http://dl.fedoraproject.org/pub/epel" version="6">
+      <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
 
     <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific" version="6.2">
+      <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
 
