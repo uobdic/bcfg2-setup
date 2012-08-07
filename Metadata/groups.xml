@@ -92,7 +92,17 @@
 
   <Group profile="true" name="router" public="true">
     <Bundle name="router" />
+  </Group>
+
+  <Group profile="true" name="io" public="true">
+    <Group name="router" />
     <Group name="basic-user" />
+    <Group name="reverse-proxy" />
+  </Group>
+
+  <Group name="reverse-proxy" public="true">
+    <Bundle name="apache" />
+    <Bundle name="reverse-proxy" />
   </Group>
 
   <Group profile="true" name="local-tarballs" public="true">

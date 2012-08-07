@@ -1,0 +1,48 @@
+LoadModule auth_cas_module modules/mod_auth_cas.so
+
+<IfModule mod_auth_cas.c>
+    CASCookiePath /var/cache/mod_auth_cas/
+    CASValidateURL https://sso.bris.ac.uk/sso/serviceValidate
+    CASLoginURL https://sso.bris.ac.uk/sso/login
+    CASCertificatePath /etc/httpd/CAs/
+</IfModule>
+
+Listen 50070
+
+<VirtualHost *:50070>
+   ServerAdmin webmaster@${self.metadata.hostname}.dice.bris.ac.uk
+   DocumentRoot "/opt/websites/web/www/dummy"
+   ServerName ${self.metadata.hostname}.dice.bris.ac.uk
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASSope /
+      Order deny, allow
+      Deny from all
+      Allow from .phy.bris.ac.uk .dice.cluster
+   </Proxy>
+   ProxyPass / http://nn-37-00.dice.cluster:50070 nocanon
+   ProxyPassReverse / http://nn-37-00.dice.cluster:50070
+   ErrorLog "logs/hadoop-nn-access_log"
+   CustomLog "logs/hadoop-nn-error_log"
+</VirtualHost>
+
+<VirtualHost *:50030>
+   ServerAdmin webmaster@${self.metadata.hostname}.dice.bris.ac.uk
+   DocumentRoot "/opt/websites/web/www/dummy"
+   ServerName ${self.metadata.hostname}.dice.bris.ac.uk
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASSope /
+      Order deny, allow
+      Deny from all
+      Allow from .phy.bris.ac.uk .dice.cluster
+   </Proxy>
+   ProxyPass / http://nn-37-00.dice.cluster:50030 nocanon
+   ProxyPassReverse / http://nn-37-00.dice.cluster:50030
+   ErrorLog "logs/hadoop-jt-access_log"
+   CustomLog "logs/hadoop-jt-error_log"
+</VirtualHost>
