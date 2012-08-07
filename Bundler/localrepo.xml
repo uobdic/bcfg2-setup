@@ -4,6 +4,7 @@
   RPMs that are not being stored in properly formed YUM repos online.
 -->
   <Package name='createrepo'/>
+  <Path name="/etc/httpd/conf.d/localrepo.conf" />
   <Path name='/srv/local-repo' />
   <Action name='create-localrepo' />
 </Bundle>

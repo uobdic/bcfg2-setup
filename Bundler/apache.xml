@@ -1,5 +1,4 @@
 <Bundle name="apache">
   <Package name="httpd" />
-  <Path name="/etc/httpd/conf.d/localrepo.conf" />
   <Service name="httpd" />
 </Bundle>
