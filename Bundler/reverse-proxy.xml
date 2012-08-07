@@ -1,5 +1,9 @@
 <Bundle name="reverse-proxy">
+  <Package name="mod_ssl" />
   <Package name="mod_auth_cas" />
-  <Path name="/etc/httpd/conf.d/reverse-proxy.conf" />
+  <Path name="/etc/httpd/conf.d/z_reverse-proxy.conf" />
   <Path name="/etc/httpd/conf/group" />
+  <Path name="/var/cache/mod_auth_cas" />
+  <Path name="/etc/httpd/CAs" />
+  <Action name="remove-auth-cas-config" />
 </Bundle>
