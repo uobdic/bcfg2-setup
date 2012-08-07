@@ -1,5 +1,5 @@
 <Rules priority="0">
     <Path type="directory" group="apache" name="/srv/local-repo" owner="apache" perms="0755" />
     <Path type="directory" group="apache" name="/var/cache/mod_auth_cas" owner="apache" perms="0755" />
-    <Path type="directoy" group="root" name="/etc/httpd/CAs" owner="root" perms="0755" />
+    <Path type="directory" group="root" name="/etc/httpd/CAs" owner="root" perms="0755" />
 </Rules>
