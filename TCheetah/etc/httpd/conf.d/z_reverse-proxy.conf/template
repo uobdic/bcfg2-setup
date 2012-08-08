@@ -11,9 +11,9 @@ Listen 50070
 Listen 50030
 
 <VirtualHost *:50070>
-   ServerAdmin webmaster@${self.metadata.hostname}.dice.bris.ac.uk
+   ServerAdmin webmaster@dice-${self.metadata.hostname}.acrc.bris.ac.uk
    DocumentRoot "/opt/websites/web/www/dummy"
-   ServerName ${self.metadata.hostname}.dice.bris.ac.uk
+   ServerName dice-${self.metadata.hostname}.acrc.bris.ac.uk
    <Proxy *>
       AuthType CAS
       AuthGroupFile /etc/httpd/conf/group
@@ -30,9 +30,9 @@ Listen 50030
 </VirtualHost>
 
 <VirtualHost *:50030>
-   ServerAdmin webmaster@${self.metadata.hostname}.dice.bris.ac.uk
+   ServerAdmin webmaster@dice-${self.metadata.hostname}.acrc.bris.ac.uk
    DocumentRoot "/opt/websites/web/www/dummy"
-   ServerName ${self.metadata.hostname}.dice.bris.ac.uk
+   ServerName dice-${self.metadata.hostname}.acrc.bris.ac.uk
    <Proxy *>
       AuthType CAS
       AuthGroupFile /etc/httpd/conf/group
