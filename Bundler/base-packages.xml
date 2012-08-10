@@ -127,6 +127,7 @@
   <Package name="lynx" />
   <Package name="mailcap" />
   <Package name="mailx" />
+  <Package name="man" />
   <Package name="mingetty" />
   <Package name="module-init-tools" />
   <Package name="mysql-libs" />
