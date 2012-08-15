@@ -23,6 +23,8 @@ COMMIT
 -A INPUT -i lo -j ACCEPT
 -A INPUT -m state --state NEW -s 137.222.0.0/16 -m tcp -p tcp --dport 22 -j ACCEPT
 #if 'reverse-proxy' in $self.metadata.groups
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 5984 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 5986 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 50070 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 50030 -j ACCEPT
 #end if
