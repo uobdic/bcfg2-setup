@@ -5,6 +5,8 @@
   <Package name="js-devel" />
   <Path name="/opt/bigcouch/etc/vm.args" />
   <Path name="/opt/bigcouch/etc/local.ini" />
+  <Path name="/opt/bigcouch/bin/populate-nodes.sh" />
   <Service name="bigcouch" />
   <Action name="create-bigcouch-dirs" />
+  <Action name="finalise-node" />
 </Bundle>
