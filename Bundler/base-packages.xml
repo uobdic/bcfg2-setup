@@ -131,6 +131,7 @@
   <Package name="mingetty" />
   <Package name="module-init-tools" />
   <Package name="mysql-libs" />
+  <Package name="nano" />
   <Package name="ncurses" />
   <Package name="ncurses-base" />
   <Package name="ncurses-libs" />
