@@ -4,4 +4,7 @@
   <Package name="js" />
   <Package name="js-devel" />
   <Path name="/opt/bigcouch/etc/vm.args" />
+  <Path name="/opt/bigcouch/etc/local.ini" />
+  <Service name="bigcouch" />
+  <Action name="create-bigcouch-dirs" />
 </Bundle>

@@ -1,0 +1,5 @@
+<Rules priority="0">
+  <Action name="create-bigcouch-dirs" timing="pre" when="modified" status="ignore"
+      command="mkdir -p /h2/bigcouch/var/lib &amp;&amp; chown -R bigcouch:bigcouch /h2/bigcouch;
+          mkdir -p /h3/bigcouch/var/lib &amp;&amp; chown -R bigcouch:bigcouch /h3/bigcouch" />
+</Rules>
