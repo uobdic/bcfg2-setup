@@ -11,9 +11,17 @@ Listen 50070
 Listen 50030
 
 <VirtualHost *:50070>
-   ServerAdmin webmaster@dice-${self.metadata.hostname}.acrc.bris.ac.uk
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
    DocumentRoot "/opt/websites/web/www/dummy"
-   ServerName dice-${self.metadata.hostname}.acrc.bris.ac.uk
    <Proxy *>
       AuthType CAS
       AuthGroupFile /etc/httpd/conf/group
@@ -30,9 +38,17 @@ Listen 50030
 </VirtualHost>
 
 <VirtualHost *:50030>
-   ServerAdmin webmaster@dice-${self.metadata.hostname}.acrc.bris.ac.uk
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
    DocumentRoot "/opt/websites/web/www/dummy"
-   ServerName dice-${self.metadata.hostname}.acrc.bris.ac.uk
    <Proxy *>
       AuthType CAS
       AuthGroupFile /etc/httpd/conf/group
