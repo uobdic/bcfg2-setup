@@ -9,4 +9,5 @@
   <Service name="bigcouch" />
   <Action name="create-bigcouch-dirs" />
   <Action name="finalise-node" />
+  <Action name="stop-bigcouch" />
 </Bundle>
