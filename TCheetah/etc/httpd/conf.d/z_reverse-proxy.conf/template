@@ -22,6 +22,7 @@ Listen 50030
    ServerName $self.metadata.hostname
 #end if
    DocumentRoot "/opt/websites/web/www/dummy"
+   ProxyRequests Off
    <Proxy *>
       AuthType CAS
       AuthGroupFile /etc/httpd/conf/group
@@ -49,6 +50,7 @@ Listen 50030
    ServerName $self.metadata.hostname
 #end if
    DocumentRoot "/opt/websites/web/www/dummy"
+   ProxyRequests Off
    <Proxy *>
       AuthType CAS
       AuthGroupFile /etc/httpd/conf/group
