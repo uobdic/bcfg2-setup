@@ -7,6 +7,7 @@
 
   <Path name='/opt/hbase/hbase-0.94.0/conf/hbase-site.xml' />
   <Path name='/opt/hbase/hbase-0.94.0/conf/hbase-env.sh' />
+  <Path name='hbase-env-symlink' />
   <Path name='/opt/hbase/hbase-0.94.0/conf/regionservers' />
 
   <Action name="useradd-hbase" />
