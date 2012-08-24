@@ -39,7 +39,7 @@ CONFIGFILE="/etc/yum.conf"
 #if 'vm-host' in $self.metadata.groups
 EXCLUDE="kernel* openafs* *-kmdl-* kmod-* *firmware* *virt* *qemu*"
 #else
-EXCLUDE="kernel* openafs* *-kmdl-* kmod-* *firmware*
+EXCLUDE="kernel* openafs* *-kmdl-* kmod-* *firmware*"
 #end if
 
 \# PRERUN
