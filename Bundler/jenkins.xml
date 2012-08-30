@@ -1,5 +1,8 @@
 <Bundle name="jenkins">
   <Path name="/etc/yum.repos.d/bristol.repo" />
+  <Path name="/etc/init.d/jenkins" />
+  <Path name="/opt/jenkins/bin/start-jenkins.sh" />
+  <Path name="/opt/jenkins/bin/stop-jenkins.sh" />
   <Package name="jre" />
   <Action name="create-jenkins-user" />
   <Action name="install-jenkins" />
