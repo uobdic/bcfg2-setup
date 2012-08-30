@@ -130,4 +130,9 @@
     <Group name="bcfg2-server" />
     <Bundle name="munin-master" />
   </Group>
+
+  <Group profile="true" name="mossaic" public="true">
+    <Group name="basic" />
+    <Bundle name="mossaic" />
+  </Group>
 </Groups>

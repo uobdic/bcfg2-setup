@@ -1,0 +1,4 @@
+<Bundle name="mossaic">
+  <Action name="create-mossaic-user" />
+  <Action name="install-mossaic" />
+</Bundle>
