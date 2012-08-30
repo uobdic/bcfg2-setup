@@ -4,7 +4,7 @@
     curl -o /opt/jenkins/jenkins.war http://vm-37-00.dice.cluster/tarballs/jenkins.war &amp;&amp;
     chkconfig --add jenkins"
   />
-  <Action name="create-hdfs-user" timing="pre" when="modified" status="ignore"
+  <Action name="create-jenkins-user" timing="pre" when="modified" status="ignore"
     command='groupadd jenkins &amp;&amp; useradd -c "jenkins system user" -d /opt/jenkins -m jenkins'
   />
   <Service name="jenkins" type="chkconfig" status="on" />
