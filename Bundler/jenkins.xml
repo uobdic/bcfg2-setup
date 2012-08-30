@@ -1,5 +1,7 @@
 <Bundle name="jenkins">
   <Path name="/etc/yum.repos.d/bristol.repo" />
   <Package name="jre" />
+  <Action name="create-jenkins-user" />
   <Action name="install-jenkins" />
+  <Service name="jenkins" />
 </Bundle>
