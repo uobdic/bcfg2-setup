@@ -3,5 +3,5 @@
     mkdir /opt/jenkins &amp;&amp;
     curl -o /opt/jenkins/jenkins.war http://vm-37-00.dice.cluster/tarballs/jenkins.war &amp;&amp;
     java -jar /opt/jenkins/jenkins.war"
-  </Action>
+  />
 </Rules>
