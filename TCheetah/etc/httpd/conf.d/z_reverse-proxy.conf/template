@@ -48,8 +48,8 @@ ProxySet stickysession=ROUTEID
       Deny from all
       Allow from .phy.bris.ac.uk .dice.cluster
    </Proxy>
-   ProxyPass / http://vm-ci.dice.cluster:8080 nocanon
-   ProxyPassReverse / http://vm-ci.dice.cluster:8080
+   ProxyPass / http://vm-ci.dice.cluster:8080/ nocanon
+   ProxyPassReverse / http://vm-ci.dice.cluster:8080/
    ErrorLog "logs/ci-access_log"
    CustomLog "logs/ci-error_log" common
 </VirtualHost>
