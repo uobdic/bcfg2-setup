@@ -11,6 +11,7 @@ Listen 5984
 Listen 5986
 Listen 50070
 Listen 50030
+Listen 58080
 
 Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
 <Proxy balancer://bigcouch>
