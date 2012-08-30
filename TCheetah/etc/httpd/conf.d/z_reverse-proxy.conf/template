@@ -129,8 +129,8 @@ ProxySet stickysession=ROUTEID
       Deny from all
       Allow from .phy.bris.ac.uk .dice.cluster
    </Proxy>
-   ProxyPass / http://nn-37-00.dice.cluster:50070 nocanon
-   ProxyPassReverse / http://nn-37-00.dice.cluster:50070
+   ProxyPass / http://nn-37-00.dice.cluster:50070/ nocanon
+   ProxyPassReverse / http://nn-37-00.dice.cluster:50070/
    ErrorLog "logs/hadoop-nn-access_log"
    CustomLog "logs/hadoop-nn-error_log" common
 </VirtualHost>
@@ -157,8 +157,8 @@ ProxySet stickysession=ROUTEID
       Deny from all
       Allow from .phy.bris.ac.uk .dice.cluster
    </Proxy>
-   ProxyPass / http://nn-37-00.dice.cluster:50030 nocanon
-   ProxyPassReverse / http://nn-37-00.dice.cluster:50030
+   ProxyPass / http://nn-37-00.dice.cluster:50030/ nocanon
+   ProxyPassReverse / http://nn-37-00.dice.cluster:50030/
    ErrorLog "logs/hadoop-jt-access_log"
    CustomLog "logs/hadoop-jt-error_log" common
 </VirtualHost>
