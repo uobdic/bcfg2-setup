@@ -1,0 +1,4 @@
+<Bundle name="jenkins">
+  <Package name="jre" />
+  <Action name="install-jenkins" />
+</Bundle>

@@ -21,5 +21,5 @@
   <Client name="vm-37-00.dice.cluster" profile="admin-node-0" />
   <Client name="vm-37-01.dice.cluster" profile="admin-node-1" />
   <Client name="vm-mossaic.dice.cluster" profile="basic" />
-  <Client name="vm-ci.dice.cluster" profile="basic" />
+  <Client name="vm-ci.dice.cluster" profile="ci" />
 </Clients>

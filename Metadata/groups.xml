@@ -105,6 +105,11 @@
     <Bundle name="reverse-proxy" />
   </Group>
 
+  <Group profile="true" name="ci" public="true">
+    <Group name="basic" />
+    <Bundle name="jenkins" />
+  </Group>
+
   <Group profile="true" name="local-tarballs" public="true">
     <Bundle name="apache" />
     <Bundle name="local-tarballs" />
