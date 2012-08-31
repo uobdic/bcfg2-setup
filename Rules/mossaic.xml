@@ -1,4 +1,5 @@
 <Rules priority="0">
+  <Path type="directory" group="mossaic" name="/opt/mossaic" owner="mossaic" perms="0755" />
   <Action name="install-mossaic" timing="post" when="modified" status="check"
     command='
       mkdir -p /opt/mossaic/staging &amp;&amp;
