@@ -9,6 +9,8 @@ LoadModule auth_cas_module modules/mod_auth_cas.so
 
 Listen 5984
 Listen 5986
+Listen 6984
+Listen 6986
 Listen 50070
 Listen 50030
 Listen 58080
@@ -54,7 +56,30 @@ ProxySet stickysession=ROUTEID
    CustomLog "logs/ci-error_log" common
 </VirtualHost>
 
-<VirtualHost *:5984>
+#if 'io-37-00' in $self.metadata.hostname
+<VirtualHost dice-io-37-00.acrc.bris.ac.uk:5984>
+    Redirect permanent / https://dice-io-37-00.acrc.bris.ac.uk:6984/
+</VirtualHost>
+<VirtualHost dice-io-37-00.acrc.bris.ac.uk:5986>
+    Redirect permanent / https://dice-io-37-00.acrc.bris.ac.uk:6986/
+</VirtualHost>
+#elif 'io-37-01' in $self.metadata.hostname
+<VirtualHost dice-io-37-01.acrc.bris.ac.uk:5984>
+    Redirect permanent / https://dice-io-37-01.acrc.bris.ac.uk:6984/
+</VirtualHost>
+<VirtualHost dice-io-37-01.acrc.bris.ac.uk:5986>
+    Redirect permanent / https://dice-io-37-01.acrc.bris.ac.uk:6986/
+</VirtualHost>
+#else
+<VirtualHost $self.metadata.hostname:5984>
+    Redirect permanent / https://$self.metadata.hostname:6984/
+</VirtualHost>
+<VirtualHost $self.metadata.hostname:5986>
+    Redirect permanent / https://$self.metadata.hostname:6986/
+</VirtualHost>
+#end if
+
+<VirtualHost *:6984>
 #if 'io-37-00' in $self.metadata.hostname
    ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
    ServerName dice-io-37-00.acrc.bris.ac.uk
@@ -65,6 +90,12 @@ ProxySet stickysession=ROUTEID
    ServerAdmin webmaster@$self.metadata.hostname
    ServerName $self.metadata.hostname
 #end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
    DocumentRoot "/opt/websites/web/www/dummy"
    AllowEncodedSlashes On
    ProxyRequests Off
@@ -81,7 +112,7 @@ ProxySet stickysession=ROUTEID
    CustomLog "logs/bc-error_log" common
 </VirtualHost>
 
-<VirtualHost *:5986>
+<VirtualHost *:6986>
 #if 'io-37-00' in $self.metadata.hostname
    ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
    ServerName dice-io-37-00.acrc.bris.ac.uk
@@ -92,6 +123,12 @@ ProxySet stickysession=ROUTEID
    ServerAdmin webmaster@$self.metadata.hostname
    ServerName $self.metadata.hostname
 #end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
    DocumentRoot "/opt/websites/web/www/dummy"
    AllowEncodedSlashes On
    ProxyRequests Off
@@ -118,6 +155,12 @@ ProxySet stickysession=ROUTEID
    ServerAdmin webmaster@$self.metadata.hostname
    ServerName $self.metadata.hostname
 #end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
    DocumentRoot "/opt/websites/web/www/dummy"
    ProxyRequests Off
    <Proxy *>
@@ -146,6 +189,12 @@ ProxySet stickysession=ROUTEID
    ServerAdmin webmaster@$self.metadata.hostname
    ServerName $self.metadata.hostname
 #end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
    DocumentRoot "/opt/websites/web/www/dummy"
    ProxyRequests Off
    <Proxy *>

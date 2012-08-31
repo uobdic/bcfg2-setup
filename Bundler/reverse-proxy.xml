@@ -5,5 +5,8 @@
   <Path name="/etc/httpd/conf/group" />
   <Path name="/var/cache/mod_auth_cas" />
   <Path name="/etc/httpd/CAs" />
+  <Path name="/root/certs/hostkey.pem" />
+  <Path name="/root/certs/hostcert.pem" />
+  <Path name="/root/certs/escience.chain" />
   <Action name="remove-auth-cas-config" />
 </Bundle>
