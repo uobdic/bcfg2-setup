@@ -5,7 +5,8 @@
       mkdir -p /opt/mossaic/staging &amp;&amp;
       curl -o /opt/mossaic/staging/mossaic-0.3.0.rc3.tar.gz http://vm-37-00.dice.cluster/tarballs/mossaic-0.3.0.rc3.tar.gz &amp;&amp;
       cd /opt/mossaic/staging &amp;&amp;
-      tar xvfz mossaic-0.3.0.rc3.tar.gz'
+      tar xvfz mossaic-0.3.0.rc3.tar.gz &amp;&amp;
+      chown -R mossaic:mossaic /opt/mossaic'
   />
   <Action name="create-mossaic-user" timing="pre" when="modified" status="ignore"
     command='groupadd mossaic &amp;&amp;
