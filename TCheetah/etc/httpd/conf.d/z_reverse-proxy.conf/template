@@ -202,6 +202,7 @@ ProxySet stickysession=ROUTEID
    <Proxy */executable>
       Order deny,allow
       Deny from all
+      Allow from .dice.cluster 137.222.79.
    </Proxy>
    ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
