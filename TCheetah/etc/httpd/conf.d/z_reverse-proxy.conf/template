@@ -15,6 +15,7 @@ Listen 7984
 Listen 8984
 Listen 9984
 Listen 50070
+Listen 50075
 Listen 50030
 Listen 58080
 
@@ -30,6 +31,18 @@ ProxySet stickysession=ROUTEID
 BalancerMember http://bc-37-00.dice.cluster:5986 route=1
 BalancerMember http://bc-37-01.dice.cluster:5986 route=2
 BalancerMember http://bc-37-02.dice.cluster:5986 route=3
+ProxySet stickysession=ROUTEID
+</Proxy>
+
+<Proxy balancer://hdfs>
+BalancerMember http://hd-37-00.dice.cluster:50075 route=1
+BalancerMember http://hd-37-01.dice.cluster:50075 route=2
+BalancerMember http://hd-37-02.dice.cluster:50075 route=3
+BalancerMember http://hd-37-03.dice.cluster:50075 route=4
+BalancerMember http://hd-37-04.dice.cluster:50075 route=5
+BalancerMember http://hd-37-05.dice.cluster:50075 route=6
+BalancerMember http://hd-37-06.dice.cluster:50075 route=7
+BalancerMember http://hd-37-07.dice.cluster:50075 route=8
 ProxySet stickysession=ROUTEID
 </Proxy>
 
@@ -361,4 +374,39 @@ ProxySet stickysession=ROUTEID
    ProxyPassReverse / http://nn-37-00.dice.cluster:50030/
    ErrorLog "logs/hadoop-jt-error_log"
    CustomLog "logs/hadoop-jt-access_log" common
+</VirtualHost>
+
+\# HDFS web interface
+<VirtualHost *:50075>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   ProxyRequests Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from .phy.bris.ac.uk .dice.cluster
+   </Proxy>
+   ProxyPass / balancer://hdfs/ nocanon
+   ProxyPassReverse / balancer://hdfs/
+   ErrorLog "logs/hadoop-hdfs-error_log"
+   CustomLog "logs/hadoop-hdfs-access_log" common
 </VirtualHost>
