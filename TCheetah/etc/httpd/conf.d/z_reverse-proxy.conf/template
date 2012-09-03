@@ -154,12 +154,12 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .hadoop.cluster .phy.bris.ac.uk .cvos.cluster .physics.ox.ac.uk
+      Allow from .dice.cluster .hadoop.cluster .phy.bris.ac.uk .cvos.cluster .physics.ox.ac.uk 137.222.79.
    </Proxy>
    <Proxy */executable>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .hadoop.cluster .cvos.cluster .physics.ox.ac.uk
+      Allow from .dice.cluster .hadoop.cluster .cvos.cluster .physics.ox.ac.uk 137.222.79.
    </Proxy>
    ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
