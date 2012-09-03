@@ -63,8 +63,8 @@ ProxySet stickysession=ROUTEID
    </Proxy>
    ProxyPass / http://vm-ci.dice.cluster:8080/ nocanon
    ProxyPassReverse / http://vm-ci.dice.cluster:8080/
-   ErrorLog "logs/ci-access_log"
-   CustomLog "logs/ci-error_log" common
+   ErrorLog "logs/ci-error_log"
+   CustomLog "logs/ci-access_log" common
 </VirtualHost>
 
 \# Redirect regular couch ports to secure ports
@@ -130,8 +130,8 @@ ProxySet stickysession=ROUTEID
    ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
-   ErrorLog "logs/bc-access_log"
-   CustomLog "logs/bc-error_log" common
+   ErrorLog "logs/bc-error_log"
+   CustomLog "logs/bc-access_log" common
 </VirtualHost>
 
 \# BigCouch cluster
@@ -172,8 +172,8 @@ ProxySet stickysession=ROUTEID
    ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
-   ErrorLog "logs/bc-sslauth-access_log"
-   CustomLog "logs/bc-sslauth-error_log" common
+   ErrorLog "logs/bc-sslauth-error_log"
+   CustomLog "logs/bc-sslauth-access_log" common
 </VirtualHost>
 
 \# BigCouch cluster
@@ -207,8 +207,8 @@ ProxySet stickysession=ROUTEID
    ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
-   ErrorLog "logs/bc-noauth-nossl-access_log"
-   CustomLog "logs/bc-noauth-nossl-error_log" common
+   ErrorLog "logs/bc-noauth-nossl-error_log"
+   CustomLog "logs/bc-noauth-nossl-access_log" common
 </VirtualHost>
 
 \# BigCouch cluster
@@ -241,8 +241,8 @@ ProxySet stickysession=ROUTEID
    ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
-   ErrorLog "logs/bc-noauth-access_log"
-   CustomLog "logs/bc-noauth-error_log" common
+   ErrorLog "logs/bc-noauth-error_log"
+   CustomLog "logs/bc-noauth-access_log" common
 </VirtualHost>
 
 \# BigCouch admin port
@@ -281,8 +281,8 @@ ProxySet stickysession=ROUTEID
    </Proxy>
    ProxyPass / balancer://bigcouch-admin/ nocanon
    ProxyPassReverse / balancer://bigcouch-admin/
-   ErrorLog "logs/bc-admin-access_log"
-   CustomLog "logs/bc-admin-error_log" common
+   ErrorLog "logs/bc-admin-error_log"
+   CustomLog "logs/bc-admin-access_log" common
 </VirtualHost>
 
 \# HDFS NameNode web interface
@@ -317,8 +317,8 @@ ProxySet stickysession=ROUTEID
    </Proxy>
    ProxyPass / http://nn-37-00.dice.cluster:50070/ nocanon
    ProxyPassReverse / http://nn-37-00.dice.cluster:50070/
-   ErrorLog "logs/hadoop-nn-access_log"
-   CustomLog "logs/hadoop-nn-error_log" common
+   ErrorLog "logs/hadoop-nn-error_log"
+   CustomLog "logs/hadoop-nn-access_log" common
 </VirtualHost>
 
 \# Hadoop JobTracker web interface
@@ -353,6 +353,6 @@ ProxySet stickysession=ROUTEID
    </Proxy>
    ProxyPass / http://nn-37-00.dice.cluster:50030/ nocanon
    ProxyPassReverse / http://nn-37-00.dice.cluster:50030/
-   ErrorLog "logs/hadoop-jt-access_log"
-   CustomLog "logs/hadoop-jt-error_log" common
+   ErrorLog "logs/hadoop-jt-error_log"
+   CustomLog "logs/hadoop-jt-access_log" common
 </VirtualHost>
