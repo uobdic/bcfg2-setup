@@ -179,24 +179,14 @@ ProxySet stickysession=ROUTEID
    ServerAdmin webmaster@$self.metadata.hostname
    ServerName $self.metadata.hostname
 #end if
-   SSLEngine On
-   SSLCertificateKeyFile /root/certs/hostkey.pem
-   SSLCertificateFile /root/certs/hostcert.pem
-   SSLProtocol All -SSLv2
-   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
-   SSLCACertificateFile /root/certs/escience.chain
    DocumentRoot "/opt/websites/web/www/dummy"
    AllowEncodedSlashes On
    ProxyRequests Off
    KeepAlive Off
    <Proxy *>
-      AuthType CAS
-      AuthGroupFile /etc/httpd/conf/group
-      Require group couch
-      CASScope /
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .phy.bris.ac.uk
+      Allow from .dice.cluster 137.222.79.
    </Proxy>
    <Proxy */executable>
       Order deny,allow
@@ -205,8 +195,8 @@ ProxySet stickysession=ROUTEID
    ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
-   ErrorLog "logs/bc-noauth-access_log"
-   CustomLog "logs/bc-noauth-error_log" common
+   ErrorLog "logs/bc-noauth-nossl-access_log"
+   CustomLog "logs/bc-noauth-nossl-error_log" common
 </VirtualHost>
 
 <VirtualHost *:6986>
