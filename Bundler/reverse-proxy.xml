@@ -4,6 +4,7 @@
   <Package name="openssl-perl" />
   <Path name="/etc/httpd/conf.d/z_reverse-proxy.conf" />
   <Path name="/etc/httpd/conf/group" />
+  <Path name="/etc/httpd/conf/httpd.conf" />
   <Path name="/var/cache/mod_auth_cas" />
   <Path name="/etc/httpd/CAs" />
   <Path name="/etc/httpd/CAs/thawteprimaryrootca.pem" />
