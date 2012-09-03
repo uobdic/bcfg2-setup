@@ -8,6 +8,7 @@
   <Path name="/opt/mossaic" />
   <Path name="/opt/mossaic/etc/ssl/jobwrapper.cert.pem" />
   <Path name="/opt/mossaic/etc/ssl/jobwrapper.key.pem" />
+  <Path name="/opt/mossaic/etc/bigcouch_nodes" />
   <Action name="create-mossaic-user" />
   <Action name="install-mossaic" />
 </Bundle>
