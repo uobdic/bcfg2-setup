@@ -13,6 +13,7 @@ Listen 6984
 Listen 6986
 Listen 7984
 Listen 8984
+Listen 9984
 Listen 50070
 Listen 50030
 Listen 58080
@@ -197,6 +198,37 @@ ProxySet stickysession=ROUTEID
    ProxyPassReverse / balancer://bigcouch/
    ErrorLog "logs/bc-noauth-nossl-access_log"
    CustomLog "logs/bc-noauth-nossl-error_log" common
+</VirtualHost>
+
+<VirtualHost *:9984>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      Order deny,allow
+      Deny from all
+      Allow from .dice.cluster 137.222.79. .phy.bris.ac.uk
+   </Proxy>
+   <Proxy */executable>
+      Order deny,allow
+      Deny from all
+   </Proxy>
+   ProxyPass /_users balancer://bigcouch-admin/_users nocanon
+   ProxyPass / balancer://bigcouch/ nocanon
+   ProxyPassReverse / balancer://bigcouch/
+   ErrorLog "logs/bc-noauth-access_log"
+   CustomLog "logs/bc-noauth-error_log" common
 </VirtualHost>
 
 <VirtualHost *:6986>

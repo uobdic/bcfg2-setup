@@ -29,6 +29,7 @@ COMMIT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 6986 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 7984 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 8984 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 9984 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 50070 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 50030 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 58080 -j ACCEPT
