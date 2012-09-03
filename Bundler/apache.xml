@@ -1,4 +1,5 @@
 <Bundle name="apache">
+  <Path name="/etc/profile.d/httpd.sh" />
   <Package name="httpd" />
   <Service name="httpd" />
 </Bundle>
