@@ -19,6 +19,7 @@
 10.132.0.13  jt-37-00.dice.cluster jt-37-00
 10.132.0.15  vm-mossaic.dice.cluster vm-mossaic
 10.132.0.16  vm-ci.dice.cluster vm-ci
+10.132.0.17  vm-cse.dice.cluster vm-cse
 
 10.132.0.41  hd-37-00.dice.cluster hd-37-00
 10.132.0.43  hd-37-01.dice.cluster hd-37-01

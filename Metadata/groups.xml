@@ -135,4 +135,8 @@
     <Group name="basic" />
     <Bundle name="mossaic" />
   </Group>
+
+  <Group profile="true" name="cse" public="true">
+    <Group name="basic" />
+  </Group>
 </Groups>
