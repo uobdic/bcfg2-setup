@@ -137,6 +137,7 @@
   </Group>
 
   <Group profile="true" name="cse" public="true">
-    <Group name="basic" />
+    <Group name="hadoop" />
+    <Group name="hbase" />
   </Group>
 </Groups>
