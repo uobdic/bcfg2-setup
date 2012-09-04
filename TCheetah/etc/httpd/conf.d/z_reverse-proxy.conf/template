@@ -225,6 +225,12 @@ ProxySet stickysession=ROUTEID
    ServerAdmin webmaster@$self.metadata.hostname
    ServerName $self.metadata.hostname
 #end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
    DocumentRoot "/opt/websites/web/www/dummy"
    AllowEncodedSlashes On
    ProxyRequests Off
