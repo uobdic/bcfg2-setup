@@ -3,12 +3,12 @@
   <Action name="install-mossaic" timing="post" when="modified" status="check"
     command='
       mkdir -p /opt/mossaic/staging &amp;&amp;
-      curl -o /opt/mossaic/staging/mossaic-0.3.0.rc4.tar.gz http://vm-37-00.dice.cluster/tarballs/mossaic-0.3.0.rc4.tar.gz &amp;&amp;
+      curl -o /opt/mossaic/staging/mossaic-0.3.0.tar.gz http://vm-37-00.dice.cluster/tarballs/mossaic-0.3.0.tar.gz &amp;&amp;
       cd /opt/mossaic/staging &amp;&amp;
-      tar xvfz mossaic-0.3.0.rc4.tar.gz &amp;&amp;
+      tar xvfz mossaic-0.3.0.tar.gz &amp;&amp;
       chown -R mossaic:mossaic /opt/mossaic &amp;&amp;
       su - mossaic &amp;&amp;
-      cd /opt/mossaic/staging/mossaic-0.3.0.rc4 &amp;&amp;
+      cd /opt/mossaic/staging/mossaic-0.3.0 &amp;&amp;
       echo "" | ./configure -p /opt/mossaic -v vo.landslides.mossaic.org -s UoB-Hep-Development -u dips://chevner.phy.bris.ac.uk:9135/Configuration/Server -a michael.wallace@bristol.ac.uk &amp;&amp;
       make lite'
   />
