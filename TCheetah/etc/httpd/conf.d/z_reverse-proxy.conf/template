@@ -14,6 +14,8 @@ Listen 6986
 Listen 7984
 Listen 8984
 Listen 9984
+Listen 10080
+Listen 18080
 Listen 50070
 Listen 50075
 Listen 50030
@@ -409,4 +411,72 @@ ProxySet stickysession=ROUTEID
    ProxyPassReverse / balancer://hdfs/
    ErrorLog "logs/hadoop-hdfs-error_log"
    CustomLog "logs/hadoop-hdfs-access_log" common
+</VirtualHost>
+
+\# CSE RESTful web service
+\# SSL encryption
+<VirtualHost *:10080>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      Order deny,allow
+      Deny from all
+      Allow from .dice.cluster .phy.bris.ac.uk
+   </Proxy>
+   ProxyPass / http://vm-cse.dice.cluster:80/ nocanon
+   ProxyPassReverse / http://vm-cse.dice.cluster:80/
+   ErrorLog "logs/cse-error_log"
+   CustomLog "logs/cse-access_log" common
+</VirtualHost>
+
+\# CSE RESTful web service
+\# SSL encryption
+<VirtualHost *:18080>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      Order deny,allow
+      Deny from all
+      Allow from .dice.cluster .phy.bris.ac.uk
+   </Proxy>
+   ProxyPass / http://vm-cse.dice.cluster:8080/ nocanon
+   ProxyPassReverse / http://vm-cse.dice.cluster:8080/
+   ErrorLog "logs/cse-8080-error_log"
+   CustomLog "logs/cse-8080-access_log" common
 </VirtualHost>
