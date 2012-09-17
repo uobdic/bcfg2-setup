@@ -184,7 +184,6 @@ ProxySet stickysession=ROUTEID
       Deny from all
       Allow from .dice.cluster .hadoop.cluster .cvos.cluster .physics.ox.ac.uk 137.222.79.
    </Proxy>
-   ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
    ErrorLog "logs/bc-sslauth-error_log"
@@ -259,7 +258,6 @@ ProxySet stickysession=ROUTEID
       Order deny,allow
       Deny from all
    </Proxy>
-   ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
    ErrorLog "logs/bc-noauth-error_log"
