@@ -136,7 +136,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .phy.bris.ac.uk 94.192.83.
+      Allow from .dice.cluster .phy.bris.ac.uk 94.192.83. 137.222.99.19
    </Proxy>
    <Proxy */executable>
       Order deny,allow
@@ -253,7 +253,7 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster 137.222.79. .phy.bris.ac.uk
+      Allow from .dice.cluster 137.222.79. .phy.bris.ac.uk 137.222.99.19
    </Proxy>
    <Proxy */executable>
       Order deny,allow
