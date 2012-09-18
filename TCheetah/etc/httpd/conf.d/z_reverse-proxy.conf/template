@@ -437,7 +437,7 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .phy.bris.ac.uk
+      Allow from .dice.cluster .bris.ac.uk
    </Proxy>
    ProxyPass / http://vm-cse.dice.cluster:80/ nocanon
    ProxyPassReverse / http://vm-cse.dice.cluster:80/
@@ -471,7 +471,7 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .phy.bris.ac.uk
+      Allow from .dice.cluster .bris.ac.uk
    </Proxy>
    ProxyPass / http://vm-cse.dice.cluster:8080/ nocanon
    ProxyPassReverse / http://vm-cse.dice.cluster:8080/
