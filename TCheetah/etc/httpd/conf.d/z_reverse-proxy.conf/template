@@ -435,6 +435,10 @@ ProxySet stickysession=ROUTEID
    ProxyRequests Off
    KeepAlive Off
    <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASScope /
       Order deny,allow
       Deny from all
       Allow from .dice.cluster .bris.ac.uk
@@ -469,6 +473,10 @@ ProxySet stickysession=ROUTEID
    ProxyRequests Off
    KeepAlive Off
    <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASScope /
       Order deny,allow
       Deny from all
       Allow from .dice.cluster .bris.ac.uk
