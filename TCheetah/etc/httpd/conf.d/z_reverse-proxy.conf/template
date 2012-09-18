@@ -72,9 +72,13 @@ ProxySet stickysession=ROUTEID
    ProxyRequests Off
    KeepAlive Off
    <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group couch
+      CASScope /
       Order deny,allow
       Deny from all
-      Allow from .phy.bris.ac.uk .dice.cluster 94.192.83.
+      Allow from .bris.ac.uk .dice.cluster 94.192.83.
    </Proxy>
    ProxyPass / http://vm-ci.dice.cluster:8080/ nocanon
    ProxyPassReverse / http://vm-ci.dice.cluster:8080/
