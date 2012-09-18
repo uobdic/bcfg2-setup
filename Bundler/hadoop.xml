@@ -18,6 +18,7 @@
   <Path name="/etc/hadoop/ssl-client.xml.example" />
   <Path name="/etc/hadoop/ssl-server.xml.example" />
   <Path name="/etc/hadoop/taskcontroller.cfg" />
+  <Path name="/etc/hadoop/hbase-site.xml" />
 
   <Path name="/home/hdfs/.ssh" />
   <Path name="/home/hdfs/.ssh/id_dsa" />
