@@ -27,11 +27,11 @@
   </property>
   <property>
     <name>mapred.tasktracker.map.tasks.maximum</name>
-    <value>2</value>
+    <value>12</value>
   </property>
   <property>
     <name>mapred.tasktracker.reduce.tasks.maximum</name>
-    <value>2</value>
+    <value>12</value>
   </property>
   <property>
     <name>mapred.jobtracker.job.history.block.size</name>
