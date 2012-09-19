@@ -45,6 +45,9 @@ BalancerMember http://hd-37-04.dice.cluster:50075 route=5
 BalancerMember http://hd-37-05.dice.cluster:50075 route=6
 BalancerMember http://hd-37-06.dice.cluster:50075 route=7
 BalancerMember http://hd-37-07.dice.cluster:50075 route=8
+BalancerMember http://hd-38-00.dice.cluster:50075 route=9
+BalancerMember http://hd-38-01.dice.cluster:50075 route=10
+BalancerMember http://hd-38-02.dice.cluster:50075 route=11
 ProxySet stickysession=ROUTEID
 </Proxy>
 
