@@ -119,6 +119,15 @@ contact.root.command mail -s "Munin notification" root@localhost
 [io-37-01.dice.cluster]
 	address io-37-01.dice.cluster
 
+[bc-37-00.dice.cluster]
+	address bc-37-00.dice.cluster
+
+[bc-37-01.dice.cluster]
+	address bc-37-01.dice.cluster
+
+[bc-37-02.dice.cluster]
+	address bc-37-02.dice.cluster
+
 \# Totals
 [dice.bris.ac.uk;Totals]
 	update no   # Turn off data-fetching for this "host".
