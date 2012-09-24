@@ -25,9 +25,9 @@ COMMIT
 #if 'reverse-proxy' in $self.metadata.groups
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 5984 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 5986 -j ACCEPT
--A INPUT -m state --state NEW -m tcp -p tcp --dport 6984 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 6986 -j ACCEPT
--A INPUT -m state --state NEW -m tcp -p tcp --dport 7984 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8080 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 8984 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 9984 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 10080 -j ACCEPT

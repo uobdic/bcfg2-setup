@@ -9,9 +9,9 @@ LoadModule auth_cas_module modules/mod_auth_cas.so
 
 Listen 5984
 Listen 5986
-Listen 6984
+Listen 443
 Listen 6986
-Listen 7984
+Listen 8080
 Listen 8984
 Listen 9984
 Listen 10080
@@ -92,21 +92,21 @@ ProxySet stickysession=ROUTEID
 \# Redirect regular couch ports to secure ports
 #if 'io-37-00' in $self.metadata.hostname
 <VirtualHost dice-io-37-00.acrc.bris.ac.uk:5984>
-    Redirect permanent / https://dice-io-37-00.acrc.bris.ac.uk:6984/
+    Redirect permanent / https://dice-io-37-00.acrc.bris.ac.uk:443/
 </VirtualHost>
 <VirtualHost dice-io-37-00.acrc.bris.ac.uk:5986>
     Redirect permanent / https://dice-io-37-00.acrc.bris.ac.uk:6986/
 </VirtualHost>
 #elif 'io-37-01' in $self.metadata.hostname
 <VirtualHost dice-io-37-01.acrc.bris.ac.uk:5984>
-    Redirect permanent / https://dice-io-37-01.acrc.bris.ac.uk:6984/
+    Redirect permanent / https://dice-io-37-01.acrc.bris.ac.uk:443/
 </VirtualHost>
 <VirtualHost dice-io-37-01.acrc.bris.ac.uk:5986>
     Redirect permanent / https://dice-io-37-01.acrc.bris.ac.uk:6986/
 </VirtualHost>
 #else
 <VirtualHost $self.metadata.hostname:5984>
-    Redirect permanent / https://$self.metadata.hostname:6984/
+    Redirect permanent / https://$self.metadata.hostname:443/
 </VirtualHost>
 <VirtualHost $self.metadata.hostname:5986>
     Redirect permanent / https://$self.metadata.hostname:6986/
@@ -115,7 +115,7 @@ ProxySet stickysession=ROUTEID
 
 \# BigCouch cluster
 \# SSL encryption and SSO auth
-<VirtualHost *:6984>
+<VirtualHost *:443>
 #if 'io-37-00' in $self.metadata.hostname
    ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
    ServerName dice-io-37-00.acrc.bris.ac.uk
@@ -158,7 +158,7 @@ ProxySet stickysession=ROUTEID
 
 \# BigCouch cluster
 \# SSL encryption and SSL certificate auth
-<VirtualHost *:7984>
+<VirtualHost *:8080>
 #if 'io-37-00' in $self.metadata.hostname
    ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
    ServerName dice-io-37-00.acrc.bris.ac.uk
