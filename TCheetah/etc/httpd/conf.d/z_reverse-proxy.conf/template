@@ -143,7 +143,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .phy.bris.ac.uk 94.192.83. 137.222.99.19
+      Allow from .dice.cluster .phy.bris.ac.uk 94.192.83. 137.222.99.19 192.76.7.207 82.132. .cen.bris.ac.uk
    </Proxy>
    <Proxy */executable>
       Order deny,allow
@@ -189,7 +189,7 @@ ProxySet stickysession=ROUTEID
    <Proxy */executable>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .hadoop.cluster .cvos.cluster .physics.ox.ac.uk 137.222.79. 137.222.171.130
+      Allow from .dice.cluster .hadoop.cluster .cvos.cluster .physics.ox.ac.uk .grid.hep.ph.ic.ac.uk 137.222.79. 137.222.171.130
    </Proxy>
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
