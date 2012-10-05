@@ -51,4 +51,84 @@ COMMIT
 -A FORWARD -m state --state NEW  -s 10.132.0.0/16 -j ACCEPT
 -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 -A FORWARD  -j REJECT --reject-with icmp-host-prohibited
+\# -----------------------------------------
+\# Drop known troublesome ranges
+\# -----------------------------------------
+-A INPUT --source 91.226.212.0/23 -j DROP
+-A INPUT --source 1.0.0.0/8 -j DROP
+-A INPUT --source 2.26.0.0/16 -j DROP
+-A INPUT --source 5.9.0.0/16 -j DROP
+-A INPUT --source 14.0.0.0/8 -j DROP
+-A INPUT --source 23.0.0.0/8 -j DROP
+-A INPUT --source 24.0.0.0/8 -j DROP
+-A INPUT --source 27.0.0.0/8 -j DROP
+-A INPUT --source 31.0.0.0/8 -j DROP
+-A INPUT --source 37.0.0.0/8 -j DROP
+-A INPUT --source 38.0.0.0/8 -j DROP
+-A INPUT --source 41.0.0.0/8 -j DROP
+-A INPUT --source 46.0.0.0/8 -j DROP
+-A INPUT --source 49.0.0.0/8 -j DROP
+-A INPUT --source 50.0.0.0/8 -j DROP
+-A INPUT --source 58.0.0.0/8 -j DROP
+-A INPUT --source 59.0.0.0/8 -j DROP
+-A INPUT --source 60.0.0.0/8 -j DROP
+-A INPUT --source 61.0.0.0/8 -j DROP
+-A INPUT --source 62.0.0.0/8 -j DROP
+-A INPUT --source 106.0.0.0/8 -j DROP
+-A INPUT --source 110.0.0.0/8 -j DROP
+-A INPUT --source 111.0.0.0/8 -j DROP
+-A INPUT --source 112.0.0.0/8 -j DROP
+-A INPUT --source 113.0.0.0/8 -j DROP
+-A INPUT --source 114.0.0.0/8 -j DROP
+-A INPUT --source 115.0.0.0/8 -j DROP
+-A INPUT --source 116.0.0.0/8 -j DROP
+-A INPUT --source 117.0.0.0/8 -j DROP
+-A INPUT --source 118.0.0.0/8 -j DROP
+-A INPUT --source 119.0.0.0/8 -j DROP
+-A INPUT --source 120.0.0.0/8 -j DROP
+-A INPUT --source 121.0.0.0/8 -j DROP
+-A INPUT --source 122.0.0.0/8 -j DROP
+-A INPUT --source 123.0.0.0/8 -j DROP
+-A INPUT --source 124.0.0.0/8 -j DROP
+-A INPUT --source 125.0.0.0/8 -j DROP
+-A INPUT --source 126.0.0.0/8 -j DROP
+-A INPUT --source 151.0.0.0/8 -j DROP
+-A INPUT --source 157.0.0.0/8 -j DROP
+-A INPUT --source 159.0.0.0/8 -j DROP
+-A INPUT --source 160.0.0.0/8 -j DROP
+-A INPUT --source 161.0.0.0/8 -j DROP
+-A INPUT --source 170.0.0.0/8 -j DROP
+-A INPUT --source 171.0.0.0/8 -j DROP
+-A INPUT --source 173.0.0.0/8 -j DROP
+-A INPUT --source 174.0.0.0/8 -j DROP
+-A INPUT --source 175.0.0.0/8 -j DROP
+-A INPUT --source 189.0.0.0/8 -j DROP
+-A INPUT --source 190.0.0.0/8 -j DROP
+-A INPUT --source 193.0.0.0/8 -j DROP
+-A INPUT --source 194.0.0.0/8 -j DROP
+-A INPUT --source 195.0.0.0/8 -j DROP
+-A INPUT --source 196.0.0.0/8 -j DROP
+-A INPUT --source 197.0.0.0/8 -j DROP
+-A INPUT --source 199.0.0.0/8 -j DROP
+-A INPUT --source 200.0.0.0/8 -j DROP
+-A INPUT --source 201.0.0.0/8 -j DROP
+-A INPUT --source 202.0.0.0/8 -j DROP
+-A INPUT --source 203.0.0.0/8 -j DROP
+-A INPUT --source 204.0.0.0/8 -j DROP
+-A INPUT --source 207.0.0.0/8 -j DROP
+-A INPUT --source 208.0.0.0/8 -j DROP
+-A INPUT --source 209.0.0.0/8 -j DROP
+-A INPUT --source 210.0.0.0/8 -j DROP
+-A INPUT --source 211.0.0.0/8 -j DROP
+-A INPUT --source 212.0.0.0/8 -j DROP
+-A INPUT --source 213.0.0.0/8 -j DROP
+-A INPUT --source 216.0.0.0/8 -j DROP
+-A INPUT --source 217.0.0.0/8 -j DROP
+-A INPUT --source 218.0.0.0/8 -j DROP
+-A INPUT --source 219.0.0.0/8 -j DROP
+-A INPUT --source 220.0.0.0/8 -j DROP
+-A INPUT --source 221.0.0.0/8 -j DROP
+-A INPUT --source 222.0.0.0/8 -j DROP
+-A INPUT --source 223.0.0.0/8 -j DROP
+
 COMMIT
