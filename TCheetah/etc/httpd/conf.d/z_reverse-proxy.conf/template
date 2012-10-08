@@ -184,12 +184,12 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .hadoop.cluster .phy.bris.ac.uk .cvos.cluster .physics.ox.ac.uk .grid.hep.ph.ic.ac.uk 137.222.79. 137.222.171.130 .eu-west-1.compute.amazonaws.com
+      Allow from .dice.cluster .hadoop.cluster .phy.bris.ac.uk .cvos.cluster .physics.ox.ac.uk .grid.hep.ph.ic.ac.uk 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
    </Proxy>
    <Proxy */executable>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .hadoop.cluster .cvos.cluster .physics.ox.ac.uk .grid.hep.ph.ic.ac.uk 137.222.79. 137.222.171.130 .eu-west-1.compute.amazonaws.com
+      Allow from .dice.cluster .hadoop.cluster .cvos.cluster .physics.ox.ac.uk .grid.hep.ph.ic.ac.uk 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
    </Proxy>
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
