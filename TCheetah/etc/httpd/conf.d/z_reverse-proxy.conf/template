@@ -26,7 +26,6 @@ BalancerMember http://bc-37-00.dice.cluster:5984
 BalancerMember http://bc-37-01.dice.cluster:5984
 BalancerMember http://bc-37-02.dice.cluster:5984
 ProxySet lbmethod=bytraffic timeout=300
-ProxyStatus On
 </Proxy>
 
 <Proxy balancer://bigcouch-admin>
