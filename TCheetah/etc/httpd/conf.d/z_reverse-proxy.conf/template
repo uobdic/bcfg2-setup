@@ -21,31 +21,34 @@ Listen 50075
 Listen 50030
 Listen 58080
 
+Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
 <Proxy balancer://bigcouch>
-BalancerMember http://bc-37-00.dice.cluster:5984
-BalancerMember http://bc-37-01.dice.cluster:5984
-BalancerMember http://bc-37-02.dice.cluster:5984
-ProxySet lbmethod=bytraffic timeout=300
+BalancerMember http://bc-37-00.dice.cluster:5984 route=1
+BalancerMember http://bc-37-01.dice.cluster:5984 route=2
+BalancerMember http://bc-37-02.dice.cluster:5984 route=3
+ProxySet stickysession=ROUTEID lbmethod=bytraffic timeout=300
 </Proxy>
 
 <Proxy balancer://bigcouch-admin>
-BalancerMember http://bc-37-00.dice.cluster:5986
-BalancerMember http://bc-37-01.dice.cluster:5986
-BalancerMember http://bc-37-02.dice.cluster:5986
+BalancerMember http://bc-37-00.dice.cluster:5986 route=1
+BalancerMember http://bc-37-01.dice.cluster:5986 route=2
+BalancerMember http://bc-37-02.dice.cluster:5986 route=3
+ProxySet stickysession=ROUTEID
 </Proxy>
 
 <Proxy balancer://hdfs>
-BalancerMember http://hd-37-00.dice.cluster:50075
-BalancerMember http://hd-37-01.dice.cluster:50075
-BalancerMember http://hd-37-02.dice.cluster:50075
-BalancerMember http://hd-37-03.dice.cluster:50075
-BalancerMember http://hd-37-04.dice.cluster:50075
-BalancerMember http://hd-37-05.dice.cluster:50075
-BalancerMember http://hd-37-06.dice.cluster:50075
-BalancerMember http://hd-37-07.dice.cluster:50075
-BalancerMember http://hd-38-00.dice.cluster:50075
-BalancerMember http://hd-38-01.dice.cluster:50075
-BalancerMember http://hd-38-02.dice.cluster:50075
+BalancerMember http://hd-37-00.dice.cluster:50075 route=1
+BalancerMember http://hd-37-01.dice.cluster:50075 route=2
+BalancerMember http://hd-37-02.dice.cluster:50075 route=3
+BalancerMember http://hd-37-03.dice.cluster:50075 route=4
+BalancerMember http://hd-37-04.dice.cluster:50075 route=5
+BalancerMember http://hd-37-05.dice.cluster:50075 route=6
+BalancerMember http://hd-37-06.dice.cluster:50075 route=7
+BalancerMember http://hd-37-07.dice.cluster:50075 route=8
+BalancerMember http://hd-38-00.dice.cluster:50075 route=9
+BalancerMember http://hd-38-01.dice.cluster:50075 route=10
+BalancerMember http://hd-38-02.dice.cluster:50075 route=11
+ProxySet stickysession=ROUTEID
 </Proxy>
 
 \# CI host (Jenkins)
