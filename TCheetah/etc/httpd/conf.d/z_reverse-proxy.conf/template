@@ -81,7 +81,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .bris.ac.uk .dice.cluster 94.192.83.
+      Allow from 137.222. 10.132.0. 94.192.83.
    </Proxy>
    ProxyPass / http://vm-ci.dice.cluster:8080/ nocanon
    ProxyPassReverse / http://vm-ci.dice.cluster:8080/
@@ -143,7 +143,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .phy.bris.ac.uk 94.192.83. 137.222.99.19 192.76.7.207 82.132. .cen.bris.ac.uk
+      Allow from 10.132.0. 137.222. 94.192.83. 137.222.99.19 192.76.7.207 82.132.
    </Proxy>
    <Proxy */executable>
       Order deny,allow
@@ -184,12 +184,12 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .hadoop.cluster .phy.bris.ac.uk .cvos.cluster .physics.ox.ac.uk .grid.hep.ph.ic.ac.uk 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
+      Allow from 10.132.0. 137.222.171. 137.222.74. 137.222.58. 163.1.74. 163.1.245. 146.179.247. 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
    </Proxy>
    <Proxy */executable>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .hadoop.cluster .cvos.cluster .physics.ox.ac.uk .grid.hep.ph.ic.ac.uk 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
+      Allow from 10.132.0. 137.222.171. 163.1.74. 163.1.245. 146.179.247. 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
    </Proxy>
    ProxyPass / balancer://bigcouch/ nocanon
    ProxyPassReverse / balancer://bigcouch/
@@ -218,12 +218,12 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster 137.222.79.
+      Allow from 10.132.0. 137.222.79.
    </Proxy>
    <Proxy */executable>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster 137.222.79.
+      Allow from 10.132.0. 137.222.79.
    </Proxy>
    ProxyPass /_users balancer://bigcouch-admin/_users nocanon
    ProxyPass / balancer://bigcouch/ nocanon
@@ -259,7 +259,7 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster 137.222.79. .phy.bris.ac.uk 137.222.99.19
+      Allow from 10.132.0. 137.222.79. 137.222.74. 137.222.58. 137.222.99.19
    </Proxy>
    <Proxy */executable>
       Order deny,allow
@@ -303,7 +303,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .phy.bris.ac.uk .dice.cluster
+      Allow from 137.222.74. 137.222.58. 10.132.0.
    </Proxy>
    ProxyPass / balancer://bigcouch-admin/ nocanon
    ProxyPassReverse / balancer://bigcouch-admin/
@@ -339,7 +339,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .bris.ac.uk .dice.cluster 94.192.83.
+      Allow from 137.222. 10.132.0. 94.192.83.
    </Proxy>
    ProxyPass / http://nn-37-00.dice.cluster:50070/ nocanon
    ProxyPassReverse / http://nn-37-00.dice.cluster:50070/
@@ -375,7 +375,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .bris.ac.uk .dice.cluster 94.192.83.
+      Allow from 137.222. 10.132.0. 94.192.83.
    </Proxy>
    ProxyPass / http://nn-37-00.dice.cluster:50030/ nocanon
    ProxyPassReverse / http://nn-37-00.dice.cluster:50030/
@@ -410,7 +410,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .bris.ac.uk .dice.cluster 94.192.83.
+      Allow from 137.222. 10.132.0. 94.192.83.
    </Proxy>
    ProxyPass / balancer://hdfs/ nocanon
    ProxyPassReverse / balancer://hdfs/
@@ -448,7 +448,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .bris.ac.uk
+      Allow from 10.132.0. 137.222.
    </Proxy>
    ProxyPass / http://vm-cse.dice.cluster:80/ nocanon
    ProxyPassReverse / http://vm-cse.dice.cluster:80/
@@ -486,7 +486,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from .dice.cluster .bris.ac.uk
+      Allow from 10.132.0. 137.222.
    </Proxy>
    ProxyPass / http://vm-cse.dice.cluster:8080/ nocanon
    ProxyPassReverse / http://vm-cse.dice.cluster:8080/
