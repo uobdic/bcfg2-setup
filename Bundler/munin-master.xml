@@ -1,5 +1,7 @@
 <Bundle name="munin-master">
   <Path name="/etc/munin/munin.conf" />
+  <Path name="/etc/munin/templates/munin-overview.html" />
+  <Path name="/etc/munin/templates/partial/generated_by.html" />
   <Package name="munin" />
   <Service name="crond" />
 </Bundle>
