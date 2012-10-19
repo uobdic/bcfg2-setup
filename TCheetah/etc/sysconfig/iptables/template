@@ -130,5 +130,8 @@ COMMIT
 -A INPUT --source 221.0.0.0/8 -j DROP
 -A INPUT --source 222.0.0.0/8 -j DROP
 -A INPUT --source 223.0.0.0/8 -j DROP
+-A INPUT --source 183.82.97.0/24 -j DROP
+-A INPUT --source 200.0.0.0/8 -j DROP
+-A INPUT --source 184.154.42.194 -j DROP
 
 COMMIT
