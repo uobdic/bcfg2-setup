@@ -21,19 +21,19 @@ Listen 50075
 Listen 50030
 Listen 58080
 
-Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
-<Proxy balancer://bigcouch>
-BalancerMember http://bc-37-00.dice.cluster:5984 route=1
-BalancerMember http://bc-37-01.dice.cluster:5984 route=2
-BalancerMember http://bc-37-02.dice.cluster:5984 route=3
-ProxySet stickysession=ROUTEID lbmethod=bytraffic timeout=300
+<Proxy balancer://bigcouch-jw>
+BalancerMember http://bc-37-00:5984 max=2 lbset=2
+BalancerMember http://bc-37-01:5984 max=2 lbset=0
+BalancerMember http://bc-37-02:5984 max=2 lbset=1
+ProxySet lbmethod=bytraffic timeout=300
 </Proxy>
 
-<Proxy balancer://bigcouch-admin>
-BalancerMember http://bc-37-00.dice.cluster:5986 route=1
-BalancerMember http://bc-37-01.dice.cluster:5986 route=2
-BalancerMember http://bc-37-02.dice.cluster:5986 route=3
-ProxySet stickysession=ROUTEID
+Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
+<Proxy balancer://bigcouch>
+BalancerMember http://bc-37-00.dice.cluster:5984 lbset=0 route=1
+BalancerMember http://bc-37-01.dice.cluster:5984 lbset=2 route=2
+BalancerMember http://bc-37-02.dice.cluster:5984 lbset=1 route=3
+ProxySet stickysession=ROUTEID lbmethod=bytraffic timeout=300
 </Proxy>
 
 <Proxy balancer://hdfs>
@@ -191,8 +191,8 @@ ProxySet stickysession=ROUTEID
       Deny from all
       Allow from 10.132.0. 137.222.171. 163.1.74. 163.1.245. 146.179.247. 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
    </Proxy>
-   ProxyPass / balancer://bigcouch/ nocanon
-   ProxyPassReverse / balancer://bigcouch/
+   ProxyPass / balancer://bigcouch-jw/ nocanon
+   ProxyPassReverse / balancer://bigcouch-jw/
    ErrorLog "logs/bc-sslauth-error_log"
    CustomLog "logs/bc-sslauth-access_log" common
 </VirtualHost>
