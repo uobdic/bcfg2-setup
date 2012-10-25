@@ -1,17 +1,19 @@
 <Sources>
   <Group name="sci-linux">
 
-    <Source type="yum" url="http://dl.fedoraproject.org/pub/epel" version="6">
+    <Source type="yum"
+rawurl="http://be.mirror.eurid.eu/scientific/6.2/x86_64/os" version="6.2">
+      <Arch>x86_64</Arch>
+    </Source>
+
+    <Source type="yum" url="http://dl.fedoraproject.org/pub/epel"
+version="6">
       <Component>.</Component>
       <Arch>x86_64</Arch>
     </Source>
 
-    <Source type="yum" url="http://ftp.scientificlinux.org/linux/scientific/6.2/x86_64/os">
-      <Component>.</Component>
-      <Arch>.</Arch>
-    </Source>
-
-    <Source rawurl="http://packages.cloudant.com/rpm" version="6">
+    <Source type="yum"
+rawurl="http://packages.cloudant.com/rpm/6/x86_64" version="6">
       <Arch>x86_64</Arch>
     </Source>
 
