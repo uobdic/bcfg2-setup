@@ -2,7 +2,7 @@
   <Package name="mod_ssl" />
   <Package name="mod_auth_cas" />
   <Package name="openssl-perl" />
-  <Package name="/etc/sysconfig/httpd" />
+  <Path name="/etc/sysconfig/httpd" />
   <Path name="/etc/httpd/conf.d/ssl.conf" />
   <Path name="/etc/httpd/conf.d/z_reverse-proxy.conf" />
   <Path name="/etc/httpd/conf/group" />
