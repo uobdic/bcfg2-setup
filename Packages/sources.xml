@@ -4,6 +4,7 @@
     <Source type="yum"
 rawurl="http://be.mirror.eurid.eu/scientific/6.2/x86_64/os" version="6.2">
       <Arch>x86_64</Arch>
+      <Blacklist>kernel*</Blacklist>
     </Source>
 
     <Source type="yum" url="http://dl.fedoraproject.org/pub/epel"
