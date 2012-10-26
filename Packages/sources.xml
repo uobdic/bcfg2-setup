@@ -17,6 +17,11 @@ rawurl="http://packages.cloudant.com/rpm/6/x86_64" version="6">
       <Arch>x86_64</Arch>
     </Source>
 
+    <Source type="yum"
+rawurl="http://vm-37-00.dice.cluster/yum/bristol" version="6">
+      <Arch>x86_64</Arch>
+    </Source>
+
   </Group>
 
 </Sources>
