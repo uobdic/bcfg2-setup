@@ -117,6 +117,9 @@ COMMIT
 -A INPUT --source 183.82.97.0/24 -j DROP
 -A INPUT --source 200.0.0.0/8 -j DROP
 -A INPUT --source 184.154.42.194 -j DROP
+-A INPUT --source 46.45.176.0/21 -j DROP
+-A INPUT --source 141.212.0.0/16 -j DROP
+-A INPUT --source 94.102.48.0/20 -j DROP
 
 #if 'reverse-proxy' in $self.metadata.groups
 \# -----------------------------------------
