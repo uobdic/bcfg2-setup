@@ -140,4 +140,10 @@
     <Group name="hadoop" />
     <Group name="hbase" />
   </Group>
+
+  <Group profile="true" name="hep" public="true">
+    <Group name="basic-user" />
+    <Group name="hadoop" />
+    <Group name="hbase" />
+  </Group>
 </Groups>

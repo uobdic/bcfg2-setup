@@ -23,4 +23,5 @@
   <Client name="vm-mossaic.dice.cluster" profile="mossaic" />
   <Client name="vm-ci.dice.cluster" profile="ci" />
   <Client name="vm-cse.dice.cluster" profile="cse" />
+  <Client name="vm-hep.dice.cluster" profile="hep" />
 </Clients>
