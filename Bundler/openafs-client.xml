@@ -1,0 +1,6 @@
+<Bundle name="afs">
+  <Package name="openafs-client" />
+  <Path name="/usr/vice/etc/ThisCell" />
+  <Path name="/usr/vice/etc/cacheinfo" />
+  <Action name="restart-afs" />
+</Bundle>
