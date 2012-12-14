@@ -146,4 +146,9 @@
     <Group name="hadoop" />
     <Group name="hbase" />
   </Group>
+  
+  <Group profile="true" name="afs-test" public="true">
+    <Group name="basic" />
+    <Bundle name="openafs-client" />
+  </Group>
 </Groups>
