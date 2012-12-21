@@ -31,6 +31,9 @@
 
   <!-- Make sure hdfs user has home dir -->
   <Action name="create-hdfs-user" />
+
+  <!-- Loosen user constraints on nproc (num of processes) and nofile (no. of open files) -->
+  <Path name='/etc/security/limits.conf' />
 <!--
   <Action name="format-hadoop-namenode" />
   <Action name="clear-hadoop-logs" />
