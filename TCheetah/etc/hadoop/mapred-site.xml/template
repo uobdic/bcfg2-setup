@@ -27,14 +27,22 @@
   </property>
   <property>
     <name>mapred.tasktracker.map.tasks.maximum</name>
-    <value>2</value>
+    <value>12</value>
   </property>
   <property>
     <name>mapred.tasktracker.reduce.tasks.maximum</name>
-    <value>2</value>
+    <value>12</value>
   </property>
   <property>
     <name>mapred.jobtracker.job.history.block.size</name>
     <value>3145728</value>
+  </property>
+  <property>
+    <name>mapred.child.java.opts</name>
+    <value>-Xmx1024m</value>
+  </property>
+  <property>
+    <name>mapred.job.tracker.handler.count</name>
+    <value>20</value>
   </property>
 </configuration>

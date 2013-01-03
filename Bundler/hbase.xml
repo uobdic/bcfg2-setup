@@ -7,9 +7,9 @@
 
   <Path name='/opt/hbase/hbase-0.94.0/conf/hbase-site.xml' />
   <Path name='/opt/hbase/hbase-0.94.0/conf/hbase-env.sh' />
+  <Path name='/etc/profile.d/hbase-env.sh' />
   <Path name='/opt/hbase/hbase-0.94.0/conf/regionservers' />
 
-  <Action name="useradd-hbase" />
   <Action name="download-and-install-hbase" />
 
   <!-- Loosen user constraints on nproc (num of processes) and nofile (no. of open files) -->

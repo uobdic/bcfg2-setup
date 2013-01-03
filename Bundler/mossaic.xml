@@ -1,0 +1,15 @@
+<Bundle name="mossaic">
+  <Package name="make" />
+  <Package name="gcc" />
+  <Package name="wget" />
+  <Package name="zlib-devel" />
+  <Package name="openssl-devel" />
+  <Package name="patch" />
+  <Package name="bzip2-devel" />
+  <Path name="/opt/mossaic" />
+  <Path name="/opt/mossaic/etc/ssl/jobwrapper.cert.pem" />
+  <Path name="/opt/mossaic/etc/ssl/jobwrapper.key.pem" />
+  <Path name="/opt/mossaic/etc/bigcouch_nodes" />
+  <Action name="create-mossaic-user" />
+  <Action name="install-mossaic" />
+</Bundle>

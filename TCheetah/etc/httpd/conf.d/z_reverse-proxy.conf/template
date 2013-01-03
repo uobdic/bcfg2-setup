@@ -1,0 +1,495 @@
+LoadModule auth_cas_module modules/mod_auth_cas.so
+
+<IfModule mod_auth_cas.c>
+    CASCookiePath /var/cache/mod_auth_cas/
+    CASValidateURL https://sso.bris.ac.uk/sso/serviceValidate
+    CASLoginURL https://sso.bris.ac.uk/sso/login
+    CASCertificatePath /etc/httpd/CAs/
+</IfModule>
+
+Listen 5984
+Listen 5986
+Listen 443
+Listen 6986
+Listen 8080
+Listen 8984
+Listen 9984
+Listen 10080
+Listen 18080
+Listen 50070
+Listen 50075
+Listen 50030
+Listen 58080
+
+<Proxy balancer://bigcouch-jw>
+BalancerMember http://bc-37-00:5984 max=2 lbset=2
+BalancerMember http://bc-37-01:5984 max=2 lbset=0
+BalancerMember http://bc-37-02:5984 max=2 lbset=1
+ProxySet lbmethod=bytraffic timeout=300
+</Proxy>
+
+Header add Set-Cookie "ROUTEID=.%{BALANCER_WORKER_ROUTE}e; path=/" env=BALANCER_ROUTE_CHANGED
+<Proxy balancer://bigcouch>
+BalancerMember http://bc-37-00.dice.cluster:5984 lbset=0 route=1
+BalancerMember http://bc-37-01.dice.cluster:5984 lbset=2 route=2
+BalancerMember http://bc-37-02.dice.cluster:5984 lbset=1 route=3
+ProxySet stickysession=ROUTEID lbmethod=bytraffic timeout=300
+</Proxy>
+
+<Proxy balancer://hdfs>
+BalancerMember http://hd-37-00.dice.cluster:50075 route=1
+BalancerMember http://hd-37-01.dice.cluster:50075 route=2
+BalancerMember http://hd-37-02.dice.cluster:50075 route=3
+BalancerMember http://hd-37-03.dice.cluster:50075 route=4
+BalancerMember http://hd-37-04.dice.cluster:50075 route=5
+BalancerMember http://hd-37-05.dice.cluster:50075 route=6
+BalancerMember http://hd-37-06.dice.cluster:50075 route=7
+BalancerMember http://hd-37-07.dice.cluster:50075 route=8
+BalancerMember http://hd-38-00.dice.cluster:50075 route=9
+BalancerMember http://hd-38-01.dice.cluster:50075 route=10
+BalancerMember http://hd-38-02.dice.cluster:50075 route=11
+ProxySet stickysession=ROUTEID
+</Proxy>
+
+\# CI host (Jenkins)
+\# SSL encryption and SSO auth
+<VirtualHost *:58080>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group couch
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from 137.222. 10.132.0. 94.192.83.
+   </Proxy>
+   ProxyPass / http://vm-ci.dice.cluster:8080/ nocanon
+   ProxyPassReverse / http://vm-ci.dice.cluster:8080/
+   ErrorLog "logs/ci-error_log"
+   CustomLog "logs/ci-access_log" common
+</VirtualHost>
+
+\# Redirect regular couch ports to secure ports
+#if 'io-37-00' in $self.metadata.hostname
+<VirtualHost dice-io-37-00.acrc.bris.ac.uk:5984>
+    Redirect permanent / https://dice-io-37-00.acrc.bris.ac.uk:443/
+</VirtualHost>
+<VirtualHost dice-io-37-00.acrc.bris.ac.uk:5986>
+    Redirect permanent / https://dice-io-37-00.acrc.bris.ac.uk:6986/
+</VirtualHost>
+#elif 'io-37-01' in $self.metadata.hostname
+<VirtualHost dice-io-37-01.acrc.bris.ac.uk:5984>
+    Redirect permanent / https://dice-io-37-01.acrc.bris.ac.uk:443/
+</VirtualHost>
+<VirtualHost dice-io-37-01.acrc.bris.ac.uk:5986>
+    Redirect permanent / https://dice-io-37-01.acrc.bris.ac.uk:6986/
+</VirtualHost>
+#else
+<VirtualHost $self.metadata.hostname:5984>
+    Redirect permanent / https://$self.metadata.hostname:443/
+</VirtualHost>
+<VirtualHost $self.metadata.hostname:5986>
+    Redirect permanent / https://$self.metadata.hostname:6986/
+</VirtualHost>
+#end if
+
+\# BigCouch cluster
+\# SSL encryption and SSO auth
+<VirtualHost *:443>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group couch
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from 10.132.0. 137.222. 94.192.83. 137.222.99.19 192.76.7.207 82.132.
+   </Proxy>
+   <Proxy */executable>
+      Order deny,allow
+      Deny from all
+   </Proxy>
+   ProxyPass /_users balancer://bigcouch-admin/_users nocanon
+   ProxyPass / balancer://bigcouch/ nocanon
+   ProxyPassReverse / balancer://bigcouch/
+   ErrorLog "logs/bc-error_log"
+   CustomLog "logs/bc-access_log" common
+</VirtualHost>
+
+\# BigCouch cluster
+\# SSL encryption and SSL certificate auth
+<VirtualHost *:8080>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   SSLVerifyClient require
+   SSLVerifyDepth 4
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      Order deny,allow
+      Deny from all
+      Allow from 10.132.0. 137.222.171. 137.222.74. 137.222.58. 163.1.5. 163.1.74. 163.1.245. 146.179.247. 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
+   </Proxy>
+   <Proxy */executable>
+      Order deny,allow
+      Deny from all
+      Allow from 10.132.0. 137.222.171. 163.1.5. 163.1.74. 163.1.245. 146.179.247. 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
+   </Proxy>
+   ProxyPass / balancer://bigcouch-jw/ nocanon
+   ProxyPassReverse / balancer://bigcouch-jw/
+   ErrorLog "logs/bc-sslauth-error_log"
+   CustomLog "logs/bc-sslauth-access_log" common
+</VirtualHost>
+
+\# BigCouch cluster
+\# No encryption and no auth
+\# Restricted to internal cluster only
+<VirtualHost *:8984>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      Order deny,allow
+      Deny from all
+      Allow from 10.132.0. 137.222.79.
+   </Proxy>
+   <Proxy */executable>
+      Order deny,allow
+      Deny from all
+      Allow from 10.132.0. 137.222.79.
+   </Proxy>
+   ProxyPass /_users balancer://bigcouch-admin/_users nocanon
+   ProxyPass / balancer://bigcouch/ nocanon
+   ProxyPassReverse / balancer://bigcouch/
+   ErrorLog "logs/bc-noauth-nossl-error_log"
+   CustomLog "logs/bc-noauth-nossl-access_log" common
+</VirtualHost>
+
+\# BigCouch cluster
+\# Encryption and no auth
+\# Restricted to internal and specific hosts only
+<VirtualHost *:9984>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      Order deny,allow
+      Deny from all
+      Allow from 10.132.0. 137.222.79. 137.222.74. 137.222.58. 137.222.99.19
+   </Proxy>
+   <Proxy */executable>
+      Order deny,allow
+      Deny from all
+   </Proxy>
+   ProxyPass / balancer://bigcouch/ nocanon
+   ProxyPassReverse / balancer://bigcouch/
+   ErrorLog "logs/bc-noauth-error_log"
+   CustomLog "logs/bc-noauth-access_log" common
+</VirtualHost>
+
+\# BigCouch admin port
+\# SSL encryption and SSO auth
+<VirtualHost *:6986>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   SSLVerifyClient require
+   SSLVerifyDepth 4
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group couch
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from 137.222.74. 137.222.58. 10.132.0.
+   </Proxy>
+   ProxyPass / balancer://bigcouch-admin/ nocanon
+   ProxyPassReverse / balancer://bigcouch-admin/
+   ErrorLog "logs/bc-admin-error_log"
+   CustomLog "logs/bc-admin-access_log" common
+</VirtualHost>
+
+\# HDFS NameNode web interface
+\# SSL encryption and SSO auth
+<VirtualHost *:50070>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   ProxyRequests Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from 137.222. 10.132.0. 94.192.83.
+   </Proxy>
+   ProxyPass / http://nn-37-00.dice.cluster:50070/ nocanon
+   ProxyPassReverse / http://nn-37-00.dice.cluster:50070/
+   ErrorLog "logs/hadoop-nn-error_log"
+   CustomLog "logs/hadoop-nn-access_log" common
+</VirtualHost>
+
+\# Hadoop JobTracker web interface
+\# SSL encryption and SSO auth
+<VirtualHost *:50030>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   ProxyRequests Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from 137.222. 10.132.0. 94.192.83.
+   </Proxy>
+   ProxyPass / http://nn-37-00.dice.cluster:50030/ nocanon
+   ProxyPassReverse / http://nn-37-00.dice.cluster:50030/
+   ErrorLog "logs/hadoop-jt-error_log"
+   CustomLog "logs/hadoop-jt-access_log" common
+</VirtualHost>
+
+\# HDFS web interface
+<VirtualHost *:50075>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   ProxyRequests Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from 137.222. 10.132.0. 94.192.83.
+   </Proxy>
+   ProxyPass / balancer://hdfs/ nocanon
+   ProxyPassReverse / balancer://hdfs/
+   ErrorLog "logs/hadoop-hdfs-error_log"
+   CustomLog "logs/hadoop-hdfs-access_log" common
+</VirtualHost>
+
+\# CSE RESTful web service
+\# SSL encryption
+<VirtualHost *:10080>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from 10.132.0. 137.222.
+   </Proxy>
+   ProxyPass / http://vm-cse.dice.cluster:80/ nocanon
+   ProxyPassReverse / http://vm-cse.dice.cluster:80/
+   ErrorLog "logs/cse-error_log"
+   CustomLog "logs/cse-access_log" common
+</VirtualHost>
+
+\# CSE RESTful web service
+\# SSL encryption
+<VirtualHost *:18080>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group hadoop
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from 10.132.0. 137.222.
+   </Proxy>
+   ProxyPass / http://vm-cse.dice.cluster:8080/ nocanon
+   ProxyPassReverse / http://vm-cse.dice.cluster:8080/
+   ErrorLog "logs/cse-8080-error_log"
+   CustomLog "logs/cse-8080-access_log" common
+</VirtualHost>

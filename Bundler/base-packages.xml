@@ -2,8 +2,10 @@
   <Path name="/etc/bcfg2.conf" />
   <Path name="/etc/bcfg2.crt" />
   <Path name="/etc/resolv.conf" />
+  <Path name="/etc/sysconfig/yum-autoupdate" />
   <Action name="writeable-sudoers" />
   <Path name="/etc/sudoers" />
+  <Path name="/etc/hosts" />
   <Package name="bcfg2" />
   <Package name="yum" />
   <Package name="MAKEDEV" />
@@ -124,9 +126,11 @@
   <Package name="lynx" />
   <Package name="mailcap" />
   <Package name="mailx" />
+  <Package name="man" />
   <Package name="mingetty" />
   <Package name="module-init-tools" />
   <Package name="mysql-libs" />
+  <Package name="nano" />
   <Package name="ncurses" />
   <Package name="ncurses-base" />
   <Package name="ncurses-libs" />

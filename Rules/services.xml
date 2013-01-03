@@ -18,4 +18,6 @@
   <Service type="chkconfig" status="on" name="rpcbind" />
   <Service type="chkconfig" status="on" name="rsyslog" />
   <Service type="chkconfig" status="on" name="sysstat" />
+  <Service type="chkconfig" status="on" name="munin-node" />
+  <Service type="chkconfig" status="on" name="bigcouch" />
 </Rules>

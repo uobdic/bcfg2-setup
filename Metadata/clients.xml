@@ -1,4 +1,5 @@
 <Clients version="3.0">
+  <Client name="test-pxe-vm.dice.cluster" profile="afs-test" />
   <Client name="hd-37-00.dice.cluster" profile="hadoop-worker-zookeeper" />
   <Client name="hd-37-01.dice.cluster" profile="hadoop-worker-zookeeper" />
   <Client name="hd-37-02.dice.cluster" profile="hadoop-worker-zookeeper" />
@@ -15,7 +16,12 @@
   <Client name="bc-37-00.dice.cluster" profile="couch" />
   <Client name="bc-37-01.dice.cluster" profile="couch" />
   <Client name="bc-37-02.dice.cluster" profile="couch" />
-  <Client name="io-37-00.dice.cluster" profile="router" />
-  <Client name="io-37-01.dice.cluster" profile="router" />
-  <Client name="vm-37-00.dice.cluster" profile="local-tarballs" />
+  <Client name="io-37-00.dice.cluster" profile="io" />
+  <Client name="io-37-01.dice.cluster" profile="io" />
+  <Client name="vm-37-00.dice.cluster" profile="admin-node-0" />
+  <Client name="vm-37-01.dice.cluster" profile="admin-node-1" />
+  <Client name="vm-mossaic.dice.cluster" profile="mossaic" />
+  <Client name="vm-ci.dice.cluster" profile="ci" />
+  <Client name="vm-cse.dice.cluster" profile="cse" />
+  <Client name="vm-hep.dice.cluster" profile="hep" />
 </Clients>

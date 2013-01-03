@@ -1,0 +1,18 @@
+<Rules priority="0">
+  <Path type="directory" group="mossaic" name="/opt/mossaic" owner="mossaic" perms="0755" />
+  <Action name="install-mossaic" timing="post" when="modified" status="check"
+    command='
+      mkdir -p /opt/mossaic/staging &amp;&amp;
+      curl -o /opt/mossaic/staging/mossaic-0.3.0.tar.gz http://vm-37-00.dice.cluster/tarballs/mossaic-0.3.0.tar.gz &amp;&amp;
+      cd /opt/mossaic/staging &amp;&amp;
+      tar xvfz mossaic-0.3.0.tar.gz &amp;&amp;
+      cd /opt/mossaic/staging/mossaic-0.3.0 &amp;&amp;
+      echo "" | ./configure -p /opt/mossaic -v vo.landslides.mossaic.org -s UoB-Hep-Development -u dips://chevner.phy.bris.ac.uk:9135/Configuration/Server -a michael.wallace@bristol.ac.uk &amp;&amp;
+      make lite &amp;&amp;
+      chown -R mossaic:mossaic /opt/mossaic'
+  />
+  <Action name="create-mossaic-user" timing="pre" when="modified" status="ignore"
+    command='groupadd mossaic &amp;&amp;
+      useradd -c "mossaic system user" -d /opt/mossaic -g mossaic mossaic'
+  />
+</Rules>

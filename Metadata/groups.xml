@@ -2,6 +2,7 @@
   <Group profile="true" public="true" default="true" name="basic">
     <Group name="sci-linux" />
     <Group name="x86_64" />
+    <Group name="munin-node" />
   </Group>
   <Group name="ubuntu" />
   <Group name="debian" />
@@ -15,6 +16,10 @@
   <Group name="sci-linux">
     <Group name="redhat" />
     <Bundle name="git" />
+  </Group>
+
+  <Group name="munin-node">
+    <Bundle name="munin-node" />
   </Group>
 
   <Group profile="true" name="bcfg2-server" public="true">
@@ -87,11 +92,63 @@
 
   <Group profile="true" name="router" public="true">
     <Bundle name="router" />
+  </Group>
+
+  <Group profile="true" name="io" public="true">
+    <Group name="router" />
     <Group name="basic-user" />
+    <Group name="reverse-proxy" />
+  </Group>
+
+  <Group name="reverse-proxy" public="true">
+    <Bundle name="apache" />
+    <Bundle name="reverse-proxy" />
+  </Group>
+
+  <Group profile="true" name="ci" public="true">
+    <Group name="basic" />
+    <Bundle name="jenkins" />
   </Group>
 
   <Group profile="true" name="local-tarballs" public="true">
     <Bundle name="apache" />
     <Bundle name="local-tarballs" />
+  </Group>
+
+  <Group profile="true" name="vm-host" public="true">
+    <Group name="basic" />
+  </Group>
+
+  <Group profile="true" name="admin-node-0" public="true">
+    <Group name="vm-host" />
+    <Group name="local-tarballs" />
+    <Bundle name="munin-master" />
+  </Group>
+
+  <Group profile="true" name="admin-node-1" public="true">
+    <Group name="vm-host" />
+    <Group name="bcfg2-server" />
+    <Bundle name="munin-master" />
+  </Group>
+
+  <Group profile="true" name="mossaic" public="true">
+    <Group name="basic" />
+    <Bundle name="mossaic" />
+  </Group>
+
+  <Group profile="true" name="cse" public="true">
+    <Group name="hadoop" />
+    <Group name="hbase" />
+  </Group>
+
+  <Group profile="true" name="hep" public="true">
+    <Group name="basic-user" />
+    <Group name="hadoop" />
+    <Group name="hbase" />
+  </Group>
+  
+  <Group profile="true" name="afs-test" public="true">
+    <Group name="basic" />
+    <Bundle name="openafs-client" />
   </Group>
 </Groups>
