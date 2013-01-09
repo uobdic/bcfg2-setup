@@ -148,7 +148,7 @@
   </Group>
   
   <Group profile="true" name="afs-test" public="true">
-    <Group name="basic" />
+    <Group name="basic-user" />
     <Bundle name="openafs-client" />
   </Group>
 </Groups>
