@@ -1,4 +1,4 @@
-<Bundle name="afs">
+<Bundle name="openafs-client">
   <Package name="openafs-client" />
   <Path name="/usr/vice/etc/ThisCell" />
   <Path name="/usr/vice/etc/cacheinfo" />
