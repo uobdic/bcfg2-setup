@@ -7,7 +7,7 @@
 :OUTPUT ACCEPT [0:0]
 \# DNS servers can't have static route so need to be NATed
 #if $self.metadata.hostname.startswith('io-37-00')
--A POSTROUTING -o em2 -j SNAT --to-source 137.222.79.2
+-A POSTROUTING -o em2 -j SNAT --to-source 137.222.79.1
 #elif $self.metadata.hostname.startswith('io-37-01')
 -A POSTROUTING -o em2 -j SNAT --to-source 137.222.79.2
 #end if
