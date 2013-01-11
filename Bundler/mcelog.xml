@@ -1,0 +1,25 @@
+<Bundle name="mcelog">
+  <Package name="mcelog" />
+  <Service name="mcelog" />
+  
+  <!-- exclude VMs -->
+  <Group name='ci' negate='true'>
+  	<Package name="mcelog" />
+  	<Service name="mcelog" />
+  </Group>
+  
+  <Group name='mossaic' negate='true'>
+  	<Package name="mcelog" />
+  	<Service name="mcelog" />
+  </Group>
+  
+  <Group name='cse' negate='true'>
+  	<Package name="mcelog" />
+  	<Service name="mcelog" />
+  </Group>
+  
+  <Group name='hep' negate='true'>
+  	<Package name="mcelog" />
+  	<Service name="mcelog" />
+  </Group>
+</Bundle>

@@ -1,5 +1,4 @@
 <Clients version="3.0">
-  <Client name="test-pxe-vm.dice.cluster" profile="afs-test" />
   <Client name="hd-37-00.dice.cluster" profile="hadoop-worker-zookeeper" />
   <Client name="hd-37-01.dice.cluster" profile="hadoop-worker-zookeeper" />
   <Client name="hd-37-02.dice.cluster" profile="hadoop-worker-zookeeper" />
@@ -20,8 +19,10 @@
   <Client name="io-37-01.dice.cluster" profile="io" />
   <Client name="vm-37-00.dice.cluster" profile="admin-node-0" />
   <Client name="vm-37-01.dice.cluster" profile="admin-node-1" />
+<!-- VMs -->
   <Client name="vm-mossaic.dice.cluster" profile="mossaic" />
   <Client name="vm-ci.dice.cluster" profile="ci" />
   <Client name="vm-cse.dice.cluster" profile="cse" />
   <Client name="vm-hep.dice.cluster" profile="hep" />
+  <Client name="test-pxe-vm.dice.cluster" profile="afs-test" />
 </Clients>
