@@ -1,0 +1,9 @@
+SW_DIR=$VO_SW_DIR/zeus
+DEFAULT_SE=$SE_HOST
+STORAGE_DIR=$SE_ACCESSPOINT/zeus
+
+VOMS_SERVERS="'vomss://grid-voms.desy.de:8443/voms/zeus?/zeus/'"
+VOMSES="'zeus grid-voms.desy.de 15112 /C=DE/O=GermanGrid/OU=DESY/CN=host/grid-voms.desy.de zeus'" 
+
+VOMS_POOL_PATH=""
+VOMS_CA_DN="'/C=DE/O=GermanGrid/CN=GridKa-CA'"

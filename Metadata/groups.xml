@@ -157,4 +157,18 @@
     <Bundle name="openafs-client" />
     <Group name="virtual-machine" />
   </Group>
+  
+  <Group name="emi-ui-node" public="True">
+  	<Group name="basic-user" />
+  	<Bundle name="emi-ui" />
+  </Group>
+  
+  <Group profile="true" name="test-vm" public="true">
+    <Group name="basic-user" />
+    <Group name="virtual-machine" />
+    <!-- HEP testing -->
+    <Group name="emi-ui-node" />
+    <Bundle name="openafs-client" />
+  </Group>
+  
 </Groups>

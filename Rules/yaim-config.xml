@@ -1,0 +1,4 @@
+<Rules priority="0">
+	<Action name="yaim-config" timing="post" when="modified" status="ignore"
+		command="/opt/glite/yaim/bin/yaim -c -s /root/yaim-conf/site-info.def -n UI" />
+</Rules>
