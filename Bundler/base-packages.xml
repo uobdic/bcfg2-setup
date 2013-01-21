@@ -244,4 +244,9 @@
   <Service name="rpcbind" />
   <Service name="rsyslog" />
   <Service name="sysstat" />
+   <!-- exclude some packages from VMs -->
+  <Group name='virtual-machine' negate='true'>
+  	<Package name="smartmontools" />
+  	<Service name="smartd" />
+  </Group>
 </Bundle>
