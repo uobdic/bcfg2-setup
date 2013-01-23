@@ -158,7 +158,7 @@
     <Group name="virtual-machine" />
   </Group>
   
-  <Group name="emi-ui-node" public="True">
+  <Group name="emi-ui-node" public="true">
   	<Group name="basic-user" />
   	<Bundle name="emi-ui" />
   </Group>
