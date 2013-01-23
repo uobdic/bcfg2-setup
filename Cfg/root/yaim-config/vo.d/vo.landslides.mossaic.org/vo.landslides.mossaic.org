@@ -1,0 +1,7 @@
+SW_DIR="$VO_SW_DIR/lsl"
+DEFAULT_SE="$SE_HOST"
+STORAGE_DIR="$SE_ACCESSPOINT/lsl"
+
+VOMS_SERVERS="vomss://voms.gridpp.ac.uk:8443/voms/vo.landslides.mossaic.org"
+VOMSES="'vo.landslides.mossaic.org voms.gridpp.ac.uk 15502 /C=UK/O=eScience/OU=Manchester/L=HEP/CN=voms.gridpp.ac.uk vo.landslides.mossaic.org'"
+VOMS_CA_DN="'/C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA 2B'"

@@ -1,0 +1,7 @@
+SW_DIR="$VO_SW_DIR/ngs"
+DEFAULT_SE="$SE_HOST"
+STORAGE_DIR="$SE_ACCESSPOINT/ngs"
+
+VOMS_SERVERS="vomss://voms.ngs.ac.uk:8443/voms/ngs.ac.uk?/ngs.ac.uk/"
+VOMSES="'ngs.ac.uk voms.ngs.ac.uk 15010 /C=UK/O=eScience/OU=Manchester/L=MC/CN=voms.ngs.ac.uk/Email=support@grid-support.ac.uk ngs.ac.uk'"
+VOMS_CA_DN="'/C=UK/O=eScienceCA/OU=Authority/CN=UK e-Science CA' "

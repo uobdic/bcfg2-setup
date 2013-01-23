@@ -1,0 +1,8 @@
+SW_DIR=$VO_SW_DIR/alice
+DEFAULT_SE=$SE_HOST
+STORAGE_DIR=$SE_ACCESSPOINT/alice
+
+VOMS_SERVERS="'vomss://voms.cern.ch:8443/voms/alice?/alice/'"
+VOMSES="'alice lcg-voms.cern.ch 15000 /DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch alice'                                       'alice voms.cern.ch     15000 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch alice'"
+
+VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"
