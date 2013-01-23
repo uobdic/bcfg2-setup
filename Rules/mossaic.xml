@@ -3,7 +3,8 @@
   <Action name="install-mossaic" timing="post" when="always" status="check"
     command='
       export VERSION=0.4.2 &amp;&amp;
-      installed_version=`cat /opt/mossaic/lib/python2.7/site-packages/mossaic/version.py || echo "not_installed" | cut -d &apos;&quot;&apos; -f 2` &amp;&amp;
+      installed_version=`cat /opt/mossaic/lib/python2.7/site-packages/mossaic/version.py || echo "not_installed"` &amp;&amp;
+      installed_version=`echo $installed_version | cut -d &apos;&quot;&apos; -f 2` &amp;&amp;
       [ $VERSION != $installed_version ] &amp;&amp;
       export RELEASE=mossaic-$VERSION &amp;&amp;
       mkdir -p /opt/mossaic/staging &amp;&amp;
