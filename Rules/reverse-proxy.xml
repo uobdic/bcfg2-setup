@@ -1,0 +1,6 @@
+<Rules priority="0">
+  <Action name="remove-auth-cas-config" timing="post" when="modified" status="ignore"
+      command="rm /etc/httpd/conf.d/auth_cas.conf" />
+  <Action name="rehash-CAs" timing="post" when="modified" status="check"
+      command="c_rehash /etc/httpd/CAs" />
+</Rules>

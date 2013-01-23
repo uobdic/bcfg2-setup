@@ -1,0 +1,23 @@
+<Rules priority="0">
+  <Path type="directory" group="mossaic" name="/opt/mossaic" owner="mossaic" perms="0755" />
+  <Action name="install-mossaic" timing="post" when="always" status="check"
+    command='
+      export VERSION=0.4.2 &amp;&amp;
+      installed_version=`cat /opt/mossaic/lib/python2.7/site-packages/mossaic/version.py || echo "not_installed"` &amp;&amp;
+      installed_version=`echo $installed_version | cut -d &apos;&quot;&apos; -f 2` &amp;&amp;
+      [ $VERSION != $installed_version ] &amp;&amp;
+      export RELEASE=mossaic-$VERSION &amp;&amp;
+      mkdir -p /opt/mossaic/staging &amp;&amp;
+      curl -o /opt/mossaic/staging/$RELEASE.tar.gz http://vm-37-00.dice.cluster/tarballs/$RELEASE.tar.gz &amp;&amp;
+      cd /opt/mossaic/staging &amp;&amp;
+      tar xvfz $RELEASE.tar.gz &amp;&amp;
+      cd /opt/mossaic/staging/$RELEASE &amp;&amp;
+      echo "" | ./configure -p /opt/mossaic -v vo.landslides.mossaic.org -s UoB-Hep-Development -u dips://chevner.phy.bris.ac.uk:9135/Configuration/Server -a michael.wallace@bristol.ac.uk &amp;&amp;
+      make lite &amp;&amp;
+      chown -R mossaic:mossaic /opt/mossaic'
+  />
+  <Action name="create-mossaic-user" timing="pre" when="modified" status="ignore"
+    command='groupadd mossaic &amp;&amp;
+      useradd -c "mossaic system user" -d /opt/mossaic -g mossaic mossaic'
+  />
+</Rules>

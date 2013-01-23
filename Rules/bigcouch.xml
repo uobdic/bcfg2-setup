@@ -1,0 +1,12 @@
+<Rules priority="0">
+  <Action name="stop-bigcouch" timing="pre" when="modified" status="ignore"
+      command="/etc/init.d/bigcouch stop" />
+  <Action name="create-bigcouch-dirs" timing="post" when="modified" status="ignore"
+      command="mkdir -p /h2/bigcouch/var/lib &amp;&amp; chown -R bigcouch:bigcouch /h2/bigcouch;
+          mkdir -p /h3/bigcouch/var/lib &amp;&amp; chown -R bigcouch:bigcouch /h3/bigcouch;
+          mkdir -p /h1/bigcouch/var/log &amp;&amp; chown -R bigcouch:bigcouch /h1/bigcouch" />
+  <Action name="finalise-node" timing="post" when="modified" status="ignore"
+      command="chown -R bigcouch:bigcouch /opt/bigcouch/etc/local.ini &amp;&amp;
+          /etc/init.d/bigcouch start &amp;&amp; sleep 5 &amp;&amp; /opt/bigcouch/bin/populate-nodes.sh &amp;&amp;
+          curl -f -X PUT http://localhost:5986/_config/admins/BIGCOUCH_ADMIN_USERNAME -d '&quot;BIGCOUCH_ADMIN_PASSWORD&quot;'" />
+</Rules>

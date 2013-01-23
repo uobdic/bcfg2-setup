@@ -1,0 +1,20 @@
+<Bundle name="reverse-proxy">
+  <Package name="mod_ssl" />
+  <Package name="mod_auth_cas" />
+  <Package name="openssl-perl" />
+  <Path name="/etc/sysconfig/httpd" />
+  <Path name="/etc/httpd/conf.d/ssl.conf" />
+  <Path name="/etc/httpd/conf.d/z_reverse-proxy.conf" />
+  <Path name="/etc/httpd/conf/group" />
+  <Path name="/etc/httpd/conf/httpd.conf" />
+  <Path name="/var/cache/mod_auth_cas" />
+  <Path name="/etc/httpd/CAs" />
+  <Path name="/etc/httpd/CAs/thawteprimaryrootca.pem" />
+  <Path name="/etc/httpd/CAs/thawtesslca.pem" />
+  <Path name="/etc/httpd/CAs/thawtepremiumserverca.pem" />
+  <Path name="/root/certs/hostkey.pem" />
+  <Path name="/root/certs/hostcert.pem" />
+  <Path name="/root/certs/escience.chain" />
+  <Action name="remove-auth-cas-config" />
+  <Action name="rehash-CAs" />
+</Bundle>

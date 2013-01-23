@@ -1,6 +1,0 @@
-[cloudant]
-name=Cloudant Repo
-baseurl=http://packages.cloudant.com/rpm/6/$basearch
-enabled=1
-gpgcheck=0
-

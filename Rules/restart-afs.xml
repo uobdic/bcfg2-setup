@@ -1,0 +1,4 @@
+<Rules priority="0">
+  <Action name="restart-afs" timing="post"
+      command="/etc/init.d/afs restart" when="modified" status="ignore" />
+</Rules>

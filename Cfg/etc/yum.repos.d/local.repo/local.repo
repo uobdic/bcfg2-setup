@@ -1,5 +1,0 @@
-[local-repo]
-name = Local YUM Repository for cluster RPMs
-baseurl = http://bcfg2-server/localrepo/
-gpgcheck = 0
-enabled=1

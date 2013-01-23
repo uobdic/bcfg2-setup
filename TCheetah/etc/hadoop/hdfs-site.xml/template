@@ -28,4 +28,12 @@
     <name>dfs.support.append</name>
     <value>true</value>
   </property>
+ <property>
+    <name>dfs.permissions</name>
+    <value>false</value>
+ </property>
+ <property>
+    <name>dfs.namenode.handler.count</name>
+    <value>20</value>
+ </property>
 </configuration>
