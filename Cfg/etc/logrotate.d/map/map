@@ -1,0 +1,7 @@
+/opt/mossaic/var/log/jobmanager.log /opt/mossaic/var/log/jobmanager.nohup.stdout /opt/mossaic/var/log/jobmanager.nohup.stderr {
+    copytruncate
+    compress
+    size 100M
+    rotate 10
+    missingok
+}
