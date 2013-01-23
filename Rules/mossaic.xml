@@ -2,7 +2,7 @@
   <Path type="directory" group="mossaic" name="/opt/mossaic" owner="mossaic" perms="0755" />
   <Action name="install-mossaic" timing="post" when="always" status="check"
     command='
-      export VERSION=0.4.1 &amp;&amp;
+      export VERSION=0.4.2 &amp;&amp;
       installed_version=`cat /opt/mossaic/lib/python2.7/site-packages/mossaic/version.py || echo "not_installed" | cut -d &apos;&quot;&apos; -f 2` &amp;&amp;
       [ $VERSION != $installed_version ] &amp;&amp;
       export RELEASE=mossaic-$VERSION &amp;&amp;
