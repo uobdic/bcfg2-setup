@@ -1,0 +1,9 @@
+SW_DIR=$VO_SW_DIR/lhcb
+DEFAULT_SE=$SE_HOST
+STORAGE_DIR=$SE_ACCESSPOINT/lhcb
+
+VOMS_SERVERS="'vomss://voms.cern.ch:8443/voms/lhcb?/lhcb/'"
+VOMSES="'lhcb lcg-voms.cern.ch 15003 /DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch lhcb'
+        'lhcb voms.cern.ch     15003 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch     lhcb'"
+VOMS_EXTRA_MAPS="lcgprod lhcbprod"
+VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"

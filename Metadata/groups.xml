@@ -7,6 +7,7 @@
   <Group name="ubuntu" />
   <Group name="debian" />
   <Group name="x86_64" />
+  <Group name="virtual-machine" />
 
   <Group name="redhat">
     <Bundle name="motd" />
@@ -107,6 +108,7 @@
 
   <Group profile="true" name="ci" public="true">
     <Group name="basic" />
+    <Group name="virtual-machine" />
     <Bundle name="jenkins" />
   </Group>
 
@@ -134,21 +136,39 @@
   <Group profile="true" name="mossaic" public="true">
     <Group name="basic-user" />
     <Bundle name="mossaic" />
+    <Group name="virtual-machine" />
   </Group>
 
   <Group profile="true" name="cse" public="true">
     <Group name="hadoop" />
     <Group name="hbase" />
+    <Group name="virtual-machine" />
   </Group>
 
   <Group profile="true" name="hep" public="true">
     <Group name="basic-user" />
     <Group name="hadoop" />
     <Group name="hbase" />
+    <Group name="virtual-machine" />
   </Group>
   
   <Group profile="true" name="afs-test" public="true">
     <Group name="basic-user" />
     <Bundle name="openafs-client" />
+    <Group name="virtual-machine" />
   </Group>
+  
+  <Group name="emi-ui-node" public="True">
+  	<Group name="basic-user" />
+  	<Bundle name="emi-ui" />
+  </Group>
+  
+  <Group profile="true" name="test-vm" public="true">
+    <Group name="basic-user" />
+    <Group name="virtual-machine" />
+    <!-- HEP testing -->
+    <Group name="emi-ui-node" />
+    <Bundle name="openafs-client" />
+  </Group>
+  
 </Groups>
