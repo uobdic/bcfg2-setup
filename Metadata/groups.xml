@@ -171,4 +171,11 @@
     <Bundle name="openafs-client" />
   </Group>
   
+  <Group profile="true" name="astro" public="true">
+    <Group name="basic-user" />
+    <Group name="hadoop" />
+    <Group name="hbase" />
+    <Group name="virtual-machine" />
+  </Group>
+  
 </Groups>

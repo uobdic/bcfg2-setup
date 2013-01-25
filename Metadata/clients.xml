@@ -24,5 +24,6 @@
   <Client name="vm-ci.dice.cluster" profile="ci" />
   <Client name="vm-cse.dice.cluster" profile="cse" />
   <Client name="vm-hep.dice.cluster" profile="hep" />
+  <Client name="vm-astro.dice.cluster" profile="astro" />
   <Client name="test-pxe-vm.dice.cluster" profile="test-vm" />
 </Clients>
