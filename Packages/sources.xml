@@ -23,20 +23,17 @@
 	</Group>
 
 	<Group name="emi-ui-node">
-		<Source type="yum" url="http://emisoft.web.cern.ch/emisoft/dist/EMI/2" version="sl6">
+		<Source type="yum" rawurl="http://emisoft.web.cern.ch/emisoft/dist/EMI/2/sl6/x86_64/base">
 			<GPGKey>http://emisoft.web.cern.ch/emisoft/dist/EMI/2/RPM-GPG-KEY-emi</GPGKey>
-			<!-- The way bcfg2 constructs the urls is -->
-			<!-- <url>/<version>/<component>/<arch> -->
-			<!-- Hence, we will misuse the terminology to our needs to add -->
-			<!-- http://emisoft.web.cern.ch/emisoft/dist/EMI/2/sl6/x86_64/base -->
-			<!-- http://emisoft.web.cern.ch/emisoft/dist/EMI/2/sl6/x86_64/contribs -->
-			<!-- http://emisoft.web.cern.ch/emisoft/dist/EMI/2/sl6/x86_64/third-party -->
-			<!-- http://emisoft.web.cern.ch/emisoft/dist/EMI/2/sl6/x86_64/updates -->
-			<Component>x86_64</Component>
-			<Arch>base</Arch>
-			<Arch>contribs</Arch>
-			<Arch>third-party</Arch>
-			<Arch>updates</Arch>
+		</Source>
+		<Source type="yum" rawurl="http://emisoft.web.cern.ch/emisoft/dist/EMI/2/sl6/x86_64/contribs">
+			<GPGKey>http://emisoft.web.cern.ch/emisoft/dist/EMI/2/RPM-GPG-KEY-emi</GPGKey>
+		</Source>
+		<Source type="yum" rawurl="http://emisoft.web.cern.ch/emisoft/dist/EMI/2/sl6/x86_64/third-party">
+			<GPGKey>http://emisoft.web.cern.ch/emisoft/dist/EMI/2/RPM-GPG-KEY-emi</GPGKey>
+		</Source>
+		<Source type="yum" rawurl="http://emisoft.web.cern.ch/emisoft/dist/EMI/2/sl6/x86_64/updates">
+			<GPGKey>http://emisoft.web.cern.ch/emisoft/dist/EMI/2/RPM-GPG-KEY-emi</GPGKey>
 		</Source>
 		<Source type="yum" rawurl="http://repository.egi.eu/sw/production/cas/1/current">
 			<GPGKey>http://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3</GPGKey>
