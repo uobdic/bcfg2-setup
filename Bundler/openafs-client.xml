@@ -1,5 +1,8 @@
 <Bundle name="openafs-client">
+  <Package name="openafs" />
   <Package name="openafs-client" />
+  <Package name="kmod-openafs" />
+  <Package name="fuse-libs" />
   <Path name="/usr/vice/etc/ThisCell" />
   <Path name="/usr/vice/etc/cacheinfo" />
   <Action name="restart-afs" />
