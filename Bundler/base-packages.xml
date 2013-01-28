@@ -1,7 +1,6 @@
 <Bundle name="base-packages">
   <Path name="/etc/bcfg2.conf" />
   <Path name="/etc/bcfg2.crt" />
-  <Path name="/etc/resolv.conf" />
   <Path name="/etc/sysconfig/yum-autoupdate" />
   <Action name="writeable-sudoers" />
   <Path name="/etc/sudoers" />
@@ -86,6 +85,7 @@
   <Package name="iputils" />
   <Package name="kbd" />
   <Package name="kbd-misc" />
+  <Package name="kernel" version="2.6.32-279.19.1.el6"/>
   <Package name="keyutils-libs" />
   <Package name="krb5-libs" />
   <Package name="less" />
@@ -201,7 +201,10 @@
   <Package name="sl-indexhtml" />
   <Package name="sl-release" />
   <Package name="slang" />
-  <Package name="smartmontools" />
+  <Group name='virtual-machine' negate='true'>
+   <!-- exclude from VMs -->
+  	<Package name="smartmontools" />
+  </Group>
   <Package name="sqlite" />
   <Package name="sudo" />
   <Package name="sysstat" />
@@ -225,18 +228,23 @@
   <Package name="yum-plugin-fastestmirror" />
   <Package name="yum-plugin-security" />
   <Package name="yum-utils" />
+  <Package name="xz" />
+  <Package name="xz-lzma-compat" />
   <Package name="zlib" />
   <Service name="auditd" />
   <Service name="iptables" />
   <Service name="network" />
   <Service name="postfix" />
   <Service name="rpcgssd" />
-  <Service name="smartd" />
   <Service name="udev-post" />
   <Service name="bcfg2" />
   <Service name="nfslock" />
   <Service name="psacct" />
   <Service name="rpcidmapd" />
+  <Group name='virtual-machine' negate='true'>
+   <!-- exclude from VMs -->
+  	<Service name="smartd" />
+  </Group>
   <Service name="sshd" />
   <Service name="crond" />
   <Service name="netfs" />
@@ -244,9 +252,7 @@
   <Service name="rpcbind" />
   <Service name="rsyslog" />
   <Service name="sysstat" />
-   <!-- exclude some packages from VMs -->
-  <Group name='virtual-machine' negate='true'>
-  	<Package name="smartmontools" />
-  	<Service name="smartd" />
-  </Group>
+  <!-- Fixes -->
+  <!-- /etc/resolv.conf needs to be defined after the dhclient -->
+  <Path name="/etc/resolv.conf" />
 </Bundle>
