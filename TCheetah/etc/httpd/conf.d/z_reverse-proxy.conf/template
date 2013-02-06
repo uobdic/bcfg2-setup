@@ -150,7 +150,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 10.132.0. 137.222. 94.192.83. 137.222.99.19 192.76.7.207 82.132.
+      Allow from 10.132.0. 137.222. 94.192.83. 137.222.99.19 192.76.7.207 82.132. 93.97.101.
    </Proxy>
    <Proxy */executable>
       Order deny,allow
