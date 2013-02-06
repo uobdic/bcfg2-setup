@@ -212,6 +212,7 @@
   <Package name="ustr" />
   <Package name="util-linux-ng" />
   <Package name="vim-minimal" />
+  <Package name="wget" />
   <Package name="which" />
   <Package name="xorg-x11-drv-ati-firmware" />
   <Package name="xz-libs" />
