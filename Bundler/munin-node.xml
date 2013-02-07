@@ -1,5 +1,6 @@
 <Bundle name="munin-node">
   <Path name="/etc/munin/munin-node.conf" />
+  <Package name="munin-common" />
   <Package name="munin-node" />
   <Service name="munin-node" />
 </Bundle>

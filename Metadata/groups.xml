@@ -16,7 +16,6 @@
 
   <Group name="sci-linux">
     <Group name="redhat" />
-    <Bundle name="git" />
   </Group>
 
   <Group name="munin-node">
@@ -26,6 +25,7 @@
   <Group profile="true" name="bcfg2-server" public="true">
     <Group name="basic" />
     <Bundle name="server-bcfg" />
+    <Bundle name="git" />
   </Group>
 
   <Group profile="true" name="basic-user" public="true">
@@ -137,12 +137,14 @@
     <Group name="basic-user" />
     <Bundle name="mossaic" />
     <Group name="virtual-machine" />
+    <Bundle name="git" />
   </Group>
 
   <Group profile="true" name="cse" public="true">
     <Group name="hadoop" />
     <Group name="hbase" />
     <Group name="virtual-machine" />
+    <Bundle name="git" />
   </Group>
 
   <Group profile="true" name="hep" public="true">
@@ -150,6 +152,7 @@
     <Group name="hadoop" />
     <Group name="hbase" />
     <Group name="virtual-machine" />
+    <Bundle name="git" />
   </Group>
   
   <Group profile="true" name="afs-test" public="true">
@@ -176,6 +179,7 @@
     <Group name="hadoop" />
     <Group name="hbase" />
     <Group name="virtual-machine" />
+    <Bundle name="git" />
   </Group>
   
 </Groups>

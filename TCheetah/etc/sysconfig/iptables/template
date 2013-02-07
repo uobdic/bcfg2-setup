@@ -30,15 +30,12 @@ COMMIT
 \# Default is to reject
 \#------------------------------------------
 -A INPUT -p igmp -d 224.0.0.1 -j DROP
-\#-A INPUT -m limit -j LOG
--A INPUT -m limit -j LOG --log-prefix "[iptables]: "
 -A FORWARD -m state --state NEW  -s 10.132.0.0/16 -j ACCEPT
 -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 -A FORWARD  -j REJECT --reject-with icmp-host-prohibited
 \# -----------------------------------------
 \# Drop known troublesome ranges
 \# -----------------------------------------
--A INPUT --source 91.226.212.0/23 -j DROP
 -A INPUT --source 1.0.0.0/8 -j DROP
 -A INPUT --source 2.26.0.0/16 -j DROP
 -A INPUT --source 5.9.0.0/16 -j DROP
@@ -50,6 +47,7 @@ COMMIT
 -A INPUT --source 37.0.0.0/8 -j DROP
 -A INPUT --source 38.0.0.0/8 -j DROP
 -A INPUT --source 41.0.0.0/8 -j DROP
+-A INPUT --source 46.45.176.0/21 -j DROP
 -A INPUT --source 46.0.0.0/8 -j DROP
 -A INPUT --source 49.0.0.0/8 -j DROP
 -A INPUT --source 50.0.0.0/8 -j DROP
@@ -58,6 +56,10 @@ COMMIT
 -A INPUT --source 60.0.0.0/8 -j DROP
 -A INPUT --source 61.0.0.0/8 -j DROP
 -A INPUT --source 62.0.0.0/8 -j DROP
+\# Romania
+-A INPUT --source 89.121.128.0/17 -j DROP
+-A INPUT --source 91.226.212.0/23 -j DROP
+-A INPUT --source 94.102.48.0/20 -j DROP
 -A INPUT --source 106.0.0.0/8 -j DROP
 -A INPUT --source 110.0.0.0/8 -j DROP
 -A INPUT --source 111.0.0.0/8 -j DROP
@@ -76,6 +78,7 @@ COMMIT
 -A INPUT --source 124.0.0.0/8 -j DROP
 -A INPUT --source 125.0.0.0/8 -j DROP
 -A INPUT --source 126.0.0.0/8 -j DROP
+-A INPUT --source 141.212.0.0/16 -j DROP
 -A INPUT --source 151.0.0.0/8 -j DROP
 -A INPUT --source 157.0.0.0/8 -j DROP
 -A INPUT --source 159.0.0.0/8 -j DROP
@@ -83,9 +86,13 @@ COMMIT
 -A INPUT --source 161.0.0.0/8 -j DROP
 -A INPUT --source 170.0.0.0/8 -j DROP
 -A INPUT --source 171.0.0.0/8 -j DROP
+# UoB: its-webjet.cse.bris.ac.uk
+-A INPUT --source 172.16.39.52 -j DROP
 -A INPUT --source 173.0.0.0/8 -j DROP
 -A INPUT --source 174.0.0.0/8 -j DROP
 -A INPUT --source 175.0.0.0/8 -j DROP
+-A INPUT --source 183.82.97.0/24 -j DROP
+-A INPUT --source 184.154.42.194 -j DROP
 -A INPUT --source 189.0.0.0/8 -j DROP
 -A INPUT --source 190.0.0.0/8 -j DROP
 -A INPUT --source 193.0.0.0/8 -j DROP
@@ -93,6 +100,8 @@ COMMIT
 -A INPUT --source 195.0.0.0/8 -j DROP
 -A INPUT --source 196.0.0.0/8 -j DROP
 -A INPUT --source 197.0.0.0/8 -j DROP
+\# Obfuscated by Gandi: Paris France
+-A INPUT --source 198.20.64.0/18 -j DROP
 -A INPUT --source 199.0.0.0/8 -j DROP
 -A INPUT --source 200.0.0.0/8 -j DROP
 -A INPUT --source 201.0.0.0/8 -j DROP
@@ -114,12 +123,14 @@ COMMIT
 -A INPUT --source 221.0.0.0/8 -j DROP
 -A INPUT --source 222.0.0.0/8 -j DROP
 -A INPUT --source 223.0.0.0/8 -j DROP
--A INPUT --source 183.82.97.0/24 -j DROP
--A INPUT --source 200.0.0.0/8 -j DROP
--A INPUT --source 184.154.42.194 -j DROP
--A INPUT --source 46.45.176.0/21 -j DROP
--A INPUT --source 141.212.0.0/16 -j DROP
--A INPUT --source 94.102.48.0/20 -j DROP
+
+
+
+
+
+
+\# Log once all DROPs are done
+-A INPUT -m limit -j LOG --log-prefix "[iptables]: "
 
 #if 'reverse-proxy' in $self.metadata.groups
 \# -----------------------------------------
