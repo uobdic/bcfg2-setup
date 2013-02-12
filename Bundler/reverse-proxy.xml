@@ -15,6 +15,7 @@
   <Path name="/root/certs/hostkey.pem" />
   <Path name="/root/certs/hostcert.pem" />
   <Path name="/root/certs/escience.chain" />
+  <Path name="/opt/websites/web/www/dummy/index.html" />
   <Action name="remove-auth-cas-config" />
   <Action name="rehash-CAs" />
 </Bundle>
