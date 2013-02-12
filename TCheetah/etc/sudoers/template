@@ -102,6 +102,10 @@ root	ALL=(ALL) 	ALL
 #end if
 #if 'astro' in $self.metadata.groups
 %ASTRO_ADMIN_GROUP	ALL=(ALL)	ALL
+#if 'mossaic' in $self.metadata.groups
+%MOSSAIC_ADMIN_GROUP	ALL=(ALL)	ALL
+#if 'hep' in $self.metadata.groups
+%HEP_ADMIN_GROUP	ALL=(ALL)	ALL
 #end if
 
 \## Same thing without a password
