@@ -62,16 +62,6 @@ contact.root.command mail -s "Munin notification" root@localhost
 	address 127.0.0.1
 	use_node_name yes
 	
-#if $self.metadata.hostname.startswith('vm-37-00')
-[vm-37-01.bris.ac.uk]
-	address vm-37-01.dice.cluster
-	use_node_name yes
-#elif $self.metadata.hostname.startswith('vm-37-01')
-[vm-37-00.bris.ac.uk]
-	address vm-37-00.dice.cluster
-	use_node_name yes
-#end if
-
 [dice-io-37-00.acrc.bris.ac.uk]
 	address io-37-00.dice.cluster
 
