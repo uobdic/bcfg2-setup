@@ -81,7 +81,6 @@
   <Package name="iputils" />
   <Package name="kbd" />
   <Package name="kbd-misc" />
-  <Package name="kernel" />
   <Package name="keyutils-libs" />
   <Package name="krb5-libs" />
   <Package name="less" />
