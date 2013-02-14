@@ -96,9 +96,10 @@
   </Group>
 
   <Group profile="true" name="io" public="true">
-    <Group name="router" />
     <Group name="basic-user" />
+    <Group name="router" />
     <Group name="reverse-proxy" />
+    <Bundle name="xorg-x11-xauth" />
   </Group>
 
   <Group name="reverse-proxy" public="true">
@@ -119,6 +120,7 @@
 
   <Group profile="true" name="vm-host" public="true">
     <Group name="basic" />
+    <Bundle name="xorg-x11-xauth" />
   </Group>
 
   <Group profile="true" name="admin-node-0" public="true">
@@ -153,6 +155,7 @@
     <Group name="hbase" />
     <Group name="virtual-machine" />
     <Bundle name="git" />
+    <Bundle name="xorg-x11-xauth" />
   </Group>
   
   <Group profile="true" name="afs-test" public="true">
