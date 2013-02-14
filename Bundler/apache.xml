@@ -1,5 +1,10 @@
 <Bundle name="apache">
   <Path name="/etc/profile.d/httpd.sh" />
   <Package name="httpd" />
+  <!-- adding dependencies for bcfg2 -r all -->
+  <Package name="httpd-tools" />
+  <Package name="apr" />
+  <Package name="apr-utils" />
+  <Package name="apr-utils-ldap" />
   <Service name="httpd" />
 </Bundle>
