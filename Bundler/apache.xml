@@ -6,5 +6,6 @@
   <Package name="apr" />
   <Package name="apr-utils" />
   <Package name="apr-utils-ldap" />
-  <Service name="httpd" />
+  <!-- start on boot -->
+  <Service type="chkconfig" status="on" name="httpd" />
 </Bundle>
