@@ -1,0 +1,20 @@
+<Bundle name="emi-ui">
+	<Package name="yum-protectbase" />
+	<Package name="yum-priorities" />
+	<Path name="/etc/yum/pluginconf.d/priorities.conf" />
+	<Package name="emi-ui" />
+	<Path name="/root/yaim-config/site-info.def" />
+	<Path name="/root/yaim-config/vo.d/alice" />
+	<Path name="/root/yaim-config/vo.d/atlas" />
+	<Path name="/root/yaim-config/vo.d/cms" />
+	<Path name="/root/yaim-config/vo.d/dteam" />
+	<Path name="/root/yaim-config/vo.d/gridpp" />
+	<Path name="/root/yaim-config/vo.d/ilc" />
+	<Path name="/root/yaim-config/vo.d/lhcb" />
+	<Path name="/root/yaim-config/vo.d/ngs.ac.uk" />
+	<Path name="/root/yaim-config/vo.d/ops" />
+	<Path name="/root/yaim-config/vo.d/vo.landslides.mossaic.org" />
+	<Path name="/root/yaim-config/vo.d/vo.southgrid.ac.uk" />
+	<Path name="/root/yaim-config/vo.d/zeus" />
+	<Action name="yaim-config" />
+</Bundle>
