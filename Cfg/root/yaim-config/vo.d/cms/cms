@@ -1,0 +1,8 @@
+SW_DIR="$VO_SW_DIR/cms"
+DEFAULT_SE=$SE_HOST
+STORAGE_DIR=$SE_ACCESSPOINT/cms
+
+VOMS_SERVERS="'vomss://voms.cern.ch:8443/voms/cms?/cms/'"
+VOMSES="'cms lcg-voms.cern.ch 15002 /DC=ch/DC=cern/OU=computers/CN=lcg-voms.cern.ch cms'
+        'cms voms.cern.ch     15002 /DC=ch/DC=cern/OU=computers/CN=voms.cern.ch     cms'"
+VOMS_CA_DN="'/DC=ch/DC=cern/CN=CERN Trusted Certification Authority' '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'"

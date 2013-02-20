@@ -7,6 +7,7 @@
   <Group name="ubuntu" />
   <Group name="debian" />
   <Group name="x86_64" />
+  <Group name="virtual-machine" />
 
   <Group name="redhat">
     <Bundle name="motd" />
@@ -15,7 +16,6 @@
 
   <Group name="sci-linux">
     <Group name="redhat" />
-    <Bundle name="git" />
   </Group>
 
   <Group name="munin-node">
@@ -25,6 +25,7 @@
   <Group profile="true" name="bcfg2-server" public="true">
     <Group name="basic" />
     <Bundle name="server-bcfg" />
+    <Bundle name="git" />
   </Group>
 
   <Group profile="true" name="basic-user" public="true">
@@ -95,9 +96,10 @@
   </Group>
 
   <Group profile="true" name="io" public="true">
-    <Group name="router" />
     <Group name="basic-user" />
+    <Group name="router" />
     <Group name="reverse-proxy" />
+    <Bundle name="xorg-x11-xauth" />
   </Group>
 
   <Group name="reverse-proxy" public="true">
@@ -107,6 +109,7 @@
 
   <Group profile="true" name="ci" public="true">
     <Group name="basic" />
+    <Group name="virtual-machine" />
     <Bundle name="jenkins" />
   </Group>
 
@@ -117,6 +120,7 @@
 
   <Group profile="true" name="vm-host" public="true">
     <Group name="basic" />
+    <Bundle name="xorg-x11-xauth" />
   </Group>
 
   <Group profile="true" name="admin-node-0" public="true">
@@ -134,21 +138,51 @@
   <Group profile="true" name="mossaic" public="true">
     <Group name="basic-user" />
     <Bundle name="mossaic" />
+    <Group name="virtual-machine" />
+    <Bundle name="git" />
   </Group>
 
   <Group profile="true" name="cse" public="true">
     <Group name="hadoop" />
     <Group name="hbase" />
+    <Group name="virtual-machine" />
+    <Bundle name="git" />
   </Group>
 
   <Group profile="true" name="hep" public="true">
     <Group name="basic-user" />
     <Group name="hadoop" />
     <Group name="hbase" />
+    <Group name="virtual-machine" />
+    <Bundle name="git" />
+    <Bundle name="xorg-x11-xauth" />
   </Group>
   
   <Group profile="true" name="afs-test" public="true">
     <Group name="basic-user" />
     <Bundle name="openafs-client" />
+    <Group name="virtual-machine" />
   </Group>
+  
+  <Group name="emi-ui-node" public="true">
+  	<Group name="basic-user" />
+  	<Bundle name="emi-ui" />
+  </Group>
+  
+  <Group profile="true" name="test-vm" public="true">
+    <Group name="basic-user" />
+    <Group name="virtual-machine" />
+    <!-- HEP testing -->
+    <Group name="emi-ui-node" />
+    <Bundle name="openafs-client" />
+  </Group>
+  
+  <Group profile="true" name="astro" public="true">
+    <Group name="basic-user" />
+    <Group name="hadoop" />
+    <Group name="hbase" />
+    <Group name="virtual-machine" />
+    <Bundle name="git" />
+  </Group>
+  
 </Groups>

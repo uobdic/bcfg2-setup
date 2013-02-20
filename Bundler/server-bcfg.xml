@@ -1,4 +1,5 @@
 <Bundle name="server-bcfg">
   <Path name="/etc/bcfg2.conf" />
+  <Package name='redhat-lsb'/>
   <Package name="bcfg2-server" />
 </Bundle>

@@ -100,6 +100,15 @@ root	ALL=(ALL) 	ALL
 #if 'couch' in $self.metadata.groups or 'mossaic' in $self.metadata.groups
 %BIGCOUCH_ADMIN_GROUP	ALL=(ALL)	ALL
 #end if
+#if 'astro' in $self.metadata.groups
+%ASTRO_ADMIN_GROUP	ALL=(ALL)	ALL
+#end if
+#if 'mossaic' in $self.metadata.groups
+%MOSSAIC_ADMIN_GROUP	ALL=(ALL)	ALL
+#end if
+#if 'hep' in $self.metadata.groups
+%HEP_ADMIN_GROUP	ALL=(ALL)	ALL
+#end if
 
 \## Same thing without a password
 \# %wheel	ALL=(ALL)	NOPASSWD: ALL

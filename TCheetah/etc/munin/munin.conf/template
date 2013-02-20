@@ -61,6 +61,12 @@ contact.root.command mail -s "Munin notification" root@localhost
 [${self.metadata.hostname}.bris.ac.uk]
 	address 127.0.0.1
 	use_node_name yes
+	
+[dice-io-37-00.acrc.bris.ac.uk]
+	address io-37-00.dice.cluster
+
+[dice-io-37-01.acrc.bris.ac.uk]
+	address io-37-01.dice.cluster
 
 [test-pxe-vm.dice.cluster]
 	address test-pxe-vm.dice.cluster
@@ -77,6 +83,9 @@ contact.root.command mail -s "Munin notification" root@localhost
 [vm-hep.dice.cluster]
 	address vm-hep.dice.cluster
 
+[vm-astro.dice.cluster]
+	address vm-astro.dice.cluster
+	
 [hd-37-00.dice.cluster]
 	address	hd-37-00.dice.cluster
 
@@ -115,12 +124,6 @@ contact.root.command mail -s "Munin notification" root@localhost
 
 [jt-37-00.dice.cluster]
 	address jt-37-00.dice.cluster
-
-[io-37-00.dice.cluster]
-	address io-37-00.dice.cluster
-
-[io-37-01.dice.cluster]
-	address io-37-01.dice.cluster
 
 [bc-37-00.dice.cluster]
 	address bc-37-00.dice.cluster

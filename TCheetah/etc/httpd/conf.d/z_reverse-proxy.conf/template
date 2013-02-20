@@ -88,7 +88,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 137.222. 10.132.0. 94.192.83.
+      Allow from 137.222. 10.132.0. 94.192.83.  172.21.
    </Proxy>
    ProxyPass / http://vm-ci.dice.cluster:8080/ nocanon
    ProxyPassReverse / http://vm-ci.dice.cluster:8080/
@@ -150,7 +150,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 10.132.0. 137.222. 94.192.83. 137.222.99.19 192.76.7.207 82.132.
+      Allow from 10.132.0. 137.222. 94.192.83. 137.222.99.19 192.76.7.207 82.132. 93.97.101.
    </Proxy>
    <Proxy */executable>
       Order deny,allow
@@ -346,7 +346,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 137.222. 10.132.0. 94.192.83.
+      Allow from 137.222. 10.132.0. 94.192.83. 172.21.
    </Proxy>
    ProxyPass / http://nn-37-00.dice.cluster:50070/ nocanon
    ProxyPassReverse / http://nn-37-00.dice.cluster:50070/
@@ -382,7 +382,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 137.222. 10.132.0. 94.192.83.
+      Allow from 137.222. 10.132.0. 94.192.83. 172.21.
    </Proxy>
    ProxyPass / http://nn-37-00.dice.cluster:50030/ nocanon
    ProxyPassReverse / http://nn-37-00.dice.cluster:50030/
@@ -417,7 +417,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 137.222. 10.132.0. 94.192.83.
+      Allow from 137.222. 10.132.0. 94.192.83. 172.21.
    </Proxy>
    ProxyPass / balancer://hdfs/ nocanon
    ProxyPassReverse / balancer://hdfs/
@@ -455,7 +455,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 10.132.0. 137.222.
+      Allow from 10.132.0. 137.222. 172.21.
    </Proxy>
    ProxyPass / http://vm-cse.dice.cluster:80/ nocanon
    ProxyPassReverse / http://vm-cse.dice.cluster:80/
@@ -493,7 +493,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 10.132.0. 137.222.
+      Allow from 10.132.0. 137.222. 172.21.
    </Proxy>
    ProxyPass / http://vm-cse.dice.cluster:8080/ nocanon
    ProxyPassReverse / http://vm-cse.dice.cluster:8080/

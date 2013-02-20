@@ -1,5 +1,9 @@
 <Bundle name="munin-node">
   <Path name="/etc/munin/munin-node.conf" />
+  <Package name="munin-common" />
   <Package name="munin-node" />
+  <!-- adding dependencies for bcfg2 -r all -->
+  <Package name="perl-Net-Server" />
+  <Package name="perl-IO-Multiplex" />
   <Service name="munin-node" />
 </Bundle>

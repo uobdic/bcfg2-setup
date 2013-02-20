@@ -1,0 +1,7 @@
+SW_DIR=$VO_SW_DIR/ilc
+DEFAULT_SE=$SE_HOST
+STORAGE_DIR=$SE_ACCESSPOINT/ilc
+
+VOMS_SERVERS="vomss://grid-voms.desy.de:8443/voms/ilc?/ilc/"
+VOMSES="'ilc grid-voms.desy.de 15110 /C=DE/O=GermanGrid/OU=DESY/CN=host/grid-voms.desy.de ilc'"
+VOMS_CA_DN="'/C=DE/O=GermanGrid/CN=GridKa-CA'"
