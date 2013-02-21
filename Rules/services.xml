@@ -22,4 +22,5 @@
   <Service type="chkconfig" status="on" name="bigcouch" />
   <Service type="chkconfig" status="on" name="named" />
   <Service type="chkconfig" status="on" name="dhcpd" />
+  <Service type="chkconfig" status="on" name="mcelog" />
 </Rules>
