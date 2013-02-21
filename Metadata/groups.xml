@@ -3,7 +3,9 @@
     <Group name="sci-linux" />
     <Group name="x86_64" />
     <Group name="munin-node" />
+    <Bundle name="mcelog" />
   </Group>
+  
   <Group name="ubuntu" />
   <Group name="debian" />
   <Group name="x86_64" />
