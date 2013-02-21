@@ -1,9 +1,7 @@
 <Bundle name="mcelog">
-  <Package name="mcelog" />
-  <Service name="mcelog" />
-  <!-- exclude VMs -->
-  <Group name='virtual-machine' negate='true'>
-  	<Package name="mcelog" />
-  	<Service name="mcelog" />
-  </Group>
+	<Group name='virtual-machine' negate='true'>
+		<!-- VMs don't need it -->
+		<Package name="mcelog" />
+		<Service name="mcelog" />
+	</Group>
 </Bundle>
