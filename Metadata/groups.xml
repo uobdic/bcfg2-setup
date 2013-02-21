@@ -100,6 +100,7 @@
     <Group name="router" />
     <Group name="reverse-proxy" />
     <Bundle name="xorg-x11-xauth" />
+    <Bundle name="bind" />
   </Group>
 
   <Group name="reverse-proxy" public="true">
@@ -127,6 +128,7 @@
     <Group name="vm-host" />
     <Group name="local-tarballs" />
     <Bundle name="munin-master" />
+    <Bundle name="dhcp" />
   </Group>
 
   <Group profile="true" name="admin-node-1" public="true">

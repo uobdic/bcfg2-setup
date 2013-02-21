@@ -1,0 +1,93 @@
+//
+// named.conf
+//
+// Provided by Red Hat bind package to configure the ISC BIND named(8) DNS
+// server as a caching only nameserver (as a localhost DNS resolver only).
+//
+// See /usr/share/doc/bind*/sample/ for example named configuration files.
+//
+
+options {
+#if 'io-37-00' in $self.metadata.hostname
+	listen-on port 53 { 10.132.0.250; };
+#elif 'io-37-00' in $self.metadata.hostname
+	listen-on port 53 { 10.132.0.251; };
+#end if
+	listen-on-v6 port 53 { ::1; };
+	directory 	"/var/named";
+	dump-file 	"/var/named/data/cache_dump.db";
+        statistics-file "/var/named/data/named_stats.txt";
+        memstatistics-file "/var/named/data/named_mem_stats.txt";
+	// Allow from whole of class B (currently only use part of this -- 10.132.0.0./24)
+	allow-query     { 10.132.0.0/16; };
+	// Allow from whole of class B (currently only use part of this -- 10.132.0.0./24)
+	recursion yes;
+	allow-recursion { 10.132.0.0/16; };
+
+	dnssec-enable yes;
+	dnssec-validation yes;
+	dnssec-lookaside auto;
+
+	/* Path to ISC DLV key */
+	bindkeys-file "/etc/named.iscdlv.key";
+
+	managed-keys-directory "/var/named/dynamic";
+};
+
+#if 'io-37-00' in $self.metadata.hostname
+key dhcpupdate-dice {
+  algorithm hmac-md5;
+  secret "DHCP_DICE_SECRET";
+};
+#end if
+
+logging {
+        channel default_debug {
+                file "data/named.run";
+                severity dynamic;
+        };
+};
+
+zone "." IN {
+	type hint;
+	file "named.ca";
+};
+
+#if 'io-37-00' in $self.metadata.hostname
+zone "dice.cluster" {
+       type master;
+       allow-transfer { 10.132.0.251; };
+       file "/etc/named/master/zones/dice.cluster";
+	
+	allow-update {
+                key dhcpupdate-dice;
+        };
+};
+
+zone "132.10.in-addr.arpa" {
+       type master;
+       allow-transfer { 10.132.0.251; };
+       file "/etc/named/master/zones/10.132.0.0";
+
+	allow-update {
+                key dhcpupdate-dice;
+        };
+};
+#elif 'io-37-01' in $self.metadata.hostname
+zone "dice.cluster" {
+       type slave;
+       allow-transfer { none; };
+       masters { 10.132.0.250; };
+       file "/etc/named/slave/zones/dice.cluster.slave";
+};
+
+zone "132.10.in-addr.arpa" {
+       type slave;
+       allow-transfer { none; };
+       masters { 10.132.0.250; };
+       file "/etc/named/slave/zones/10.132.0.0.slave";
+};
+#end if
+
+include "/etc/named.rfc1912.zones";
+include "/etc/named.root.key";

@@ -1,0 +1,5 @@
+<Bundle name="dhcp">
+	<Package name="dhcp" />
+	<Path name="/etc/dhcp/dhcpd.conf" />
+	<Service name="dhcpd" />
+</Bundle>
