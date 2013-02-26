@@ -189,4 +189,12 @@
     <Bundle name="git" />
   </Group>
   
+  <Group profile="true" name="gridftp" public="true">
+    <Group name="basic-user" />
+    <Group name="hadoop" />
+    <Group name="virtual-machine" />
+    <Bundle name="git" />
+    <Bundle name="gridftp" />
+  </Group>
+  
 </Groups>

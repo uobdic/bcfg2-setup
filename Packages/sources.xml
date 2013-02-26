@@ -54,5 +54,15 @@
 			<Arch>x86_64</Arch>
 		</Source>
 	</Group>
+	
+	<Group name="gridftp">
+		<Source type="yum" rawurl="http://repo.grid.iu.edu/3.0/el6/osg-release/x86_64">
+			<Arch>x86_64</Arch>
+		</Source>
+		<Source type="yum" rawurl="http://repository.egi.eu/sw/production/cas/1/current">
+			<GPGKey>http://repository.egi.eu/sw/production/cas/1/GPG-KEY-EUGridPMA-RPM-3</GPGKey>
+			<Arch>x86_64</Arch>
+		</Source>
+	</Group>
 
 </Sources>
