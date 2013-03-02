@@ -1,0 +1,9 @@
+<Bundle name="vm-host">
+  <Package name="xorg-x11-xauth" />
+  <Package name="qemu-kvm" />
+  <Package name="qemu-img" />
+  <Package name="libvirt" />
+  <Path name="/etc/libvirt/libvirtd.conf" />
+  <Path name="/etc/libvirt/qemu/networks/NIC-eth0.xml" />
+  <Path name="/etc/libvirt/qemu/networks/autostart/NIC-eth0.xml" />
+</Bundle>

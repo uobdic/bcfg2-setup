@@ -123,7 +123,7 @@
 
   <Group profile="true" name="vm-host" public="true">
     <Group name="basic" />
-    <Bundle name="xorg-x11-xauth" />
+    <Bundle name="vm-host" />
   </Group>
 
   <Group profile="true" name="admin-node-0" public="true">
