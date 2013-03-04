@@ -6,4 +6,5 @@
   <Path name="/etc/libvirt/libvirtd.conf" />
   <Path name="/etc/libvirt/qemu/networks/NIC-eth0.xml" />
   <Path name="/etc/libvirt/qemu/networks/autostart/NIC-eth0.xml" />
+  <Service name="libvirtd" />
 </Bundle>
