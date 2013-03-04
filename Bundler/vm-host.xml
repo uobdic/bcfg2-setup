@@ -1,10 +1,20 @@
 <Bundle name="vm-host">
   <Package name="xorg-x11-xauth" />
   <Package name="qemu-kvm" />
+  <Package name="qemu-kvm-tools" />
   <Package name="qemu-img" />
   <Package name="libvirt" />
+  <Package name="virt-install" />
+  <Package name="virt-viewer" />
+  <Package name="tigervnc" />
   <Path name="/etc/libvirt/libvirtd.conf" />
   <Path name="/etc/libvirt/qemu/networks/NIC-eth0.xml" />
-  <Path name="/etc/libvirt/qemu/networks/autostart/NIC-eth0.xml" />
+<!-- this should be done as an action with 
+virsh net-define /etc/libvirt/qemu/networks/NIC-eth0.xml
+virsh net-autostart NIC-eth0
+<Path name="/etc/libvirt/qemu/networks/autostart/NIC-eth0.xml" /> -->
+  <Path name="/etc/sysconfig/network-scripts/ifcfg-br0" />
+  <Path name="/etc/sysconfig/network-scripts/ifcfg-eth0" />
   <Service name="libvirtd" />
+  <Service name="network" />
 </Bundle>

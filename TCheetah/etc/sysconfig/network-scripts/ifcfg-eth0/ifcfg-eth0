@@ -1,0 +1,19 @@
+DEVICE="eth0"
+MTU=1500
+NM_CONTROLLED="yes"
+ONBOOT="yes"
+#BOOTPROTO=static
+BRIDGE=br0
+IPV6INIT=no
+IPV6_AUTOCONF=no
+NETMASK=255.255.0.0
+NETWORK=10.132.0.0
+TYPE=Ethernet
+#if $self.metadata.hostname.startswith('vm-37-00')
+HWADDR="00:25:90:69:D6:2E"
+IPADDR=10.132.0.2
+#elif $self.metadata.hostname.startswith('vm-37-01')
+HWADDR="00:25:90:69:D6:62"
+IPADDR=10.132.0.6
+#end if
+
