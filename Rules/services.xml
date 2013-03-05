@@ -20,4 +20,13 @@
   <Service type="chkconfig" status="on" name="sysstat" />
   <Service type="chkconfig" status="on" name="munin-node" />
   <Service type="chkconfig" status="on" name="bigcouch" />
+  <Service type="chkconfig" status="on" name="named" />
+  <Service type="chkconfig" status="on" name="dhcpd" />
+  <Service type="chkconfig" status="on" name="mcelog" />
+  
+  <Service type="chkconfig" status="on" name="fetch-crl-boot" />
+  <Service type="chkconfig" status="on" name="fetch-crl-cron" />
+  <Service type="chkconfig" status="on" name="tomcat6" />
+  <Service type="chkconfig" status="on" name="mysqld" />
+  <Service type="chkconfig" status="on" name="libvirtd" />
 </Rules>

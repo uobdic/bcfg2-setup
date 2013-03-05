@@ -1,0 +1,12 @@
+<Bundle name="bind">
+  <Package name="bind" />
+  <Package name="bind-libs" />
+  <Package name="bind-chroot" />
+  <Package name="bind-utils" />
+  <Path name="/etc/named.conf" />
+  <Path name="/etc/named/master/zones/10.132.0.0" />
+  <Path name="/etc/named/master/zones/dice.cluster" />
+  <Path name="/etc/named/slave/zones/10.132.0.0.slave" />
+  <Path name="/etc/named/slave/zones/dice.cluster.slave" altsrc="/etc/named/master/zones/dice.cluster"/>
+  <Service name="named" />
+</Bundle>

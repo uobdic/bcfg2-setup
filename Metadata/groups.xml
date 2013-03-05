@@ -3,7 +3,9 @@
     <Group name="sci-linux" />
     <Group name="x86_64" />
     <Group name="munin-node" />
+    <Bundle name="mcelog" />
   </Group>
+  
   <Group name="ubuntu" />
   <Group name="debian" />
   <Group name="x86_64" />
@@ -100,6 +102,7 @@
     <Group name="router" />
     <Group name="reverse-proxy" />
     <Bundle name="xorg-x11-xauth" />
+    <Bundle name="bind" />
   </Group>
 
   <Group name="reverse-proxy" public="true">
@@ -120,13 +123,14 @@
 
   <Group profile="true" name="vm-host" public="true">
     <Group name="basic" />
-    <Bundle name="xorg-x11-xauth" />
+    <Bundle name="vm-host" />
   </Group>
 
   <Group profile="true" name="admin-node-0" public="true">
     <Group name="vm-host" />
     <Group name="local-tarballs" />
     <Bundle name="munin-master" />
+    <Bundle name="dhcp" />
   </Group>
 
   <Group profile="true" name="admin-node-1" public="true">
@@ -183,6 +187,14 @@
     <Group name="hbase" />
     <Group name="virtual-machine" />
     <Bundle name="git" />
+  </Group>
+  
+  <Group profile="true" name="gridftp" public="true">
+    <Group name="basic-user" />
+    <Group name="hadoop" />
+    <Group name="virtual-machine" />
+    <Bundle name="git" />
+    <Bundle name="gridftp" />
   </Group>
   
 </Groups>

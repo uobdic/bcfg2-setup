@@ -1,0 +1,15 @@
+DEVICE=br0
+BOOTPROTO=static
+ONBOOT=yes
+TYPE=Bridge
+STP=off
+DELAY=0
+IPV6INIT=no
+IPV6_AUTOCONF=no
+NETMASK=255.255.0.0
+NETWORK=10.132.0.0
+#if $self.metadata.hostname.startswith('vm-37-00')
+IPADDR=10.132.0.1
+#elif $self.metadata.hostname.startswith('vm-37-01')
+IPADDR=10.132.0.5
+#end if
