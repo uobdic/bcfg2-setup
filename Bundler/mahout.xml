@@ -1,3 +1,0 @@
-<Bundle name='mahout'>
-    <Action name='download-and-install-mahout' />
-</Bundle>
