@@ -86,6 +86,9 @@ contact.root.command mail -s "Munin notification" root@localhost
 [vm-astro.dice.cluster]
 	address vm-astro.dice.cluster
 	
+[vm-hdfs-gridFTP.dice.cluster]
+	address vm-hdfs-gridFTP.dice.cluster
+	
 [hd-37-00.dice.cluster]
 	address	hd-37-00.dice.cluster
 

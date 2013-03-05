@@ -12,6 +12,7 @@ Listen 5986
 Listen 443
 Listen 6986
 Listen 8080
+Listen 8443
 Listen 8984
 Listen 9984
 Listen 10080
@@ -499,4 +500,42 @@ ProxySet stickysession=ROUTEID
    ProxyPassReverse / http://vm-cse.dice.cluster:8080/
    ErrorLog "logs/cse-8080-error_log"
    CustomLog "logs/cse-8080-access_log" common
+</VirtualHost>
+
+\# GUMS (grid ftp) web service
+\# SSL encryption
+<VirtualHost *:8443>
+#if 'io-37-00' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-00.acrc.bris.ac.uk
+   ServerName dice-io-37-00.acrc.bris.ac.uk
+#elif 'io-37-01' in $self.metadata.hostname
+   ServerAdmin webmaster@dice-io-37-01.acrc.bris.ac.uk
+   ServerName dice-io-37-01.acrc.bris.ac.uk
+#else
+   ServerAdmin webmaster@$self.metadata.hostname
+   ServerName $self.metadata.hostname
+#end if
+   SSLEngine On
+   SSLCertificateKeyFile /root/certs/hostkey.pem
+   SSLCertificateFile /root/certs/hostcert.pem
+   SSLProtocol All -SSLv2
+   SSLCipherSuite HIGH:MEDIUM:!aNULL:+MD5
+   SSLCACertificateFile /root/certs/escience.chain
+   DocumentRoot "/opt/websites/web/www/dummy"
+   AllowEncodedSlashes On
+   ProxyRequests Off
+   KeepAlive Off
+   <Proxy *>
+      AuthType CAS
+      AuthGroupFile /etc/httpd/conf/group
+      Require group gridftp
+      CASScope /
+      Order deny,allow
+      Deny from all
+      Allow from 10.132.0. 137.222. 172.21.
+   </Proxy>
+   ProxyPass / http://vm-hdfs-gridFTP.dice.cluster:8443/ nocanon
+   ProxyPassReverse / http://vm-hdfs-gridFTP.dice.cluster:8443/
+   ErrorLog "logs/gridftp-8443-error_log"
+   CustomLog "logs/gridftp-8443-access_log" common
 </VirtualHost>

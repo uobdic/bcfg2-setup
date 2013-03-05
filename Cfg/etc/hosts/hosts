@@ -1,2 +1,5 @@
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+#temporary fixes
+10.132.0.250    io-37-00.dice.cluster
+10.132.0.251    io-37-01.dice.cluster

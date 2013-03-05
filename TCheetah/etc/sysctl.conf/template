@@ -4,7 +4,11 @@
 # sysctl.conf(5) for more details.
 
 # Controls IP packet forwarding
+#if 'reverse-proxy' in $self.metadata.groups
 net.ipv4.ip_forward = 1
+#else
+net.ipv4.ip_forward = 0
+#end if
 
 # Controls source route verification
 net.ipv4.conf.default.rp_filter = 1

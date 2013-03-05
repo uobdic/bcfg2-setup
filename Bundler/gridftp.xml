@@ -1,0 +1,12 @@
+<Bundle name="gridftp">
+  <Package name="fetch-crl" />
+  <!-- GUMS server for grid authentication -->
+  <Package name="osg-gums" />
+  <Package name="osg-ca-certs" />
+  <Package name="osg-gridftp-hdfs" />
+  <!-- services -->
+  <Service name="fetch-crl-boot" />
+  <Service name="fetch-crl-cron" />
+  <Service name="tomcat6" />
+  <Service name="mysqld" />
+</Bundle>
