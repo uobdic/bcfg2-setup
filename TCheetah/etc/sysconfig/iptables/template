@@ -1,6 +1,6 @@
 \# Firewall configuration written by system-config-firewall
 \# Manual customization of this file is not recommended.
-
+#if $self.metadata.hostname.startswith('io-37-0')
 *nat
 :PREROUTING ACCEPT [32:5258]
 :POSTROUTING ACCEPT [0:0]
@@ -12,7 +12,7 @@
 -A POSTROUTING -o em2 -j SNAT --to-source 137.222.79.2
 #end if
 COMMIT
-
+#end if
 
 *filter
 :INPUT ACCEPT [0:0]
@@ -21,10 +21,25 @@ COMMIT
 -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 -A INPUT -p icmp -j ACCEPT
 -A INPUT -i lo -j ACCEPT
+\#------------------------------------------
+\# SSH -- for external interfaces -- UOB only
+\#------------------------------------------
 -A INPUT -m state --state NEW -s 137.222.0.0/16 -m tcp -p tcp --dport 22 -j ACCEPT
+#if $self.metadata.hostname.startswith('vm-37-0')
+\# Allow view of monitoring
+-A INPUT -s 137.222.58.0/24 -j ACCEPT
+\#------------------------------------------
+\# For UB IS backups
+\#------------------------------------------
+-A INPUT -s 137.222.10.17 -j ACCEPT
+-A INPUT -s 137.222.10.17 -j ACCEPT
+-A INPUT -s 137.222.9.60 -j ACCEPT
+-A INPUT -s 137.222.9.60 -j ACCEPT
+#end if
 \#------------------------------------------
 \# Trust internal network
 \#------------------------------------------
+-A INPUT -m state --state NEW -s 10.132.0.0/16 -m tcp -p tcp --dport 22 -j ACCEPT
 -A INPUT -m state --state NEW -s 10.132.0.0/16 -j ACCEPT
 \#------------------------------------------
 \# Default is to reject
@@ -33,6 +48,7 @@ COMMIT
 -A FORWARD -m state --state NEW  -s 10.132.0.0/16 -j ACCEPT
 -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
 -A FORWARD  -j REJECT --reject-with icmp-host-prohibited
+#if $self.metadata.hostname.startswith('io-37-0') or $self.metadata.hostname.startswith('vm-37-0')
 \# -----------------------------------------
 \# Drop known troublesome ranges
 \# -----------------------------------------
@@ -128,11 +144,7 @@ COMMIT
 -A INPUT --source 221.0.0.0/8 -j DROP
 -A INPUT --source 222.0.0.0/8 -j DROP
 -A INPUT --source 223.0.0.0/8 -j DROP
-
-
-
-
-
+#end if
 
 \# Log once all DROPs are done
 -A INPUT -m limit -j LOG --log-prefix "[iptables]: "
@@ -161,5 +173,4 @@ COMMIT
 \# -----------------------------------------
 
 -A INPUT -j REJECT --reject-with icmp-host-prohibited
-
 COMMIT
