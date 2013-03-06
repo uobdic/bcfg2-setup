@@ -168,6 +168,10 @@ COMMIT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 58080 -j ACCEPT
 #end if
 
+#if $self.metadata.hostname.startswith('vm-37-00')
+\# allow CM access
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 7180 -j ACCEPT
+#end if
 \# -----------------------------------------
 \# Reject anything else
 \# -----------------------------------------
