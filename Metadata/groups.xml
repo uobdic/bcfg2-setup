@@ -40,6 +40,11 @@
     <Group name="basic" />
   </Group>
 
+  <Group profile="true" name="hadoop-non-user" public="true">
+    <Group name="basic" />
+    <Bundle name="hadoop" />
+  </Group>
+  
   <Group profile="true" name="hadoop" public="true">
     <Group name="basic-user" />
     <Bundle name="hadoop" />
@@ -146,8 +151,8 @@
   </Group>
   
   <Group profile="true" name="gridftp" public="true">
-    <Group name="basic-user" />
-    <Group name="hadoop" />
+  	<Group name="basic" />
+    <Group name="hadoop-non-user" />
     <Group name="virtual-machine" />
     <Bundle name="git" />
     <Bundle name="gridftp" />
