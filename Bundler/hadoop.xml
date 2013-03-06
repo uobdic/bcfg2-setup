@@ -3,7 +3,6 @@
 	<Path name="/home/hdfs/.ssh/id_dsa" />
 	<Path name="/home/hdfs/.ssh/id_dsa.pub" />
 	<Path name="/home/hdfs/.ssh/authorized_keys" />
-	<Path name="/home/hdfs/.ssh/known_hosts" />
 
 	<Path name="/etc/sysctl.conf" />
 </Bundle>

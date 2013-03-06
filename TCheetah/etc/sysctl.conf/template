@@ -43,7 +43,7 @@ kernel.shmmax = 68719476736
 # Controls the maximum number of shared memory segments, in pages
 kernel.shmall = 4294967296
 
-#if 'hadoop' in $self.metadata.groups
+#if 'hadoop' in $self.metadata.groups or 'hadoop-non-user' in $self.metadata.groups
 # Raise per-process limits
 fs.epoll.max_user_instances = 2048
 #end if

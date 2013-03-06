@@ -94,7 +94,7 @@ root	ALL=(ALL) 	ALL
 \# %wheel	ALL=(ALL)	ALL
 
 %DICE_ADMIN_GROUP	ALL=(ALL)	ALL
-#if 'hadoop' in $self.metadata.groups
+#if 'hadoop' in $self.metadata.groups or 'hadoop-non-user' in $self.metadata.groups
 %HADOOP_ADMIN_GROUP	ALL=(ALL)	ALL
 #end if
 #if 'couch' in $self.metadata.groups or 'mossaic' in $self.metadata.groups
