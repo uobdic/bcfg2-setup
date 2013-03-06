@@ -1,5 +1,4 @@
 <Bundle name="hadoop">
-	<Path name="/home/hdfs/.ssh" />
 	<Path name="/home/hdfs/.ssh/id_dsa" />
 	<Path name="/home/hdfs/.ssh/id_dsa.pub" />
 	<Path name="/home/hdfs/.ssh/authorized_keys" />
