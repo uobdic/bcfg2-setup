@@ -41,6 +41,11 @@ COMMIT
 \#------------------------------------------
 -A INPUT -m state --state NEW -s 10.132.0.0/16 -m tcp -p tcp --dport 22 -j ACCEPT
 -A INPUT -m state --state NEW -s 10.132.0.0/16 -j ACCEPT
+#if $self.metadata.hostname.startswith('io-37-01')
+\#gridftp
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 2811 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 5002 -j ACCEPT
+#end if
 \#------------------------------------------
 \# Default is to reject
 \#------------------------------------------
