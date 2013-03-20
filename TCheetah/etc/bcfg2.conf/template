@@ -1,6 +1,7 @@
 [server]
 repository = /var/lib/bcfg2
 plugins = Bundler,Cfg,Metadata,Packages,Rules,SSHbase,TCheetah
+listen_all=true
 
 [statistics]
 sendmailpath = /usr/lib/sendmail
