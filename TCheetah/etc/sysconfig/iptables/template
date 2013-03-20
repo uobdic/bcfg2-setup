@@ -25,6 +25,10 @@ COMMIT
 \# SSH -- for external interfaces -- UOB only
 \#------------------------------------------
 -A INPUT -m state --state NEW -s 137.222.0.0/16 -m tcp -p tcp --dport 22 -j ACCEPT
+#if $self.metadata.hostname.startswith('io-37-0')
+\# SSH for CSE
+-A INPUT -m state --state NEW -s 92.234.12.153/16 -m tcp -p tcp --dport 22 -j ACCEPT
+#end if
 #if $self.metadata.hostname.startswith('vm-37-0')
 \# Allow view of monitoring
 -A INPUT -s 137.222.58.0/24 -j ACCEPT
@@ -32,8 +36,6 @@ COMMIT
 \# For UB IS backups
 \#------------------------------------------
 -A INPUT -s 137.222.10.17 -j ACCEPT
--A INPUT -s 137.222.10.17 -j ACCEPT
--A INPUT -s 137.222.9.60 -j ACCEPT
 -A INPUT -s 137.222.9.60 -j ACCEPT
 #end if
 \#------------------------------------------
