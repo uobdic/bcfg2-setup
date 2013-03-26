@@ -106,6 +106,7 @@ COMMIT
 -A INPUT --source 125.0.0.0/8 -j DROP
 -A INPUT --source 126.0.0.0/8 -j DROP
 -A INPUT --source 141.212.0.0/16 -j DROP
+-A INPUT --source 147.52.0.0/16 -j DROP
 -A INPUT --source 151.0.0.0/8 -j DROP
 -A INPUT --source 157.0.0.0/8 -j DROP
 -A INPUT --source 159.0.0.0/8 -j DROP
