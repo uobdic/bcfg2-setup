@@ -79,6 +79,7 @@ COMMIT
 -A INPUT --source 60.0.0.0/8 -j DROP
 -A INPUT --source 61.0.0.0/8 -j DROP
 -A INPUT --source 62.0.0.0/8 -j DROP
+-A INPUT --source 75.149.0.0/19 -j DROP
 -A INPUT --source 83.169.0.0/18 -j DROP
 \# Romania
 -A INPUT --source 89.121.128.0/17 -j DROP
@@ -88,6 +89,7 @@ COMMIT
 -A INPUT --source 94.103.144.0/20 -j DROP
 -A INPUT --source 94.142.152.0/21 -j DROP
 -A INPUT --source 106.0.0.0/8 -j DROP
+-A INPUT --source 109.163.224.0/22 -j DROP
 -A INPUT --source 110.0.0.0/8 -j DROP
 -A INPUT --source 111.0.0.0/8 -j DROP
 -A INPUT --source 112.0.0.0/8 -j DROP
