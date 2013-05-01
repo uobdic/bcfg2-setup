@@ -1,3 +1,0 @@
-<Rules priority="0">
-    <Action name="download-and-install-mahout" timing="post" when="modified" status="check" command="mkdir -p /opt/mahout; cd /opt/mahout; curl -o mahout-distribution-0.7.tar.gz http://vm-37-00.dice.cluster/tarballs/mahout-distribution-0.7.tar.gz; tar xvzf mahout-distribution-0.7.tar.gz" />
-</Rules>

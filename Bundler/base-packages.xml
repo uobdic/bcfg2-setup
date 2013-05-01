@@ -233,9 +233,12 @@
   <Action name="writeable-sudoers" />
   <Path name="/etc/sudoers" />
   <Path name="/etc/hosts" />
+  <Path name="/etc/sysconfig/iptables" />
+  <Path name="/root/.bash_profile" />
   <!-- Fixes -->
   <!-- /etc/resolv.conf needs to be defined after the dhclient -->
   <Path name="/etc/resolv.conf" />
+  <Path name="/etc/profile.d/dice.sh" />
   
   <!-- Start/restart services -->
   <Service name="auditd" />

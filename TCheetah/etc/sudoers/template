@@ -51,8 +51,11 @@
 
 \# Disable "ssh hostname sudo <cmd>", because it will show the password in clear. 
 \#         You have to run "ssh -t hostname sudo <cmd>".
+#if $self.metadata.hostname.startswith('io-37-01')
+\#Defaults    requiretty
+#else
 Defaults    requiretty
-
+#end if
 \# Refuse to run if unable to disable echo on the tty. This setting should also be
 \# changed in order to be able to use sudo without a tty. See requiretty above.
 Defaults   !visiblepw
@@ -94,7 +97,7 @@ root	ALL=(ALL) 	ALL
 \# %wheel	ALL=(ALL)	ALL
 
 %DICE_ADMIN_GROUP	ALL=(ALL)	ALL
-#if 'hadoop' in $self.metadata.groups
+#if 'hadoop' in $self.metadata.groups or 'hadoop-non-user' in $self.metadata.groups
 %HADOOP_ADMIN_GROUP	ALL=(ALL)	ALL
 #end if
 #if 'couch' in $self.metadata.groups or 'mossaic' in $self.metadata.groups
@@ -119,6 +122,13 @@ root	ALL=(ALL) 	ALL
 
 \## Allows members of the users group to shutdown this system
 \# %users  localhost=/sbin/shutdown -h now
+#if $self.metadata.hostname.startswith('io-37-01')
+\#bestman2
+Cmnd_Alias SRM_CMD = /bin/rm, /bin/mkdir, /bin/rmdir, /bin/mv, /bin/cp, /bin/ls
+Runas_Alias SRM_USR = ALL, !root
+bestman ALL=(SRM_USR) NOPASSWD: SRM_CMD
+#end if
+
 
 \## Read drop-in files from /etc/sudoers.d (the # here does not mean a comment)
 \#includedir /etc/sudoers.d

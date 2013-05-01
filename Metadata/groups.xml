@@ -40,50 +40,14 @@
     <Group name="basic" />
   </Group>
 
-  <Group profile="true" name="hadoop" public="true">
+  <Group profile="true" name="hadoop-non-user" public="true">
+    <Group name="basic" />
     <Bundle name="hadoop" />
-    <Group name="pig" />
+  </Group>
+  
+  <Group profile="true" name="hadoop" public="true">
     <Group name="basic-user" />
-  </Group>
-
-  <Group profile="true" name="hadoop-master" public="true">
-    <Group name="hadoop" />
-    <Bundle name="hadoop-master" />
-  </Group>
-
-  <Group profile="true" name="hadoop-worker" public="true">
-    <Group name="hadoop" />
-    <Bundle name="hadoop-worker" />
-  </Group>
-
-  <Group profile="true" name="zookeeper" public="true">
-    <Bundle name="zookeeper" />
-    <Group name="basic-user" />
-  </Group>
-
-  <Group profile="true" name="hadoop-worker-zookeeper" public="true">
-    <Group name="zookeeper" />
-    <Group name="hadoop-worker" />
-  </Group>
-
-  <Group profile='true' name='hbase' public='true'>
-    <Bundle name='hbase'/>
-    <Group name='basic'/>
-  </Group>
-
-  <Group profile="true" name="hadoop-worker-hbase" public="true">
-    <Group name="hbase" />
-    <Group name="hadoop-worker" />
-  </Group>
-
-  <Group profile='true' name='pig' public='true'>
-    <Bundle name='pig'/>
-    <Group name='basic-user'/>
-  </Group>
-
-  <Group profile='true' name='mahout' public='true'>
-    <Bundle name='mahout'/>
-    <Group name='basic'/>
+    <Bundle name="hadoop" />
   </Group>
 
   <Group profile="true" name="repo" public="true">
@@ -148,7 +112,6 @@
 
   <Group profile="true" name="cse" public="true">
     <Group name="hadoop" />
-    <Group name="hbase" />
     <Group name="virtual-machine" />
     <Bundle name="git" />
   </Group>
@@ -156,7 +119,6 @@
   <Group profile="true" name="hep" public="true">
     <Group name="basic-user" />
     <Group name="hadoop" />
-    <Group name="hbase" />
     <Group name="virtual-machine" />
     <Bundle name="git" />
     <Bundle name="xorg-x11-xauth" />
@@ -184,14 +146,13 @@
   <Group profile="true" name="astro" public="true">
     <Group name="basic-user" />
     <Group name="hadoop" />
-    <Group name="hbase" />
     <Group name="virtual-machine" />
     <Bundle name="git" />
   </Group>
   
   <Group profile="true" name="gridftp" public="true">
-    <Group name="basic-user" />
-    <Group name="hadoop" />
+  	<Group name="basic" />
+    <Group name="hadoop-non-user" />
     <Group name="virtual-machine" />
     <Bundle name="git" />
     <Bundle name="gridftp" />
