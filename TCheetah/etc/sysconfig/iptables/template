@@ -28,6 +28,10 @@ COMMIT
 #if $self.metadata.hostname.startswith('io-37-0')
 \# SSH for CSE
 -A INPUT -m state --state NEW -s 92.234.12.153/16 -m tcp -p tcp --dport 22 -j ACCEPT
+\#------------------------------------------
+\# For UB IS backups
+\#------------------------------------------
+-A INPUT -s 137.222.10.17 -j ACCEPT
 #end if
 #if $self.metadata.hostname.startswith('vm-37-0')
 \# Allow view of monitoring
@@ -47,6 +51,8 @@ COMMIT
 \#gridftp
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 2811 -j ACCEPT
 -A INPUT -m state --state NEW -m tcp -p tcp --dport 5002 -j ACCEPT
+\#bestman SRM
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
 #end if
 \#------------------------------------------
 \# Default is to reject
@@ -80,6 +86,8 @@ COMMIT
 -A INPUT --source 61.0.0.0/8 -j DROP
 -A INPUT --source 62.0.0.0/8 -j DROP
 -A INPUT --source 75.149.0.0/19 -j DROP
+-A INPUT --source 76.125.16.0/20 -j DROP
+-A INPUT --source 80.128.0.0/11 -j DROP
 -A INPUT --source 83.169.0.0/18 -j DROP
 \# Romania
 -A INPUT --source 89.121.128.0/17 -j DROP
@@ -107,6 +115,7 @@ COMMIT
 -A INPUT --source 124.0.0.0/8 -j DROP
 -A INPUT --source 125.0.0.0/8 -j DROP
 -A INPUT --source 126.0.0.0/8 -j DROP
+-A INPUT --source 137.116.0.0/16 -j DROP
 -A INPUT --source 141.212.0.0/16 -j DROP
 -A INPUT --source 147.52.0.0/16 -j DROP
 -A INPUT --source 151.0.0.0/8 -j DROP
