@@ -1,6 +1,7 @@
 [server]
 repository = /var/lib/bcfg2
 plugins = Bundler,Cfg,Metadata,Packages,Rules,SSHbase,TCheetah
+listen_all=true
 
 [statistics]
 sendmailpath = /usr/lib/sendmail
@@ -19,3 +20,6 @@ ca = /etc/bcfg2.crt
 
 [components]
 bcfg2 = https://vm-37-01.dice.cluster:6789
+
+[reporting]
+transport = LocalFilesystem

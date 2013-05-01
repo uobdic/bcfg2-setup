@@ -2,10 +2,6 @@
   <Path type="directory" group="apache" name="/opt/tarballs" owner="apache" perms="0755" />
   <Action name="fetch-tarballs" timing="post" when="modified" status="check"
       command="
-          curl -o /opt/tarballs/zookeeper-3.4.3.tar.gz http://mirrors.enquira.co.uk/apache/zookeeper/zookeeper-3.4.3/zookeeper-3.4.3.tar.gz &amp;&amp;
-          curl -o /opt/tarballs/hbase-0.94.0.tar.gz http://mirrors.enquira.co.uk/apache/hbase/hbase-0.94.0/hbase-0.94.0.tar.gz &amp;&amp;
-          curl -o /opt/tarballs/pig-0.10.0.tar.gz http://apache.mirror.anlx.net/pig/stable/pig-0.10.0.tar.gz &amp;&amp;
-          curl -o /opt/tarballs/mahout-distribution-0.7.tar.gz http://mirror.ox.ac.uk/sites/rsync.apache.org/mahout/0.7/mahout-distribution-0.7.tar.gz &amp;&amp;
           curl -L -o /opt/tarballs/jenkins.war http://mirrors.jenkins-ci.org/war/latest/jenkins.war
       " />
 </Rules>

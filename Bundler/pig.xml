@@ -1,5 +1,0 @@
-<Bundle name='pig'>
-    <Path name='/opt/pig' />
-    <Path name='/etc/profile.d/pig-env.sh' />
-    <Action name='download-and-install-pig' />
-</Bundle>

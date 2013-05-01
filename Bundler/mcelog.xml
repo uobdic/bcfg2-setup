@@ -2,6 +2,6 @@
 	<Group name='virtual-machine' negate='true'>
 		<!-- VMs don't need it -->
 		<Package name="mcelog" />
-		<Service name="mcelog" />
+		<Service name="mcelogd" />
 	</Group>
 </Bundle>

@@ -7,8 +7,8 @@ $TTL 604800	; 1 week
 				604800     ; expire (1 week)
 				3600       ; minimum (1 hour)
 				)
-			NS	ns1.dice.cluster.
-			NS	ns2.dice.cluster.
+			NS	io-37-00.dice.cluster.
+			NS	io-37-01.dice.cluster.
 $ORIGIN 0.132.10.in-addr.arpa.
 1			PTR	vm-37-00.dice.cluster.
 10			PTR	test-pxe-vm.dice.cluster.
@@ -21,14 +21,13 @@ $TTL 86400	; 1 day
 18			PTR	vm-astro.dice.cluster.
 19			PTR	vm-hep.dice.cluster.
 20			PTR	vm-hdfs-gridFTP.dice.cluster.
+96			PTR	vm-ci.dice.cluster.
 $TTL 604800	; 1 week
 21			PTR	bc-37-00.dice.cluster.
 23			PTR	bc-37-01.dice.cluster.
 25			PTR	bc-37-02.dice.cluster.
-250			PTR	ns1.dice.cluster.
-			PTR	io-37-00.dice.cluster.
-251			PTR	ns2.dice.cluster.
-			PTR	io-37-01.dice.cluster.
+250			PTR	io-37-00.dice.cluster.
+251			PTR	io-37-01.dice.cluster.
 41			PTR	hd-37-00.dice.cluster.
 43			PTR	hd-37-01.dice.cluster.
 45			PTR	hd-37-02.dice.cluster.
@@ -38,8 +37,6 @@ $TTL 604800	; 1 week
 51			PTR	hd-37-05.dice.cluster.
 53			PTR	hd-37-06.dice.cluster.
 55			PTR	hd-37-07.dice.cluster.
-$TTL 86400	; 1 day
 57			PTR	hd-38-00.dice.cluster.
 59			PTR	hd-38-01.dice.cluster.
 61			PTR	hd-38-02.dice.cluster.
-96			PTR	vm-ci.dice.cluster.

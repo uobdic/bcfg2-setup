@@ -6,7 +6,7 @@
 			<Blacklist>kernel*</Blacklist>
 			<GPGKey>http://be.mirror.eurid.eu/scientific/6.2/x86_64/os/RPM-GPG-KEY-sl6</GPGKey>
 		</Source>
-
+	
 		<Source type="yum" rawurl="http://dl.fedoraproject.org/pub/epel/6/x86_64" version="6">
 			<Arch>x86_64</Arch>
 			<GPGKey>http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6</GPGKey>
@@ -20,16 +20,10 @@
 			<Arch>x86_64</Arch>
 		</Source>
 		
-		<Source type="yum" rawurl="http://dl.fedoraproject.org/pub/epel/testing/6/x86_64/" version="6">
+		<Source type="yum" rawurl="http://cvmrepo.web.cern.ch/cvmrepo/yum/cvmfs/x86_64" version="6.2">
 			<Arch>x86_64</Arch>
-			<GPGKey>http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6</GPGKey>
-			<Whitelist>bcfg2</Whitelist>
-			<Whitelist>bcfg2-server</Whitelist>
-			<Whitelist>bcfg2-doc</Whitelist>
-			<Whitelist>bcfg2-examples</Whitelist>
-			<Whitelist>bcfg2-web</Whitelist>
+			<GPGKey>http://cvmrepo.web.cern.ch/cvmrepo/yum/RPM-GPG-KEY-CernVM</GPGKey>
 		</Source>
-
 	</Group>
 
 	<Group name="emi-ui-node">
