@@ -26,5 +26,5 @@
   <Client name="vm-hep.dice.cluster" profile="hep" />
   <Client name="vm-astro.dice.cluster" profile="astro" />
   <Client name="test-pxe-vm.dice.cluster" profile="test-vm" />
-  <Client name="vm-hdfs-gridFTP.dice.cluster" profile="gridftp" />
+  <Client name="gridFTP-hdfs-01.dice.cluster" profile="gridftp" />
 </Clients>

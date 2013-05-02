@@ -20,9 +20,9 @@ $TTL 86400	; 1 day
 17			PTR	vm-cse.dice.cluster.
 18			PTR	vm-astro.dice.cluster.
 19			PTR	vm-hep.dice.cluster.
-20			PTR	vm-hdfs-gridFTP.dice.cluster.
 96			PTR	vm-ci.dice.cluster.
 $TTL 604800	; 1 week
+20			PTR	gridFTP-hdfs-01.dice.cluster.
 21			PTR	bc-37-00.dice.cluster.
 23			PTR	bc-37-01.dice.cluster.
 25			PTR	bc-37-02.dice.cluster.
