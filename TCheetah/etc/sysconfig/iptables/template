@@ -14,6 +14,12 @@
 COMMIT
 #end if
 
+\# forwarding setup
+#if $self.metadata.hostname.startswith('io-37-0')
+-t nat -A POSTROUTING -o em2 -j MASQUERADE
+-A FORWARD -i em2 -o em1 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i em1 -o em2 -j ACCEPT
+#end if
 *filter
 :INPUT ACCEPT [0:0]
 :FORWARD ACCEPT [0:0]
@@ -59,7 +65,10 @@ COMMIT
 \#------------------------------------------
 -A INPUT -p igmp -d 224.0.0.1 -j DROP
 -A FORWARD -m state --state NEW  -s 10.132.0.0/16 -j ACCEPT
+\#LCG squid
+-A FORWARD -m state --state NEW -s 137.222.171.55 -j ACCEPT
 -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+\# Stop anything else
 -A FORWARD  -j REJECT --reject-with icmp-host-prohibited
 #if $self.metadata.hostname.startswith('io-37-0') or $self.metadata.hostname.startswith('vm-37-0')
 \# -----------------------------------------
