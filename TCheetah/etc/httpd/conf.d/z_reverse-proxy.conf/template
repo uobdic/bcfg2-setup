@@ -150,7 +150,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 10.132.0. 137.222. 94.192.83. 137.222.99.19 192.76.7.207 82.132. 93.97.101.
+      Allow from 10.132.0. 137.222. 94.192.83. 137.222.99.19 192.76.7.207 82.132. 93.97.101. 172.21.
    </Proxy>
    <Proxy */executable>
       Order deny,allow
@@ -191,12 +191,12 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from 10.132.0. 137.222.171. 137.222.74. 137.222.58. 163.1.5. 163.1.74. 163.1.245. 146.179.247. 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
+      Allow from 10.132.0. 137.222.171. 137.222.74. 137.222.58. 163.1.5. 163.1.74. 163.1.245. 146.179.247. 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16 172.21.
    </Proxy>
    <Proxy */executable>
       Order deny,allow
       Deny from all
-      Allow from 10.132.0. 137.222.171. 163.1.5. 163.1.74. 163.1.245. 146.179.247. 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16
+      Allow from 10.132.0. 137.222.171. 163.1.5. 163.1.74. 163.1.245. 146.179.247. 137.222.79. 137.222.171.130 79.125.0.0/17 46.51.128.0/18 46.51.192.0/20 46.137.0.0/17 46.137.128.0/18 176.34.128.0/17 176.34.64.0/18 54.247.0.0/16 54.246.0.0/16 172.21.
    </Proxy>
    ProxyPass / balancer://bigcouch-jw/ nocanon
    ProxyPassReverse / balancer://bigcouch-jw/
@@ -266,7 +266,7 @@ ProxySet stickysession=ROUTEID
    <Proxy *>
       Order deny,allow
       Deny from all
-      Allow from 10.132.0. 137.222.79. 137.222.74. 137.222.58. 137.222.99.19
+      Allow from 10.132.0. 137.222.79. 137.222.74. 137.222.58. 137.222.99.19 172.21.
    </Proxy>
    <Proxy */executable>
       Order deny,allow
@@ -310,7 +310,7 @@ ProxySet stickysession=ROUTEID
       CASScope /
       Order deny,allow
       Deny from all
-      Allow from 137.222.74. 137.222.58. 10.132.0.
+      Allow from 137.222.74. 137.222.58. 10.132.0. 172.21.
    </Proxy>
    ProxyPass / balancer://bigcouch-admin/ nocanon
    ProxyPassReverse / balancer://bigcouch-admin/
