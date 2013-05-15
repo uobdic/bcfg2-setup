@@ -10,13 +10,29 @@
   <Client name="hd-38-00.dice.cluster" profile="hadoop" />
   <Client name="hd-38-01.dice.cluster" profile="hadoop" />
   <Client name="hd-38-02.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-03.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-04.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-05.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-06.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-07.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-08.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-09.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-10.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-11.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-12.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-13.dice.cluster" profile="hadoop" />
+  <Client name="hd-38-14.dice.cluster" profile="hadoop" />
+  
   <Client name="nn-37-00.dice.cluster" profile="hadoop-non-user" />
   <Client name="jt-37-00.dice.cluster" profile="hadoop-non-user" />
+  
   <Client name="bc-37-00.dice.cluster" profile="couch" />
   <Client name="bc-37-01.dice.cluster" profile="couch" />
   <Client name="bc-37-02.dice.cluster" profile="couch" />
+  
   <Client name="io-37-00.dice.cluster" profile="io" />
   <Client name="io-37-01.dice.cluster" profile="io" />
+  
   <Client name="vm-37-00.dice.cluster" profile="admin-node-0" />
   <Client name="vm-37-01.dice.cluster" profile="admin-node-1" />
 <!-- VMs -->
