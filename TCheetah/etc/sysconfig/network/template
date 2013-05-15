@@ -3,6 +3,8 @@ NETWORKING=yes
 HOSTNAME=dice-io-37-00.acrc.bris.ac.uk
 #elif $self.metadata.hostname.startswith('io-37-01')
 HOSTNAME=dice-io-37-01.acrc.bris.ac.uk
+#elif $self.metadata.hostname.startswith('vm-37-01')
+HOSTNAME=vm037-01.acrc.bris.ac.uk
 #end if
 NETWORKING_IPV6=no
 NOZEROCONF=yes
