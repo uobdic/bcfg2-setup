@@ -28,6 +28,8 @@ COMMIT
 #if $self.metadata.hostname.startswith('io-37-0')
 \# SSH for CSE
 -A INPUT -m state --state NEW -s 92.234.12.153/16 -m tcp -p tcp --dport 22 -j ACCEPT
+\# SSH from VPN
+-A INPUT -m state --state NEW -s 172.21.0.0/16 -m tcp -p tcp --dport 22 -j ACCEPT
 \#------------------------------------------
 \# For UB IS backups
 \#------------------------------------------
@@ -59,7 +61,10 @@ COMMIT
 \#------------------------------------------
 -A INPUT -p igmp -d 224.0.0.1 -j DROP
 -A FORWARD -m state --state NEW  -s 10.132.0.0/16 -j ACCEPT
+\#LCG squid
+-A FORWARD -m state --state NEW -s 137.222.171.55 -j ACCEPT
 -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+\# Stop anything else
 -A FORWARD  -j REJECT --reject-with icmp-host-prohibited
 #if $self.metadata.hostname.startswith('io-37-0') or $self.metadata.hostname.startswith('vm-37-0')
 \# -----------------------------------------

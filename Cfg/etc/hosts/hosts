@@ -33,3 +33,5 @@
 10.132.0.57 hd-38-00.dice.cluster hd-38-00
 10.132.0.59 hd-38-01.dice.cluster hd-38-01
 10.132.0.61 hd-38-02.dice.cluster hd-38-02
+
+10.132.0.20 gridFTP-hdfs-01.dice.cluster gridFTP-hdfs-01
