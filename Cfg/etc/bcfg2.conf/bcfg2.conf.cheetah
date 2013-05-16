@@ -1,6 +1,6 @@
 [server]
 repository = /var/lib/bcfg2
-plugins = Bundler,Cfg,Metadata,Packages,Rules,SSHbase,TCheetah
+plugins = Bundler,Cfg,Metadata,Packages,Rules,SSHbase
 listen_all=true
 
 [statistics]
