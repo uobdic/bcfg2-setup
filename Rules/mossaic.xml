@@ -1,5 +1,5 @@
 <Rules priority="0">
-  <Path type="directory" group="mossaic" name="/opt/mossaic" owner="mossaic" perms="0755" />
+  <Path type="directory" group="mossaic" name="/opt/mossaic" owner="mossaic" mode="0755" />
   <Action name="install-mossaic" timing="post" when="always" status="check"
     command='
       export VERSION=0.4.2 &amp;&amp;
