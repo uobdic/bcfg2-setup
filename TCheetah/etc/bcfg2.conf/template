@@ -5,9 +5,11 @@ listen_all=true
 
 [statistics]
 sendmailpath = /usr/lib/sendmail
-database_engine = sqlite3
+
+[database]
 # 'postgresql', 'mysql', 'mysql_old', 'sqlite3' or 'ado_mssql'.
-database_name = /etc/brpt.sqlite
+engine = sqlite3
+name = /etc/brpt.sqlite
 
 [communication]
 protocol = xmlrpc/ssl
@@ -23,3 +25,4 @@ bcfg2 = https://vm-37-01.dice.cluster:6789
 
 [reporting]
 transport = LocalFilesystem
+
