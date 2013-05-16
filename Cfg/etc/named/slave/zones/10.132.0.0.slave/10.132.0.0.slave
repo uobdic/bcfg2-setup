@@ -22,6 +22,7 @@ $TTL 86400	; 1 day
 19			PTR	vm-hep.dice.cluster.
 96			PTR	vm-ci.dice.cluster.
 $TTL 604800	; 1 week
+5			PTR	vm-37-01.dice.cluster.
 20			PTR	gridFTP-hdfs-01.dice.cluster.
 21			PTR	bc-37-00.dice.cluster.
 23			PTR	bc-37-01.dice.cluster.
@@ -33,10 +34,21 @@ $TTL 604800	; 1 week
 45			PTR	hd-37-02.dice.cluster.
 47			PTR	hd-37-03.dice.cluster.
 49			PTR	hd-37-04.dice.cluster.
-5			PTR	vm-37-01.dice.cluster.
 51			PTR	hd-37-05.dice.cluster.
 53			PTR	hd-37-06.dice.cluster.
 55			PTR	hd-37-07.dice.cluster.
 57			PTR	hd-38-00.dice.cluster.
 59			PTR	hd-38-01.dice.cluster.
 61			PTR	hd-38-02.dice.cluster.
+63			PTR	hd-38-03.dice.cluster.
+65			PTR	hd-38-04.dice.cluster.
+67			PTR	hd-38-05.dice.cluster.
+69			PTR	hd-38-06.dice.cluster.
+71			PTR	hd-38-07.dice.cluster.
+72			PTR	hd-38-08.dice.cluster.
+75			PTR	hd-38-09.dice.cluster.
+77			PTR	hd-38-10.dice.cluster.
+79			PTR	hd-38-11.dice.cluster.
+81			PTR	hd-38-12.dice.cluster.
+83			PTR	hd-38-13.dice.cluster.
+85			PTR	hd-38-14.dice.cluster.
