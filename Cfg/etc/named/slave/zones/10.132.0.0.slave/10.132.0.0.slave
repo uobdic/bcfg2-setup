@@ -45,7 +45,7 @@ $TTL 604800	; 1 week
 67			PTR	hd-38-05.dice.cluster.
 69			PTR	hd-38-06.dice.cluster.
 71			PTR	hd-38-07.dice.cluster.
-72			PTR	hd-38-08.dice.cluster.
+73			PTR	hd-38-08.dice.cluster.
 75			PTR	hd-38-09.dice.cluster.
 77			PTR	hd-38-10.dice.cluster.
 79			PTR	hd-38-11.dice.cluster.
