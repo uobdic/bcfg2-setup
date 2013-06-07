@@ -71,6 +71,7 @@ COMMIT
 \# Drop known troublesome ranges
 \# -----------------------------------------
 -A INPUT --source 1.0.0.0/8 -j DROP
+-A INPUT --source 2.20.183.0/24 -j DROP
 -A INPUT --source 2.26.0.0/16 -j DROP
 -A INPUT --source 5.9.0.0/16 -j DROP
 -A INPUT --source 14.0.0.0/8 -j DROP
@@ -90,12 +91,15 @@ COMMIT
 -A INPUT --source 60.0.0.0/8 -j DROP
 -A INPUT --source 61.0.0.0/8 -j DROP
 -A INPUT --source 62.0.0.0/8 -j DROP
+-A INPUT --source 72.233.61.0/25 -j DROP
+-A INPUT --source 74.125.0.0/16 -j DROP
 -A INPUT --source 75.149.0.0/19 -j DROP
 -A INPUT --source 76.125.16.0/20 -j DROP
 -A INPUT --source 80.128.0.0/11 -j DROP
 -A INPUT --source 80.229.0.0/16 -j DROP
 -A INPUT --source 83.169.0.0/18 -j DROP
 -A INPUT --source 85.17.0.0/16 -j DROP
+-A INPUT --source 85.190.0.0/19 -j DROP
 \# Romania
 -A INPUT --source 89.121.128.0/17 -j DROP
 -A INPUT --source 91.121.0.0/16 -j DROP
@@ -123,6 +127,7 @@ COMMIT
 -A INPUT --source 124.0.0.0/8 -j DROP
 -A INPUT --source 125.0.0.0/8 -j DROP
 -A INPUT --source 126.0.0.0/8 -j DROP
+-A INPUT --source 129.79.0.0/16 -j DROP
 -A INPUT --source 137.116.0.0/16 -j DROP
 -A INPUT --source 141.212.0.0/16 -j DROP
 -A INPUT --source 147.52.0.0/16 -j DROP

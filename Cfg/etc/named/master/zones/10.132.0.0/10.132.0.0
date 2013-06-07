@@ -11,6 +11,7 @@ $TTL 604800	; 1 week
 			NS	io-37-01.dice.cluster.
 $ORIGIN 0.132.10.in-addr.arpa.
 1			PTR	vm-37-00.dice.cluster.
+9			PTR	test-vm-WL.dice.cluster.
 10			PTR	test-pxe-vm.dice.cluster.
 11			PTR	nn-37-00.dice.cluster.
 13			PTR	jt-37-00.dice.cluster.

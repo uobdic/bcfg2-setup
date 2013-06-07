@@ -79,10 +79,6 @@ zone "dice.cluster" {
        allow-transfer { none; };
        masters { 10.132.0.250; };
        file "/etc/named/slave/zones/dice.cluster.slave";
-       
-       allow-update {
-                key dhcpupdate-dice;
-        };
 };
 
 zone "132.10.in-addr.arpa" {
@@ -91,9 +87,6 @@ zone "132.10.in-addr.arpa" {
        masters { 10.132.0.250; };
        file "/etc/named/slave/zones/10.132.0.0.slave";
        
-       allow-update {
-                key dhcpupdate-dice;
-        };
 };
 #end if
 
