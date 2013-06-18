@@ -10,7 +10,7 @@
 options {
 #if 'io-37-00' in $self.metadata.hostname
 	listen-on port 53 { 10.132.0.250; };
-#elif 'io-37-00' in $self.metadata.hostname
+#elif 'io-37-01' in $self.metadata.hostname
 	listen-on port 53 { 10.132.0.251; };
 #end if
 	listen-on-v6 port 53 { ::1; };
