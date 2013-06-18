@@ -1,6 +1,5 @@
-$ORIGIN .
 $TTL 604800	; 1 week
-132.10.in-addr.arpa	IN SOA	ns1.dice.cluster. hpc-help.bristol.ac.uk. (
+@	IN SOA	io-37-00.dice.cluster. hpc-help.bristol.ac.uk. (
 				2012101621 ; serial
 				10800      ; refresh (3 hours)
 				3600       ; retry (1 hour)
@@ -9,7 +8,7 @@ $TTL 604800	; 1 week
 				)
 			NS	io-37-00.dice.cluster.
 			NS	io-37-01.dice.cluster.
-$ORIGIN 0.132.10.in-addr.arpa.
+
 1			PTR	vm-37-00.dice.cluster.
 9			PTR	test-vm-WL.dice.cluster.
 10			PTR	test-pxe-vm.dice.cluster.
@@ -20,7 +19,7 @@ $TTL 86400	; 1 day
 16			PTR	vm-ci.dice.cluster.
 17			PTR	vm-cse.dice.cluster.
 18			PTR	vm-astro.dice.cluster.
-19			PTR	vm-hep.dice.cluster.
+19		IN	PTR	vm-hep.dice.cluster.
 96			PTR	vm-ci.dice.cluster.
 $TTL 604800	; 1 week
 5			PTR	vm-37-01.dice.cluster.
@@ -53,3 +52,4 @@ $TTL 604800	; 1 week
 81			PTR	hd-38-12.dice.cluster.
 83			PTR	hd-38-13.dice.cluster.
 85			PTR	hd-38-14.dice.cluster.
+100			PTR	lcgce02.phy.bris.ac.uk.
